@@ -23,9 +23,9 @@
  A cualquier persona que necesite una artículo de librería, y que no tenga ganas de hacer filas interminables en horas picos.
 
 Fuente del logo
-Faster One [https://fonts.google.com/specimen/Faster+One?query=faster+]
+[https://fonts.google.com/specimen/Faster+One?query=faster+]: Faster One 
 Fuente del header
-Luckiest Guy [https://fonts.google.com/specimen/Luckiest+Guy?query=Luckiest+Guy]
-Aclonica [https://fonts.google.com/specimen/Aclonica?query=Aclonica+]
+[https://fonts.google.com/specimen/Luckiest+Guy?query=Luckiest+Guy]: Luckiest Guy 
+[https://fonts.google.com/specimen/Aclonica?query=Aclonica+]: Aclonica 
 Footer
-Libre Barcode 128 Text [https://fonts.google.com/specimen/Libre+Barcode+128+Text?query=Libre+Barcode+128+Text+]
+[https://fonts.google.com/specimen/Libre+Barcode+128+Text?query=Libre+Barcode+128+Text+]: Libre Barcode 128 Text 
