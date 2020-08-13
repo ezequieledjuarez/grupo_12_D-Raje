@@ -4,7 +4,7 @@
 # Integrantes
 
  ## Segovia, Axel Germán.
-    ⋅⋅* 22 años.
+⋅⋅* 22 años.
     ⋅⋅* Estudiante Profesorado de Matemática.
 
  ## Troche Hinojosa, Juan Carlos.
