@@ -4,16 +4,16 @@
 # Integrantes
 
  ## Segovia, Axel Germán.
-    _ 22 años.
-    _ Estudiante Profesorado de Matemática.
+    ⋅⋅* 22 años.
+    ⋅⋅* Estudiante Profesorado de Matemática.
 
  ## Troche Hinojosa, Juan Carlos.
     
-    _ Estudiante
+    ⋅⋅* Estudiante
 
  ## Juarez, Ezequiel Eduardo.
-    _ Edad 26 años.
-    _ Control de calidad interno/ Estudiante Licenciatura en Sistemas.
+    ⋅⋅* Edad 26 años.
+    ⋅⋅* Control de calidad interno/ Estudiante Licenciatura en Sistemas.
 
  # Temática del sitio.
  Nuestro sitio comercializará artículos de librería.
@@ -23,9 +23,9 @@
  A cualquier persona que necesite una artículo de librería, y que no tenga ganas de hacer filas interminables en horas picos.
 
 Fuente del logo
-Faster One https://fonts.google.com/specimen/Faster+One?query=faster+
+Faster One [https://fonts.google.com/specimen/Faster+One?query=faster+]
 Fuente del header
-Luckiest Guy https://fonts.google.com/specimen/Luckiest+Guy?query=Luckiest+Guy
-Aclonica https://fonts.google.com/specimen/Aclonica?query=Aclonica+
+Luckiest Guy [https://fonts.google.com/specimen/Luckiest+Guy?query=Luckiest+Guy]
+Aclonica [https://fonts.google.com/specimen/Aclonica?query=Aclonica+]
 Footer
-Libre Barcode 128 Text https://fonts.google.com/specimen/Libre+Barcode+128+Text?query=Libre+Barcode+128+Text+
+Libre Barcode 128 Text [https://fonts.google.com/specimen/Libre+Barcode+128+Text?query=Libre+Barcode+128+Text+]
