@@ -4,16 +4,16 @@
 # Integrantes
 
  ## Segovia, Axel Germán.
-    ⋅⋅* 22 años.
-    ⋅⋅* Estudiante Profesorado de Matemática.
+    * 22 años.
+    * Estudiante Profesorado de Matemática.
 
  ## Troche Hinojosa, Juan Carlos.
     
-    ⋅⋅* Estudiante
+    * Estudiante
 
  ## Juarez, Ezequiel Eduardo.
-    ⋅⋅* Edad 26 años.
-    ⋅⋅* Control de calidad interno/ Estudiante Licenciatura en Sistemas.
+    * Edad 26 años.
+    * Control de calidad interno/ Estudiante Licenciatura en Sistemas.
 
  # Temática del sitio.
  Nuestro sitio comercializará artículos de librería.
