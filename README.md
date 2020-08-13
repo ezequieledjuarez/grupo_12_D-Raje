@@ -22,6 +22,8 @@
  # Público al que apunta.
  A cualquier persona que necesite una artículo de librería, y que no tenga ganas de hacer filas interminables en horas picos.
 
+# Fuentes a utilizar
+
 Fuente del logo
 
 [Faster One](https://fonts.google.com/specimen/Faster+One?query=faster+)
