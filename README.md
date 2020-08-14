@@ -38,3 +38,6 @@ Fuente del header
 Footer
 
 [Libre Barcode 128 Text](https://fonts.google.com/specimen/Libre+Barcode+128+Text?query=Libre+Barcode+128+Text+)
+
+# Colores a utilizar:
+https://colorhunt.co/palette/204627
