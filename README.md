@@ -9,7 +9,8 @@
 
  ## Troche Hinojosa, Juan Carlos.
     
-    * Estudiante
+    * Edad 22 años.
+    * Estudiante de Analista de Sistemas y desarrollo Web
 
  ## Juarez, Ezequiel Eduardo.
     * Edad 26 años.
