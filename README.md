@@ -1,6 +1,7 @@
 # grupo_12_D-Raje :notebook: :pencil2:
+![image info](./design/logo/D-RAJE%20-Logo-%20Negativo.jpg)
 
-##Primer Sprint (17/08) :large_blue_circle: 
+## Primer Sprint (17/08) :large_blue_circle: 
 # Integrantes
 
  ## Segovia, Axel Germán.
@@ -21,9 +22,9 @@
  Además se podrá realizar un pedido, pagarlo y retirarlo cuando se pueda, y así evitar pérdidas de venta en horas pico, además de posibilitar la venta incluso cuando el local se encuentre cerrado.
 
  # Público al que apunta. :point_down:
- A aquellas personas que necesiten una artículo de librería, a esas familias que se enteran a última hora que su hijx necesita una cartulina. Nosotros tomamos sus pedido y ustedes lo podrán pagar con tarjeta o al otro día en nuestro local, ya vamos a tener preparado tu pedido, y no tendrán que hacer filas interminables en horas pico.
+ A aquellas personas que necesiten una artículo de librería, a esas familias que se enteran a última hora que su hijx necesita una cartulina. Nosotros tomamos sus pedido y ustedes lo podrán pagar con tarjeta o al otro día en nuestro local, ya vamos a tener preparado sus pedidos, y no tendrán que hacer filas interminables en horas pico.
 
-#Paginas de referencia  :clipboard:
+# Paginas de referencia  :clipboard:
 * [Woopy Librería](https://www.woopylibreria.com.ar/)
 * [Casa Abe](https://www.casaabe.com.ar/)
 * [Librería Peluffo](https://libreriapeluffo.com.ar/home)
