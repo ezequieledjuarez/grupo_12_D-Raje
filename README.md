@@ -43,6 +43,13 @@ Las páginas elegidas, son utilizadas como referencia ya que consideramos que ta
 #Wireframe Tablet :newspaper:
 * [Home Tablet](https://github.com/ezzeguason/grupo_12_D-Raje/blob/master/wireframes/Tablet/Home%20Tablet.png)
 
+* [Detalle del Producto Tablet]()
+
+* []()
+
+* []()
+
+* []()
 
 # Fuentes a utilizar :capital_abcd:
 
