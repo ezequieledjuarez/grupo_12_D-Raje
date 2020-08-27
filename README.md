@@ -42,14 +42,10 @@ Las páginas elegidas, son utilizadas como referencia ya que consideramos que ta
 
 #Wireframe Tablet :newspaper:
 * [Home Tablet](https://github.com/ezzeguason/grupo_12_D-Raje/blob/master/wireframes/Tablet/Home%20Tablet.png)
-
-* [Detalle del Producto Tablet]()
-
-* []()
-
-* []()
-
-* []()
+* [Detalle del Producto Tablet](https://github.com/ezzeguason/grupo_12_D-Raje/blob/master/wireframes/Tablet/Detalle%20de%20producto%20Tablet.png)
+* [Carrito de compras Tablet](https://github.com/ezzeguason/grupo_12_D-Raje/blob/master/wireframes/Tablet/Carrito%20de%20compras%20Tablet.png)
+* [Formulario de Registro Tablet](https://github.com/ezzeguason/grupo_12_D-Raje/blob/master/wireframes/Tablet/Formulario%20de%20Registro%20Tablet.png)
+* [Formulario de carga de producto Tablet](https://github.com/ezzeguason/grupo_12_D-Raje/blob/master/wireframes/Tablet/Formulario%20de%20carga%20de%20producto%20Tablet.png)
 
 # Fuentes a utilizar :capital_abcd:
 
