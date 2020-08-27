@@ -40,6 +40,10 @@ Las páginas elegidas, son utilizadas como referencia ya que consideramos que ta
 * [Formulario de registro](https://github.com/ezzeguason/grupo_12_D-Raje/blob/master/wireframes/Registro.png)
 * [Formulario de carga de producto](https://github.com/ezzeguason/grupo_12_D-Raje/blob/master/wireframes/Carga_de_Producto.png)
 
+#Wireframe Tablet :newspaper:
+* [Home Tablet](https://github.com/ezzeguason/grupo_12_D-Raje/blob/master/wireframes/Tablet/Home%20Tablet.png)
+
+
 # Fuentes a utilizar :capital_abcd:
 
 ### _Fuente del logo_ :
