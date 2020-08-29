@@ -179,6 +179,16 @@
 		"descripcion":"Tijera de oficina",
 		"image":"img-tijera-maped"
 	},
+	{
+	"id":19,
+			"nombre": "Tijera",
+			"marca": "Maped",
+			"precio": 80,
+			"descuento":0,
+			"estado":"sin-estado",
+			"descripcion":"Tijera de oficina",
+			"image":"img-tijera-maped"
+		}
 	
 
 ]
