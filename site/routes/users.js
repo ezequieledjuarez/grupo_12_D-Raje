@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var usersController = require('../controllers/usersController')
+var usersController = require('../controllers/usersController');
+const usersControllers = require('../controllers/usersControllers');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -8,6 +9,6 @@ router.get('/', function(req, res, next) {
 });
 
 /*Carrito de compra*/
-router.get('/shop')
+router.get('/shop', usersControllers.carrito)
 
 module.exports = router;
