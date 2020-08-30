@@ -1,8 +1,121 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-}
+    /*
+--IMPORTS
+*/
+    
+    @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Aref+Ruqaa:wght@400;700&family=Faster+One&family=Luckiest+Guy&display=swap');
+    /*Carrito de compra-Desktop*/
+    
+    * {
+        box-sizing: border-box;
+        margin: auto;
+    }
+    
+    p {
+        font-size: 1em;
+    }
+    
+    body {
+        padding: 50px;
+        font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    }
+    
+    table,
+    .info {
+        display: flex;
+        flex: wrap;
+        font-family: "Aref Ruqaa", Helvetica, Arial, sans-serif;
+    }
+    
+    caption {
+        position: absolute;
+        top: -56px;
+    }
+    
+    .producto-compra {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .botones {
+        display: flex;
+        flex: wrap;
+    }
+    
+    .info {
+        position: fixed;
+        top: 8%;
+        left: 75%;
+    }
+    
+    .botones-seguir {
+        position: relative;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
+    a {
+        color: #00B7FF;
+    }
+    /*Tablet*/
+    
+    @media(max-width:768px) {
+        .hidden {
+            visibility: hidden;
+        }
+        .producto-compra {
+            width: 100px;
+            height: 100px;
+        }
+        .botones,
+        .info {
+            display: flex;
+            flex: wrap;
+        }
+        .info {
+            position: absolute;
+            top: 90%;
+            left: 0px;
+        }
+        .total {
+            position: relative;
+            top: 50px;
+        }
+        .cantidad {
+            position: relative;
+            top: 77px;
+            left: -125px;
+        }
+        #ticket {
+            position: relative;
+            top: 114px;
+            left: -98px;
+        }
+        #pagar {
+            position: relative;
+            top: 114px;
+            left: -235px;
+        }
+        .botones-seguir {
+            display: flex;
+            right: -90px;
+            top: 160px;
+        }
+        #descuento {
+            display: flex;
+            position: absolute;
+            top: -54px;
+            left: 97px;
+        }
+        #vaciar {
+            display: flex;
+            position: absolute;
+            top: -8px;
+            left: 115px;
+        }
+        #seguir {
+            display: flex;
+            position: relative;
+            top: -8px;
+            right: 337px;
+        }
+    }
