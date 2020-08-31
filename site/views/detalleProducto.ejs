@@ -5,26 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <%= title%>
+        <%= title %>
     </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
 </head>
 
 
 <body>
-    <div class="container">
-        <section>
-            <div class="row productoElegido">
+    <div class="row productoElegido">
+        <div class="titulo">
+            <h1>
+                <%= title %>
+            </h1>
+        </div>
+        <div class="producto">
+            <div class="row producto">
                 <div class="col-8 col-md-6 col-xl-10">
-                    <figure>
-                        <a href=""><img src="" alt=""></a>
-                    </figure>
+                    <img src="/images/productos/<%= producto.image %>.jpg" alt="" class="imgProducto">
+                    <p>
+                        <%= producto.descripcion %>
+                    </p>
+                </div>
+                <div class="datosProducto ">
+                    <h4>
+                        <%= producto.nombre%>
+                    </h4>
+                    <span>
+                        $<%= producto.precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ". ") %>  
+                        <strong>
+                              <%= producto.descuento %>  % OFF
+                        </strong>
+                    </span>
+                    <h2>
+                        $
+                        <%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0)%>
+                    </h2>
                 </div>
             </div>
 
-        </section>
+        </div>
 
     </div>
+
+    </section>
+
 
     <footer>
         <!--scripts de bootstrap-->

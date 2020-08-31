@@ -4,8 +4,13 @@ const dbProducts = require(path.join(__dirname, '..', 'data', 'dbProducts'))
 
 module.exports = {
     detalleProducto: function(req, res) {
+        idProducto = req.params.id
+        let producto = dbProducts.filter(producto => {
+            return producto.id == idProducto
+        })
         res.render('detalleProducto', {
-            title: 'Producto detallado'
+            title: 'Producto detallado',
+            producto: producto[0]
         })
     }
 }
