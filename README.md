@@ -47,6 +47,14 @@ Las páginas elegidas, son utilizadas como referencia ya que consideramos que ta
 * [Formulario de Registro Tablet](https://github.com/ezzeguason/grupo_12_D-Raje/blob/master/wireframes/Tablet/Formulario%20de%20Registro%20Tablet.png)
 * [Formulario de carga de producto Tablet](https://github.com/ezzeguason/grupo_12_D-Raje/blob/master/wireframes/Tablet/Formulario%20de%20carga%20de%20producto%20Tablet.png)
 
+#Wireframe Mobil :newspaper:
+* [Home](https://github.com/ezzeguason/grupo_12_D-Raje/blob/master/wireframes/Home.png)
+* [Detalle de producto](https://github.com/ezzeguason/grupo_12_D-Raje/blob/master/wireframes/Detalle_del_producto.png)
+* [Carrito de compras](https://github.com/ezzeguason/grupo_12_D-Raje/blob/master/wireframes/Carrito.png)
+* [Formulario de registro](https://github.com/ezzeguason/grupo_12_D-Raje/blob/master/wireframes/Registro.png)
+* [Formulario de carga de producto](https://github.com/ezzeguason/grupo_12_D-Raje/blob/master/wireframes/Carga_de_Producto.png)
+* [Footer de mobil](https://github.com/ezzeguason/grupo_12_D-Raje/blob/master/wireframes/Celular/Footer%20movil%20.png)
+
 # Fuentes a utilizar :capital_abcd:
 
 ### _Fuente del logo_ :
