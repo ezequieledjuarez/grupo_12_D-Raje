@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Aref+Ruqaa:wght@400;700&family=Faster+One&family=Luckiest+Guy&display=swap');
+    
     * {
-        font-family: "Aref Ruqaa", Helvetica, Arial, sans-serif;
-        ;
+        font-family: "Aref Ruqaa", Helvetica, Arial, sans-serif;;
     }
     
     body {
@@ -12,15 +13,56 @@
     .principal {
     display: flex;
     position: relative;
-    width: 59%;
-    height: 550px;
+    width: 24%;
+    height: 590px;
     align-self:center;
     border: black solid 2px;
     }
-
-    img{
-        width:200px;
-        height:200px;
+    
+    img {
+        width: 80%;
+        height: auto;
+        display:flex;
     }
     
-    
+    .productoNombre{
+        font-size: 2em;
+        width: 299px;
+    }
+   
+    .productoDescripcion{
+        display: flex;
+        width: 158%;
+        font-size: 16px;
+    }
+
+    .datosProducto{
+    align-self: auto;
+    position: absolute;
+    left: 38%;
+    top: 75%;
+    }
+
+    .productoPrecio{
+        position: absolute;
+        top: -115px;
+        left: -119px;
+    }
+
+    .tachado {
+        text-decoration: line-through;
+        position: relative;
+        top: -67px;
+    }
+
+    .productoDescuento{
+        position:absolute;
+        top: -70px;
+        left: -117px;
+    }
+
+    .boton{
+        position:absolute;
+        top: 105%;
+        left: 30%;
+    }
