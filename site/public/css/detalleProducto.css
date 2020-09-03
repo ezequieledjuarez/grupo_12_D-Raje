@@ -1,4 +1,37 @@
-img {
-    width: 400px;
-    height: 600px;
-}
+    * {
+        font-family: font-family: "Aref Ruqaa", Helvetica, Arial, sans-serif;
+        ;
+    }
+    
+    body {
+        background-color: #f5efef;
+    }
+    
+    .productoElegido {
+        display: flex;
+        flex: wrap;
+    }
+    
+    .productoDetalle {
+        display: flex;
+        flex: wrap;
+    }
+    
+    .imgProducto {
+        width: 250px;
+        height: 400px;
+        position: absolute;
+        left: 50%;
+        top: 138%;
+        border: black 6px solid;
+    }
+    
+    .productoDescripcion {
+        width: 200px;
+        height: 150px;
+        display: inline-block;
+        font-size: 2em;
+        position: relative;
+        left: 160%;
+        top: 190%;
+    }
