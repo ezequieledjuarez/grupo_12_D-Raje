@@ -1,101 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/css/carrito.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="registro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+    <title>Registro</title>
 </head>
-<body>
-    <div class="contenedor-formulario">
-        <form action="#" method="post">
-            <div class="input-grupo-6">
-                <label>
-                    <p>
-                        Ingrese su correo:
-                        <input type="email" name="correo" required>
-                    </p>
-                </label>
-            </div>
-            <div class="input-grupo-6">
-                <label>
-                    <p>
-                        Ingrese su contraseña:
-                        <input type="password" name="contraseña" required>
-                    </p>
-                </label>
-            </div>
-            <div class="input-grupo-6">
-                <label>
-                    <p>
-                        Repetir contraseña:
-                        <input type="password" name="contraseña" required>
-                    </p>
-                </label>
-            </div>
-            <div class="input-grupo-6">
-                <label>
-                    <p>
-                        Ingrese su nombre:
-                        <input type="text" name="nombre" required>
-                    </p>
-                </label>
-            </div>
-            <div class="input-grupo-6">
-                <label>
-                    <p>
-                        Ingrese su apellido:
-                        <input type="text" name="apellido" required>
-                    </p>
-                </label>
-            </div>
-            <div class="input-grupo-6">
-                <label>
-                    <p>
-                        Ingrese su localidad:
-                        <input type="text" name="localidad">
-                    </p>
-                </label>
-            </div>
-            <div class="input-grupo-6">
-                <label>
-                    <p>
-                        Ingrese su direccion:
-                        <input type="text" name="direccion" required>
-                    </p>
-                </label>
-            </div>
-            <div class="input-grupo-6">
-                <label>
-                    <p>
-                        Ingrese su codigo postal:
-                        <input type="postal-code" name="codigo postal">
-                    </p>
-                </label>
-            </div>
-            <div class="radio">
-                <p>
-                    Genero:
-                    <label><input type="radio" name="sexo" value="Masculino" required> Masculino</label>
-                    <label><input type="radio" name="sexo" value="Femenino" required> Femenino</label>
-                    <label><input type="radio" name="sexo" value="Otro" required> Otro</label>
-                </p>
-            </div>
-            <div class="boton registro">
-                <input type="submit" value="Registrarme">
-            </div>
-        </form>
-        <nav>
-            <p>¿Tienes una cuenta? <span><a href="#">Iniciar sesíon</a></span></p>
-        </nav>
-    </div>
 
-    <footer>
-         <!--scripts de bootstrap-->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js "integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj "crossorigin="anonymous "></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js "integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo "crossorigin="anonymous "></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js "integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI "crossorigin="anonymous "></script>
-    </footer>
+<body>
+    <div class="container">
+        <h1><span>Registrarme</span></h1>
+        <div class="agrupacion">
+            <!--todo el formulario esta dentro de este div-->
+            <form action="#" method="POST">
+                <p>
+                    <label for="correo">Ingrese su correo:</label>
+                    <input type="email" name="correo" required id="correo">
+                </p>
+                <p>
+                    <label for="contraceña1">Ingrese su contraseña:</label>
+                    <input type="password" name="contraseña" required id="contraceña1">
+                </p>
+                <p>
+                    <label for="contraceña2">Repetir contraseña:</label>
+                    <input type="password" name="contraseña" required id="contraceña2">
+                </p>
+                <p>
+                    <label for="nombre">Ingrese su nombre:</label>
+                    <input type="text" name="nombre" required id="nombre">
+                </p>
+                <p>
+                    <label for="apellido">Ingrese su apellido:</label>
+                    <input type="text" name="apellido" required id="apellido">
+                </p>
+                <p>
+                    <label for="localidad">Ingrese su localidad:</label>
+                    <input type="text" name="localidad" id="localidad">
+                </p>
+                <p>
+                    <label for="direccion">Ingrese su direccion:</label>
+                    <input type="text" name="direccion" required id="direccion">
+                </p>
+                <p>
+                    <label for="codigo-postal">Ingrese su codigo postal:</label>
+                    <input type="postal-code" name="codigo postal" id="codigo-postal">
+                </p>
+                <div class="boton-registro">
+                    <button>Registrarme</button>
+                </div>
+            </form>
+        </div>
+        <div class="cuentaExistente">
+            <p>¿Tienes una cuenta?<a href="#">Iniciar sesíon</a></p>
+        </div>
+    </div>
 </body>
+
 </html>
