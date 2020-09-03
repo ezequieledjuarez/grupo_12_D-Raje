@@ -9,17 +9,18 @@
         width: 1280px;
         height: 768px;
     }
-    
+    .titulo{
+        margin-left:20px;
+    }
     .principal {
     display: flex;
     position: relative;
     width: 24%;
     height: 590px;
     top:100px;
-    right: 23%;
-    margin-left: 10px;
+    right: 21%;
     align-self:center;
-    border: black solid 2px;
+    border: grey 4px dashed;
     }
     
     img {
@@ -68,4 +69,58 @@
         position:absolute;
         top: 105%;
         left: 30%;
+    }
+
+    @media(min-width:768px){
+        img{
+            width:100% ;
+            height:65%;
+            position:relative;
+            top:-35%;
+        }
+        
+        .principal{
+            width: 20%;
+            height: 300px;
+            
+        }
+
+        .productoNombre{
+            position: relative;
+            top:95%;
+        }
+
+        .productoDescripcion{
+            position: absolute;
+            width: 100%;
+            left: 170%;
+            top: 25%;    
+        }
+
+        .productoDescuento{
+            position:absolute;
+            width:max-content;
+            left:810%;
+            top:-800%; 
+        }
+        .productoPrecio{
+            position: absolute;
+            width:max-content;
+            left: 525%;
+            top: -840%;
+        }
+
+        .tachado{
+            position: relative;
+            width:max-content;
+            border: black solid 1px;
+            left: 623%;
+            top: -230px;
+            color:red;
+        }
+        .boton{
+            left: 105%;
+            top: 55%;
+            width: max-content;
+        }
     }
