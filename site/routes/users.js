@@ -10,4 +10,8 @@ router.get('/', function(req, res, next) {
 /*Carrito de compra*/
 router.get('/shop', usersControllers.carrito)
 
+/*Registro*/
+router.get('/register')
+
+
 module.exports = router;
