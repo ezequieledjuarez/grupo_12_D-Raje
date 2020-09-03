@@ -1,126 +1,156 @@
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Aref+Ruqaa:wght@400;700&family=Faster+One&family=Luckiest+Guy&display=swap');
-    
-    * {
-        font-family: "Aref Ruqaa", Helvetica, Arial, sans-serif;;
-    }
-    
-    body {
-        background-color: #f5efef;
-        width: 1280px;
-        height: 768px;
-    }
-    .titulo{
-        margin-left:20px;
-    }
-    .principal {
+* {
+    font-family: "Aref Ruqaa", Helvetica, Arial, sans-serif;
+    ;
+}
+
+body {
+    background-color: #f5efef;
+    width: 1280px;
+    height: 768px;
+}
+
+.titulo {
+    margin-left: 20px;
+}
+
+.principal {
     display: flex;
     position: relative;
     width: 24%;
     height: 590px;
-    top:100px;
+    top: 100px;
     right: 21%;
-    align-self:center;
+    align-self: center;
     border: grey 4px dashed;
-    }
-    
-    img {
-        width: 80%;
-        height: auto;
-        display:flex;
-    }
-    
-    .productoNombre{
-        font-size: 2em;
-        width: 299px;
-    }
-   
-    .productoDescripcion{
-        display: flex;
-        width: 158%;
-        font-size: 16px;
-    }
+}
 
-    .datosProducto{
+.imgProducto {
+    width: 80%;
+    height: auto;
+    display: flex;
+}
+
+.productoNombre {
+    font-size: 2em;
+    width: 299px;
+}
+
+.productoDescripcion {
+    display: flex;
+    width: 158%;
+    font-size: 16px;
+}
+
+.datosProducto {
     align-self: auto;
     position: absolute;
     left: 38%;
     top: 75%;
-    }
+}
 
-    .productoPrecio{
-        position: absolute;
-        top: -115px;
-        left: -119px;
-    }
+.productoPrecio {
+    position: absolute;
+    top: -115px;
+    left: -119px;
+}
 
-    .tachado {
-        text-decoration: line-through;
+.tachado {
+    text-decoration: line-through;
+    position: relative;
+    top: -67px;
+}
+
+.productoDescuento {
+    position: absolute;
+    top: -70px;
+    left: -110px;
+}
+
+.boton {
+    position: absolute;
+    top: 105%;
+    left: 30%;
+}
+
+@media(min-width:768px) {
+    .imgProducto {
+        width: 100%;
+        height: 65%;
         position: relative;
-        top: -67px;
+        top: -35%;
     }
-
-    .productoDescuento{
-        position:absolute;
-        top: -70px;
-        left: -110px;
+    .principal {
+        width: 18%;
+        height: 300px;
     }
-
-    .boton{
-        position:absolute;
-        top: 105%;
-        left: 30%;
+    .productoNombre {
+        position: relative;
+        top: 95%;
     }
-
-    @media(min-width:768px){
-        img{
-            width:100% ;
-            height:65%;
-            position:relative;
-            top:-35%;
-        }
-        
-        .principal{
-            width: 20%;
-            height: 300px;
-            
-        }
-
-        .productoNombre{
-            position: relative;
-            top:95%;
-        }
-
-        .productoDescripcion{
-            position: absolute;
-            width: 100%;
-            left: 170%;
-            top: 25%;    
-        }
-
-        .productoDescuento{
-            position:absolute;
-            width:max-content;
-            left:810%;
-            top:-800%; 
-        }
-        .productoPrecio{
-            position: absolute;
-            width:max-content;
-            left: 525%;
-            top: -840%;
-        }
-
-        .tachado{
-            position: relative;
-            width:max-content;
-            border: black solid 1px;
-            left: 623%;
-            top: -230px;
-            color:red;
-        }
-        .boton{
-            left: 105%;
-            top: 55%;
-            width: max-content;
-        }
+    .productoDescripcion {
+        position: absolute;
+        width: 100%;
+        left: 170%;
+        top: 25%;
     }
+    .productoDescuento {
+        position: absolute;
+        width: max-content;
+        left: 810%;
+        top: -800%;
+    }
+    .productoPrecio {
+        position: absolute;
+        width: max-content;
+        left: 525%;
+        top: -840%;
+    }
+    .tachado {
+        position: relative;
+        width: max-content;
+        border: black solid 1px;
+        left: 623%;
+        top: -230px;
+        color: red;
+    }
+    .boton {
+        left: 105%;
+        top: 55%;
+        width: max-content;
+    }
+}
+
+@media(min-width:1200px) {
+    .productoNombre {
+        width: max-content;
+        top: -1%;
+    }
+    .principal {
+        width: 40%;
+        height: 600px;
+        margin-left: 50px;
+    }
+    .imgProducto {
+        width: 90%;
+        height: 90%;
+        top: 5%;
+    }
+    .tachado {
+        font-size: 2em;
+        top: -495px;
+        left: 380px;
+    }
+    .productoDescripcion {
+        font-size: 2em;
+        display: block;
+    }
+    .productoPrecio {
+        font-size: 3em;
+        top: -940%;
+    }
+    .productoDescuento {
+        font-size: 3em;
+        top: -950%;
+    }
+}
