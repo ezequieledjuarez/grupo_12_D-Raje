@@ -26,14 +26,18 @@
                     <p class="productoDescripcion">
                         <%= producto.descripcion %>
                     </p>
-                </div>
-                <div class="datosProducto ">
+
                     <h4 class="productoNombre">
                         <%= producto.nombre%>
                     </h4>
+                </div>
+                <div class="datosProducto ">
+
                     <span>
-                        $<%= producto.precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ". ") %>  
-                        <strong class = "productoDescuento">
+                        <span class="tachado">
+                    <%= producto.precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ". ") %>
+                        </span> $
+                    <strong class="productoDescuento">
                               <%= producto.descuento %>  % OFF
                         </strong>
                     </span>
