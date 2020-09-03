@@ -1,74 +1,26 @@
     * {
-        font-family: font-family: "Aref Ruqaa", Helvetica, Arial, sans-serif;
+        font-family: "Aref Ruqaa", Helvetica, Arial, sans-serif;
         ;
     }
     
     body {
         background-color: #f5efef;
-    }
-    
-    .productoElegido {
-        display: flex;
-        flex: wrap;
-        margin-right: auto;
-        margin-left: auto;
-    }
-    
-    .productoDetalle {
-        display: flex;
-        flex: wrap;
-    }
-    
-    .imgProducto {
-        width: 250px;
-        height: 400px;
-        position: absolute;
-        left: 86%;
-        top: 108%;
-        border: black 6px solid;
-    }
-    
-    .productoDescripcion {
-        width: 200px;
-        height: 150px;
-        display: inline-block;
-        font-size: 2em;
-        position: relative;
-        left: 285%;
-        top: 190%;
-    }
-    
-    .tachado {
-        text-decoration: line-through;
-    }
-    
-    .productoNombre {
-        display: inline-block;
-        position: absolute;
-        width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-        left: 117%;
-        top: 88%;
-    }
-    
-    .datosProducto {
-        display: flex;
-        position: relative;
-        bottom: -10px;
-        left: 124%;
+        width: 1280px;
+        height: 768px;
     }
     
     .principal {
-        width: 300px;
-        height: 400px;
-        position: relative;
-        left: -3%;
+    display: flex;
+    position: relative;
+    width: 59%;
+    height: 550px;
+    align-self:center;
+    border: black solid 2px;
+    }
+
+    img{
+        width:200px;
+        height:200px;
     }
     
-    .productoPrecio {
-        display: flex;
-        position: relative;
-        left: -60%;
-        top: 80%;
-    }
+    

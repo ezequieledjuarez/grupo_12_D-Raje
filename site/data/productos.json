@@ -96,7 +96,7 @@
         "descuento": 0,
         "estado": "sin-estado",
         "descripcion": "Bolígrafos marca Bic, azul y negro, trazo grueso.5 azules,4 negras 3 rojas, 3 verdes.",
-        "image": ""
+        "image": "img-lapiceras-clasicas-bic"
     },
     {
         "id": 11,
@@ -115,7 +115,7 @@
         "precio": 1100,
         "descuento": 0,
         "estado": "sin-estado",
-        "descripcion": "Lapices de colores dobles punta.",
+        "descripcion": "Lapices de colores dobles punta, punta de 2 pulgadas, en caja metálica.",
         "image": "img-lapices-colores-maped"
     },
     {
