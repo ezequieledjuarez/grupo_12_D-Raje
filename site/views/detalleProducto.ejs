@@ -19,36 +19,37 @@
                 <%= title %>
             </h1>
         </div>
-        <div class="producto">
-            <div class="row productoDetalle">
-                <div class="col-8 col-md-6 col-xl-10">
-                    <img src="/images/productos/<%= producto.image %>.jpg" alt="" class="imgProducto">
-                    <p class="productoDescripcion">
-                        <%= producto.descripcion %>
-                    </p>
+        <section class="principal">
+            <div class="producto">
+                <div class="row productoDetalle">
+                    <div class="col-8 col-md-6 col-xl-10">
+                        <img src="/images/productos/<%= producto.image %>.jpg" alt="" class="imgProducto">
+                        <p class="productoDescripcion">
+                            <%= producto.descripcion %>
+                        </p>
 
-                    <h4 class="productoNombre">
-                        <%= producto.nombre%>
-                    </h4>
-                </div>
-                <div class="datosProducto ">
+                        <h4 class="productoNombre">
+                            <%= producto.nombre%>
+                        </h4>
+                    </div>
+                    <div class="datosProducto ">
 
-                    <span>
+                        <span>
                         <span class="tachado">
-                    <%= producto.precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ". ") %>
-                        </span> $
-                    <strong class="productoDescuento">
+                    $<%= producto.precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ". ") %>
+                        </span>
+                        <strong class="productoDescuento">
                               <%= producto.descuento %>  % OFF
                         </strong>
-                    </span>
-                    <h2 class="productoPrecio">
-                        $
-                        <%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0)%>
-                    </h2>
+                        </span>
+                        <h2 class="productoPrecio">
+                            $
+                            <%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0)%>
+                        </h2>
+                    </div>
                 </div>
-            </div>
 
-        </div>
+            </div>
 
     </div>
 
