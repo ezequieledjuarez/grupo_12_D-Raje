@@ -1,61 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/grupo_12_EJA/site/public/css/registro.css">
-    <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
-    <title>Registro</title>
-</head>
+<%- include('partials/head') %>
 
-<body>
-    <div class="container">
-        <h1><span>Registrarme</span></h1>
-        <div class="agrupacion">
-            <!--todo el formulario esta dentro de este div-->
-            <form action="#" method="POST">
-                <p>
-                    <label for="correo">Ingrese su correo:</label>
-                    <input type="email" name="correo" required id="correo">
-                </p>
-                <p>
-                    <label for="contraceña1">Ingrese su contraseña:</label>
-                    <input type="password" name="contraseña" required id="contraceña1">
-                </p>
-                <p>
-                    <label for="contraceña2">Repetir contraseña:</label>
-                    <input type="password" name="contraseña" required id="contraceña2">
-                </p>
-                <p>
-                    <label for="nombre">Ingrese su nombre:</label>
-                    <input type="text" name="nombre" required id="nombre">
-                </p>
-                <p>
-                    <label for="apellido">Ingrese su apellido:</label>
-                    <input type="text" name="apellido" required id="apellido">
-                </p>
-                <p>
-                    <label for="localidad">Ingrese su localidad:</label>
-                    <input type="text" name="localidad" id="localidad">
-                </p>
-                <p>
-                    <label for="direccion">Ingrese su direccion:</label>
-                    <input type="text" name="direccion" required id="direccion">
-                </p>
-                <p>
-                    <label for="codigo-postal">Ingrese su codigo postal:</label>
-                    <input type="postal-code" name="codigo postal" id="codigo-postal">
-                </p>
-                <div class="boton-registro">
-                    <button>Registrarme</button>
+    <body>
+        <%- include('partials/header') %>
+            <div class="container">
+                <h1><span>Registrarme</span></h1>
+                <div class="agrupacion">
+                    <!--todo el formulario esta dentro de este div-->
+                    <form action="#" method="POST">
+                        <p>
+                            <label for="correo">Ingrese su correo:</label>
+                            <input type="email" name="correo" required id="correo">
+                        </p>
+                        <p>
+                            <label for="contraceña1">Ingrese su contraseña:</label>
+                            <input type="password" name="contraseña" required id="contraceña1">
+                        </p>
+                        <p>
+                            <label for="contraceña2">Repetir contraseña:</label>
+                            <input type="password" name="contraseña" required id="contraceña2">
+                        </p>
+                        <p>
+                            <label for="nombre">Ingrese su nombre:</label>
+                            <input type="text" name="nombre" required id="nombre">
+                        </p>
+                        <p>
+                            <label for="apellido">Ingrese su apellido:</label>
+                            <input type="text" name="apellido" required id="apellido">
+                        </p>
+                        <p>
+                            <label for="localidad">Ingrese su localidad:</label>
+                            <input type="text" name="localidad" id="localidad">
+                        </p>
+                        <p>
+                            <label for="direccion">Ingrese su direccion:</label>
+                            <input type="text" name="direccion" required id="direccion">
+                        </p>
+                        <p>
+                            <label for="codigo-postal">Ingrese su codigo postal:</label>
+                            <input type="postal-code" name="codigo postal" id="codigo-postal">
+                        </p>
+                        <div class="boton-registro">
+                            <button>Registrarme</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
-        </div>
-        <div class="cuentaExistente">
-            <p>¿Tienes una cuenta?<a href="#">Iniciar sesíon</a></p>
-        </div>
-    </div>
-</body>
+                <div class="cuentaExistente">
+                    <p>¿Tienes una cuenta?<a href="#">Iniciar sesíon</a></p>
+                </div>
+            </div>
+            <%- include('partials/footer') %>
+
+    </body>
 
 </html>
