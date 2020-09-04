@@ -1,137 +1,157 @@
-/*
+    /*
 --IMPORTS
 */
-
-@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Aref+Ruqaa:wght@400;700&family=Faster+One&family=Luckiest+Guy&display=swap');
-
-/*Carrito de compra-Desktop*/
-
-* {
-    box-sizing: border-box;
-    margin: auto;
-}
-
-p {
-    font-size: 1em;
-}
-
-body {
-    padding: 50px;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    background-color: #f5efef;
-}
-
-table,
-.info {
-    display: flex;
-    flex: wrap;
-    font-family: "Aref Ruqaa", Helvetica, Arial, sans-serif;
-}
-
-.info {
-    display: inline;
-}
-
-caption {
-    position: absolute;
-    top: -56px;
-}
-
-.producto-compra {
-    width: 100px;
-    height: 100px;
-}
-
-.botones {
-    display: flex;
-    flex: wrap;
-}
-
-.info {
-    position: fixed;
-    top: 6%;
-    left: 80%;
-}
-
-.botones-seguir {
-    position: relative;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-#seguir {
-    position: absolute;
-    left: -58%;
-}
-
-a {
-    color: #00B7FF;
-}
-
-
-/*Tablet*/
-
-@media(max-width:768px) {
+    
+    @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Aref+Ruqaa:wght@400;700&family=Faster+One&family=Luckiest+Guy&display=swap');
+    /*Carrito de compra-Desktop*/
+    
+    * {
+        box-sizing: border-box;
+        margin: auto;
+        background-color: #f5efef;
+    }
+    
+    p {
+        font-size: 1em;
+    }
+    
+    .producto-compra {
+        width: 100%;
+        height: 100%;
+    }
+    
     .hidden {
         visibility: hidden;
     }
-    .producto-compra {
-        width: 100px;
-        height: 100px;
-    }
-    .botones,
+    
+    table,
     .info {
         display: flex;
         flex: wrap;
+        font-family: "Aref Ruqaa", Helvetica, Arial, sans-serif;
     }
+    
     .info {
+        display: inline;
+    }
+    
+    caption {
         position: absolute;
-        top: 90%;
-        left: 182px;
+        top: -56px;
     }
-    .total {
-        position: relative;
-        top: 50px;
-        left: -15px
+    
+    th {
+        font-size: 16px;
+        font-weight: lighter;
     }
-    .cantidad {
-        position: relative;
-        top: 77px;
-        left: -125px;
+    /*Tablet*/
+    
+    @media(min-width:768px) {
+        .hidden {
+            visibility: hidden;
+        }
+        .producto-compra {
+            width: 100px;
+            height: 100px;
+        }
+        .botones,
+        .info {
+            display: flex;
+            flex: wrap;
+        }
+        .info {
+            position: absolute;
+            top: 90%;
+            left: 182px;
+        }
+        .total {
+            position: relative;
+            top: 50px;
+            left: -15px
+        }
+        .cantidad {
+            position: relative;
+            top: 77px;
+            left: -125px;
+        }
+        #ticket {
+            position: relative;
+            top: 114px;
+            left: -98px;
+        }
+        #pagar {
+            position: relative;
+            top: 114px;
+            left: -235px;
+        }
+        .botones-seguir {
+            display: flex;
+            right: -110px;
+            top: 203px;
+        }
+        #descuento {
+            display: flex;
+            position: absolute;
+            top: -55px;
+            left: -244px;
+        }
+        #vaciar {
+            display: flex;
+            position: absolute;
+            margin-left: 44px;
+            top: -55px;
+            left: 30px;
+        }
+        #seguir {
+            display: flex;
+            position: relative;
+            margin-left: 86px;
+            top: -55px;
+            left: -175px;
+        }
     }
-    #ticket {
-        position: relative;
-        top: 114px;
-        left: -98px;
+    
+    @media(min-width:1200px) {
+        body {
+            padding: 50px;
+            background-color: #f5efef;
+        }
+        table,
+        .info {
+            display: flex;
+            flex: wrap;
+            font-family: "Aref Ruqaa", Helvetica, Arial, sans-serif;
+        }
+        .info {
+            display: inline;
+        }
+        caption {
+            position: absolute;
+            top: -56px;
+        }
+        .producto-compra {
+            width: 100px;
+            height: 100px;
+        }
+        .botones {
+            display: flex;
+            flex: wrap;
+        }
+        .info {
+            position: fixed;
+            top: 6%;
+            left: 80%;
+        }
+        .botones-seguir {
+            position: relative;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        #seguir {
+            position: absolute;
+            left: -58%;
+        }
+        a {
+            color: #00B7FF;
+        }
     }
-    #pagar {
-        position: relative;
-        top: 114px;
-        left: -235px;
-    }
-    .botones-seguir {
-        display: flex;
-        right: -110px;
-        top: 203px;
-    }
-    #descuento {
-        display: flex;
-        position: absolute;
-        top: -55px;
-        left: -244px;
-    }
-    #vaciar {
-        display: flex;
-        position: absolute;
-        margin-left: 44px;
-        top: -55px;
-        left: 30px;
-    }
-    #seguir {
-        display: flex;
-        position: relative;
-        margin-left: 86px;
-        top: -55px;
-        left: -175px;
-    }
-}
