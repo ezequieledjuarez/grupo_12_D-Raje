@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 router.get('/shop', usersControllers.carrito)
 
 /*Registro*/
-router.get('/register')
+router.get('/register', usersControllers.registro)
 
 
 module.exports = router;
