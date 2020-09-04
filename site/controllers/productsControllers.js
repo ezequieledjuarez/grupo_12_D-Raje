@@ -10,6 +10,7 @@ module.exports = {
         })
         res.render('detalleProducto', {
             title: 'Producto detallado',
+            css: 'detalleProducto.css',
             producto: producto[0]
         })
     }
