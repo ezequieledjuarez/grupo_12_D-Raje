@@ -112,47 +112,4 @@
         }
     }
     
-    @media(min-width:1200px) {
-        body {
-            padding: 50px;
-            background-color: #f5efef;
-        }
-        table,
-        .info {
-            display: flex;
-            flex: wrap;
-            font-family: "Aref Ruqaa", Helvetica, Arial, sans-serif;
-        }
-        .info {
-            display: inline;
-        }
-        caption {
-            position: absolute;
-            top: -56px;
-        }
-        .producto-compra {
-            width: 100px;
-            height: 100px;
-        }
-        .botones {
-            display: flex;
-            flex: wrap;
-        }
-        .info {
-            position: fixed;
-            top: 6%;
-            left: 80%;
-        }
-        .botones-seguir {
-            position: relative;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-        #seguir {
-            position: absolute;
-            left: -58%;
-        }
-        a {
-            color: #00B7FF;
-        }
-    }
+    @media(min-width:1200px) {}
