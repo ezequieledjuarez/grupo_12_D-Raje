@@ -95,6 +95,11 @@ body {
         height: 300px;
         right: 35%;
     }
+
+    .datosProducto{
+        position:absolute;
+        top:65%
+    }
     .productoNombre {
         position: relative;
         top: 95%;
