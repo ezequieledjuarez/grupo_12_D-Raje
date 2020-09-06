@@ -5,5 +5,4 @@ const mainController = require('../controllers/mainControllers')
 /* GET home page. */
 router.get('/', mainController.home);
 
-router.get('/detalle/:id')
 module.exports = router;
