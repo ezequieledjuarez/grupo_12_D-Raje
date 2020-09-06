@@ -73,3 +73,26 @@ Las páginas elegidas, son utilizadas como referencia ya que consideramos que ta
 
 ### _Colores_ :art:
 [Paleta de colores](https://github.com/ezzeguason/grupo_12_D-Raje/blob/master/design/colors/Color%20Hunt%20Palette%20204627.png)
+
+## Segundo Sprint (05/09) :large_red_circle: 
+
+#Trello
+
+[Trello_Grupo_12](https://trello.com/b/tax86dzo/proyecto-integrador-grupo-12)
+
+#Retrospectiva Estrella Sprint 1
+
+## Empezar a hacer:
+	* Practicas grupales de programación.
+	* Trabajar con ramas en Git. 
+
+## Hacer más:
+
+## Seguir haciendo:
+	* Comunicación fluida.
+	* Cumplir tiempos de entrega.
+
+## Hacer menos:
+
+## Dejar de hacer:
+	*Centrilización tareas.
