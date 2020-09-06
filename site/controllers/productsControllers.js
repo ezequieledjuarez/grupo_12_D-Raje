@@ -14,11 +14,11 @@ module.exports = {
             producto: producto[0]
         })
     },
-    
-    cargaProducto: function(req,res){
-        res.render('cargaDeProducto',{
+
+    cargaProducto: function(req, res) {
+        res.render('cargaDeProducto', {
             title: 'Carga de producto',
-            css:'',
+            css: 'cargaProductos.css',
         })
     }
 }
