@@ -7,7 +7,7 @@ const productsController = require('../controllers/productsControllers')
 router.get('/detalle/:id', productsController.detalleProducto)
 
 /*carga de producto*/ 
-router.get('/load/', productsController.cargaProducto)
+router.get('/load', productsController.cargaProducto)
 
 router.get('')
 module.exports = router;

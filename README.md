@@ -76,6 +76,14 @@ Las páginas elegidas, son utilizadas como referencia ya que consideramos que ta
 
 ## Segundo Sprint (05/09) :large_red_circle: 
 
+#Rutas:
+
+	*	Home: localhost:3000/
+	*	Detalle Producto : localhost:3000/products/detalle/:id
+	*	Carrito de compras : localhost:3000/users/shop
+	*	Registro : localhost:3000/users/register
+	*	Carga de producto : localhost:3000/products/load
+
 #Trello
 
 [Trello_Grupo_12](https://trello.com/b/tax86dzo/proyecto-integrador-grupo-12)
@@ -95,4 +103,4 @@ Las páginas elegidas, son utilizadas como referencia ya que consideramos que ta
 ## Hacer menos:
 
 ## Dejar de hacer:
-	*Centrilización tareas.
+	*Centralización tareas.
