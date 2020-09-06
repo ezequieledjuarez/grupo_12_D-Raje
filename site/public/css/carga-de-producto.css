@@ -39,7 +39,6 @@ body {
     color: white;
     margin: 16px 0;
     font-size: 16px;
-    box-shadow: 0 0 20px 0 rgba(3, 38, 114, 0.3);
     border-radius: 4px;
 }
 textarea{
@@ -48,5 +47,24 @@ textarea{
     border-radius: 4px;
     margin-bottom: 16px;
     border: 2px solid #202040;
-    font-size: 18px;
+}
+.botones:hover{
+background: #202040;
+}
+.boton-de-ayuda{
+    position: fixed;
+    right: 0;
+    top: 150px;
+}
+.boton-de-ayuda{
+    background: #0f4c75;
+    text-decoration: none;
+    border-radius: 4px;
+}
+a{
+    text-decoration: solid;
+    color: darkgray;
+}
+.boton-de-ayuda:hover{
+    background: #202040;
 }
