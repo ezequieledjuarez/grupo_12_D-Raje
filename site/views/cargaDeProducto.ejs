@@ -3,48 +3,41 @@
 <%- include('partials/head') %>
 
     <body>
-         <%- include('partials/header') %>
+        <%- include('partials/header') %>
+        <div class="boton-de-ayuda">
+            <p>¿Necesitas ayuda?</p>
+        </div>
         <div class="conteiner">
-            <div class="boton-de-ayuda">
-            </div>
-            <div class="titulo-form">
-                <h1>Ingrese los datos del Producto</h1>
-            </div>
+        
             <div class="body-de-form">
+                <h4>Ingrese los datos del Producto</h4>
                 <form action="#" method="post" enctype="multipart/form-data">
                     <p>
-                        <input type="file" name="imagen-del-producto" id="imagen-del-producto">
+                        <input class="datos-producto" type="file" name="imagen-del-producto" id="imagen-del-producto">
                     </p>
                     <p>
-                        <textarea name="descripcion-del-producto" id="descripcion-del-producto" cols="20" rows="5"
-                            placeholder="Descripcion del producto"></textarea>
+                        <textarea name="descripcion-del-producto" id="descripcion-del-producto" cols="20" rows="5" placeholder="Descripcion del producto"></textarea>
                     </p>
                     <p>
-                        <input type="text" name="nombre-del-producto" id="nombre-del-producto"
-                            placeholder="Ingrese el nombre del producto">
+                        <input class="datos-producto" type="text" name="nombre-del-producto" id="nombre-del-producto" placeholder="Ingrese el nombre del producto">
                     </p>
                     <p>
-                        <input type="text" name="id-de-producto" id="id-de-producto"
-                            placeholder="Ingrese el ID del producto">
+                        <input class="datos-producto" type="text" name="id-de-producto" id="id-de-producto"placeholder="Ingrese el ID del producto">
                     </p>
                     <p>
-                        <input type="text" name="precio-de-proucto" id="precio-de-producto"
-                            placeholder="Ingrese el precio del producto">
+                        <input class="datos-producto" type="text" name="precio-de-proucto" id="precio-de-producto" placeholder="Ingrese el precio del producto">
                     </p>
                     <p>
-                        <input type="text" name="descuento" id="descuento"
-                            placeholder="Ingrese el descripcion del producto">
+                        <input class="datos-producto" type="text" name="descuento" id="descuento" placeholder="Ingrese el descripcion del producto">
                     </p>
                     <p>
-                        <input type="text" name="categoria" id="categoria" placeholder="Ingrese la categoria del producto">
+                        <input class="datos-producto" type="text" name="categoria" id="categoria" placeholder="Ingrese la categoria del producto">
                     </p>
                     <p>
-                        <input type="text" name="etiqueta" id="etiqueta" placeholder="Ingrese la etiqueta del producto">
+                        <input class="datos-producto" type="text" name="etiqueta" id="etiqueta" placeholder="Ingrese la etiqueta del producto">
                     </p>
-                    <div class="botones">
-                        <input type="button" value="Subir producto">
-                        <input type="button" value="Borrar todo">
-                    </div>
+                    <input class="botones" type="submit" value="Subir producto">
+                    <input class="botones" type="submit" value="Borrar todo">
                 </form>
             </div>
         </div>

@@ -1,0 +1,52 @@
+@import "style.css";
+ @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Aref+Ruqaa:wght@400;700&family=Faster+One&family=Luckiest+Guy&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.conteiner{
+    width: 100%;
+    background: #3282b8;
+    padding: 30px;
+    margin: auto;
+    margin-top: auto;
+    border-radius: 5px;
+}
+.body-de-form h4{
+    font-size: 30px;
+    margin-bottom:20px ;
+    text-align: center;
+}
+.datos-producto{
+    width: 100%;
+    background: #3282b8;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 2px solid #202040;
+    font-size: 18px;
+}
+.botones{
+    width: 100%;
+    background: #0f4c75;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+    box-shadow: 0 0 20px 0 rgba(3, 38, 114, 0.3);
+    border-radius: 4px;
+}
+textarea{
+    width: 50%;
+    background: #3282b8;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 2px solid #202040;
+    font-size: 18px;
+}
