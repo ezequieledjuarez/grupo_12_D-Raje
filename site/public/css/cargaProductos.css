@@ -1,5 +1,5 @@
 @import "style.css";
- @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Aref+Ruqaa:wght@400;700&family=Faster+One&family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Aref+Ruqaa:wght@400;700&family=Faster+One&family=Luckiest+Guy&display=swap');
 * {
     box-sizing: border-box;
 }
@@ -9,29 +9,33 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
-.conteiner{
+
+.conteiner {
     width: 100%;
-    background: #3282b8;
+    background: #f5efef;
     padding: 30px;
     margin: auto;
     margin-top: auto;
     border-radius: 5px;
 }
-.body-de-form h4{
+
+.body-de-form h4 {
     font-size: 30px;
-    margin-bottom:20px ;
+    margin-bottom: 20px;
     text-align: center;
 }
-.datos-producto{
+
+.datos-producto {
     width: 100%;
-    background: #3282b8;
+    background: #f5efef;
     padding: 10px;
     border-radius: 4px;
     margin-bottom: 16px;
     border: 2px solid #202040;
     font-size: 18px;
 }
-.botones{
+
+.botones {
     width: 100%;
     background: #0f4c75;
     border: none;
@@ -41,30 +45,36 @@ body {
     font-size: 16px;
     border-radius: 4px;
 }
-textarea{
+
+textarea {
     width: 50%;
-    background: #3282b8;
+    background: #f5efef;
     border-radius: 4px;
     margin-bottom: 16px;
     border: 2px solid #202040;
 }
-.botones:hover{
-background: #202040;
+
+.botones:hover {
+    background: #202040;
 }
-.boton-de-ayuda{
+
+.boton-de-ayuda {
     position: fixed;
     right: 0;
     top: 150px;
 }
-.boton-de-ayuda{
+
+.boton-de-ayuda {
     background: #0f4c75;
     text-decoration: none;
     border-radius: 4px;
 }
-a{
+
+a {
     text-decoration: solid;
     color: darkgray;
 }
-.boton-de-ayuda:hover{
+
+.boton-de-ayuda:hover {
     background: #202040;
 }

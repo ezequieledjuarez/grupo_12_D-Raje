@@ -20,5 +20,27 @@ module.exports = {
             title: 'Carga de producto',
             css: 'cargaProductos.css',
         })
+    },
+
+    mostrarProducto: function(req,res){
+        res.render('mostrarProducto',{
+            title: 'Producto',
+            css: 'cargaDeProducto'
+        })
+    },
+    editarProducto: function(req,res){
+        let id = req.body.id;
+
+        dbProducts.forEach(producto=>{
+            if(producto.id == id){
+                producto.id = Number(req.body.id),
+                producto.nombre = req.body.nombre.trim()
+                producto.precio = Number(req.body.precio),
+                producto.descuento = Number(req.body.descuento),
+                producto.estado = req.body.estado.trim(),
+                producto.descripcion = req.body.descripcion.trim(),
+                producto.image = producto.image
+            }
+        })
     }
 }
