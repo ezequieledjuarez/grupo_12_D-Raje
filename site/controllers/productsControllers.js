@@ -23,16 +23,25 @@ module.exports = {
     },
 
     mostrarProducto: function(req,res){
+        idProducto = req.params.id
+        let producto = dbProducts.filter(producto => {
+            return producto.id == idProducto
+        })
         res.render('mostrarProducto',{
-            title: 'Producto',
-            css: 'cargaDeProducto'
+            title: 'Editar Producto',
+            css: 'home.css',
+            producto: producto[0]
+
         })
     },
     editarProducto: function(req,res){
-        let id = req.body.id;
+        res.render('editarProductos',{
+            title: 'Editar Producto',
+            css: 'detalleProducto.css'
+        })
 
         dbProducts.forEach(producto=>{
-            if(producto.id == id){
+            if(producto.id == req.params.id){
                 producto.id = Number(req.body.id),
                 producto.nombre = req.body.nombre.trim()
                 producto.precio = Number(req.body.precio),
@@ -42,5 +51,7 @@ module.exports = {
                 producto.image = producto.image
             }
         })
-    }
+        
+   
+    },
 }

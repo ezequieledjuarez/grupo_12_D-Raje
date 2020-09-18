@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const productsController = require('../controllers/productsControllers');
-const productsControllers = require('../controllers/productsControllers');
 
 /*Detalle de producto*/
 
@@ -10,13 +9,16 @@ router.get('/detalle/:id', productsController.detalleProducto)
 /*carga de producto*/ 
 router.get('/create', productsController.cargaProducto)
 
-/*Vista previa de edit*/
+/*Vista de un producto con opciones para editar o eliminar*/
 
-router.get('/:id/edit', productsControllers.mostrarProducto)
+router.get('/show/:id', productsController.mostrarProducto)
+
+/*Vista previa del producto a editar*/ 
+
+router.get('/edit/:id', productsController.editarProducto)
 
 /*Editar productos*/ 
-
-router.put('/:id/edit', productsController.editarProducto)
+router.put('/edit/:id', productsController.editarProducto)
 
 
 router.get('')

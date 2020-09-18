@@ -5,13 +5,23 @@
 <%- include('partials/head') %> 
 <body>
     <%- include('partials/header') %> 
-    <h1>
-        <%= title %>
-    </h1>
-    <p>Welcome to
-        <%= title %>
-    </p>
-
+    <div class="card" style="width: 30%;">
+        <img class="card-img-top" src="/images/productos/<%= producto.image %>.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= producto.nombre%></h5>
+          <p class="card-text"><%= producto.descripcion %> </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%= producto.marca %></li>
+          <li class="list-group-item">$<%= producto.precio %></li>
+          <li class="list-group-item"><%= producto.descuento %>  % OFF</li>
+        </ul>
+        <div class="card-body">
+          <a href="/products/edit/<%= producto.id%>" class="card-link">Editar</a> <i class="far fa-edit"></i>
+          <a href="/products/delete/<%= producto.id%>" class="card-link">Eliminar</a> <i class="fas fa-trash"></i>
+          
+        </div>
+      </div>
     <%- include('partials/footer') %> 
 </body>
 
