@@ -3,30 +3,30 @@
     <%- include('partials/head') %>
 <body>
     <%- include('partials/header') %>
+    <form action="/products/edit/<%= producto.id %>_method=PUT" method="POST" >
 
-    <form>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="nombre">Nombre</label>
-            <input type="text" class="form-control" id="nombre" placeholder= "nombre">
+            <input type="text" name= "nombre" value= "<%= producto.nombre%> "class="form-control" id="nombre" placeholder= "nombre">
           </div>
           <div class="form-group col-md-6">
             <label for="marca">Marca</label>
-            <input type="text" class="form-control" id="marca" placeholder="Marca">
+            <input type="text" name = "marca" value = "<%= producto.marca%>"class="form-control" id="marca" placeholder="Marca">
           </div>
         </div>
         <div class="form-group">
           <label for="descripcion">Descripcion</label>
-          <textarea name="descripcion" cols = "95" rows ="3"></textarea> <class="form-control" id="descripcion" placeholder="Escriba una descripción del producto">
+          <textarea name="descripcion" cols = "95" rows ="3"> <%= producto.descripcion%> </textarea> <class="form-control" id="descripcion" placeholder="Escriba una descripción del producto">
         </div>
         <div class="form-row">
             <div class="form-group col-md-3">
             <label for="precio">Precio</label>
-            <input type="text" class="form-control" id="precio" placeholder="$">
+            <input type="text" name = "precio" value = "<%= producto.precio%>" class="form-control" id="precio" placeholder="$">
             </div>
             <div class="form-group col-md-3">
             <label for="descuento">Descuento</label>
-            <input type="text" class="form-control" id="descuento" placeholder="%">
+            <input type="text" name = "descuento" value="<%=producto.descuento%>" class="form-control" id="descuento" placeholder="%">
           </div>
         </div>
 
@@ -34,7 +34,7 @@
         <div class="form-row">
           <div class="form-group col-md-3">
             <label for="categoria">Categoría</label>
-            <select id="categoria" class="form-control">
+            <select id="categoria" name = "categoria" class="form-control">
               <option selected>Escolar</option>
               <option>Oficina</option>
               <option>Artística</option>

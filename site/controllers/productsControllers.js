@@ -34,6 +34,20 @@ module.exports = {
 
         })
     },
+
+    formProducto: function(req,res){
+        let prEditar;
+        
+        dbProducts.forEach(producto=>{
+            if(producto.id = req.params.id){
+                prEditar = producto
+            };
+            res.render('editarProductos',
+            {css: 'detalleProducto.css',
+            producto : prEditar}
+            )
+        })
+    },
     editarProducto: function(req,res){
         res.render('editarProductos',{
             title: 'Editar Producto',

@@ -15,7 +15,7 @@ router.get('/show/:id', productsController.mostrarProducto)
 
 /*Vista previa del producto a editar*/ 
 
-router.get('/edit/:id', productsController.editarProducto)
+router.get('/edit/:id', productsController.formProducto)
 
 /*Editar productos*/ 
 router.put('/edit/:id', productsController.editarProducto)
