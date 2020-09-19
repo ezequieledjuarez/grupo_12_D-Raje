@@ -1,12 +1,71 @@
-            <br>
-            <textarea name="descripcion" id="" cols="30" rows="10"><%= producto.descripcion %> </textarea>
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('partials/head') %>
+<body>
+    <%- include('partials/header') %>
+    <form action="/products/edit/<%= producto.id %>_method=PUT" method="POST" >
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="nombre">Nombre</label>
+            <input type="text" name= "nombre" value= "<%= producto.nombre%> "class="form-control" id="nombre" placeholder= "nombre">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="marca">Marca</label>
+            <input type="text" name = "marca" value = "<%= producto.marca%>"class="form-control" id="marca" placeholder="Marca">
+          </div>
         </div>
-        <div>
-            <button type="submit">Editar</button>
+        <div class="form-group">
+          <label for="descripcion">Descripcion</label>
+          <textarea name="descripcion" cols = "95" rows ="3"> <%= producto.descripcion%> </textarea> <class="form-control" id="descripcion" placeholder="Escriba una descripción del producto">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+            <label for="precio">Precio</label>
+            <input type="text" name = "precio" value = "<%= producto.precio%>" class="form-control" id="precio" placeholder="$">
+            </div>
+            <div class="form-group col-md-3">
+            <label for="descuento">Descuento</label>
+            <input type="text" name = "descuento" value="<%=producto.descuento%>" class="form-control" id="descuento" placeholder="%">
+          </div>
         </div>
 
-    </form>
-</main>
+        
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="categoria">Categoría</label>
+            <select id="categoria" name = "categoria" class="form-control">
+              <option selected>Escolar</option>
+              <option>Oficina</option>
+              <option>Artística</option>
+            </select>
+          </div>
+          <div class="form-group col-md-3">
+          <label for = "estado"> Estado </label>
+           <select id="estado" class="form-control">
+              <option selected>Sin estado</option>
+              <option>PMV</option>
+              <option>Oferta</option>
+            </select>
+          </div>
+          
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Seleccionar imagen</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+             Aceptar los cambios.
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Editar</button>
+      </form>
+      
 
-
-<%- include('./partials/footer.ejs')  %> 
+    <%- include('partials/footer') %>
+</body>
+</html>
