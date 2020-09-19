@@ -42,5 +42,21 @@ module.exports = {
                 producto.image = producto.image
             }
         })
+    },
+    eliminarProducto: (req,res) =>{
+        let indiceDelProducto;
+    
+        dbProducts.forEach(producto => {
+            if(producto.id == req.params.id)
+            indiceDelProducto = dbProducts.indexOf(producto)
+        })
+    
+        dbProducts.splice( indiceDelProducto , 1);
+        let productoJson =JSON.stringify(dbProducts);
+    
+        fs.writeFileSync(path.join(__dirname, '..' , 'data' , 'productos.json'), productoJson)
+    
+        res.redirect('/')
+    
     }
 }

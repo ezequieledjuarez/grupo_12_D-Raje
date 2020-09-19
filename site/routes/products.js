@@ -18,6 +18,9 @@ router.get('/:id/edit', productsControllers.mostrarProducto)
 
 router.put('/:id/edit', productsController.editarProducto)
 
+/*Eliminar productos*/ 
+
+router.delete('/eliminar/:id', productsControllers.eliminarProducto)
 
 router.get('')
 module.exports = router;
