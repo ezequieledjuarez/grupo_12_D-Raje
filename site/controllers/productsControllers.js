@@ -36,35 +36,36 @@ module.exports = {
     },
 
     formProducto: function(req,res){
-        let prEditar;
-        
-        dbProducts.forEach(producto=>{
-            if(producto.id = req.params.id){
-                prEditar = producto
-            };
-            res.render('editarProductos',
-            {css: 'detalleProducto.css',
-            producto : prEditar}
-            )
-        })
+        let idProducto = req.params.id;
+
+        let prEditar = dbProducts.filter(producto =>{
+            return producto.id == idProducto
+        });
+        res.render('editarProductos',
+        {css: 'detalleProducto.css',
+        producto : prEditar[0]}
+        )
     },
     editarProducto: function(req,res){
-        res.render('editarProductos',{
-            title: 'Editar Producto',
-            css: 'detalleProducto.css'
-        })
 
         dbProducts.forEach(producto=>{
             if(producto.id == req.params.id){
-                producto.id = Number(req.body.id),
                 producto.nombre = req.body.nombre.trim()
+                producto.marca = req.body.marca.trim()
                 producto.precio = Number(req.body.precio),
                 producto.descuento = Number(req.body.descuento),
-                producto.estado = req.body.estado.trim(),
+                producto.estado = req.body.estado,
                 producto.descripcion = req.body.descripcion.trim(),
+                producto.categoria = req.body.categoria,
                 producto.image = producto.image
             }
-        })
+        });
+
+        let productoJson = JSON.stringify(dbProducts)
+
+        fs.writeFileSync(path.join(__dirname,'../data/productsDataBase.json'),productoJson,'utf-8');
+        res.redirect('/products/show/'+ req.params.id)
+
     },
     eliminarProducto: (req,res) =>{
         let indiceDelProducto;
