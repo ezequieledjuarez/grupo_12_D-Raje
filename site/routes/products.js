@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const productsController = require('../controllers/productsControllers');
+const subirImg = require('../middlewares/subirImgProductos')
 
 /*Detalle de producto*/
 
@@ -18,7 +19,7 @@ router.get('/show/:id', productsController.mostrarProducto)
 router.get('/edit/:id', productsController.formProducto)
 
 /*Editar productos*/ 
-router.put('/edit/:id', productsController.editarProducto)
+router.put('/edit/:id', subirImg.any(), productsController.editarProducto)
 
 /*Eliminar productos*/ 
 
