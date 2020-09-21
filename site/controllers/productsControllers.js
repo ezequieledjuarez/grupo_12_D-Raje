@@ -22,6 +22,32 @@ module.exports = {
         })
     },
 
+    agregarProducto:function(req,res){
+        let ultimoId = 1
+        dbProducts.forEach(producto=>{
+            if(producto.id > ultimoId){
+                ultimoId = producto.id
+            }    
+        })
+        let nuevoProducto = {
+            id : ultimoId + 1,
+            nombre : req.body.nombre.trim(),
+            marca: req.body.marca.trim(),
+            precio:Number(req.body.precio),
+            descuento:Number(req.body.descuento),
+            estado:req.body.estado.trim(),
+            descripcion:req.body.descripcion.trim(),
+            categoria:req.body.categoria.trim(),
+            imagen:(req.files[0])?req.files[0].filename:"default-image.jpg",
+        }
+        dbProducts.push(nuevoProducto)
+
+        let productoJson = JSON.stringify(dbProducts)
+
+        fs.writeFileSync(path.join(__dirname, '..', 'data', 'productos.json'),productoJson)
+        res.redirect('/')
+    },
+
     mostrarProducto: function(req,res){
         idProducto = req.params.id
         let producto = dbProducts.filter(producto => {
@@ -46,6 +72,7 @@ module.exports = {
         producto : prEditar[0]}
         )
     },
+    
     editarProducto: function(req,res){
 
         dbProducts.forEach(producto=>{
@@ -63,7 +90,7 @@ module.exports = {
 
         let productoJson = JSON.stringify(dbProducts)
 
-        fs.writeFileSync(path.join(__dirname,'../data/productsDataBase.json'),productoJson,'utf-8');
+        fs.writeFileSync(path.join(__dirname,'../data/productos.json'),productoJson,'utf-8');
         res.redirect('/products/show/'+ req.params.id)
 
     },

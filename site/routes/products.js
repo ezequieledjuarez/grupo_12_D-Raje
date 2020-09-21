@@ -7,9 +7,12 @@ const subirImg = require('../middlewares/subirImgProductos')
 
 router.get('/detalle/:id', productsController.detalleProducto)
 
-/*carga de producto*/ 
+/*vista carga de producto*/ 
 router.get('/create', productsController.cargaProducto)
 
+/*Envio de datos de carga*/
+
+router.post('/create', subirImg.any(), productsController.agregarProducto)
 /*Vista de un producto con opciones para editar o eliminar*/
 
 router.get('/show/:id', productsController.mostrarProducto)

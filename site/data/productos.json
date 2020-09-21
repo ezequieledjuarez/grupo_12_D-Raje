@@ -1,1 +1,178 @@
-[{"id":3,"nombre":"Cartuchera canopla Unicornio","marca":"Mooving","descripcion":"Cartuchera en forma de canopla, 2 compartimientos, edición Unicornio","precio":500,"descuento":25,"estado":"oferta","categoria":"Escolar","image":"img-cartuchera-canopla-moving"},{"id":4,"nombre":"Resltadores pastel x8","marca":"Mooving","descripcion":"Nuevos colores de resaltadores, esta vez color pastel, ideal para resaltar apuntes","precio":480,"descuento":15,"estado":"oferta","categoria":"Escolar","image":"img-resaltadores-pastel-mooving.jpg"},{"id":5,"nombre":"Bolígrafo","marca":"Simball","descripcion":"Boligrafo retractil color azul","precio":150,"descuento":10,"estado":"oferta","categoria":"Oficina","image":"img-boligrafo-azul-simball"},{"id":6,"nombre":"Cartulinas x6","marca":"Cartulina","descripcion":"Set de 6 cartulinas color pastel","precio":150,"descuento":0,"estado":"pmv","categoria":"Escolar","image":"img-cartulinas-pastel"},{"id":7,"nombre":"Hojas rayadas x480","marca":"Éxito","descripcion":"Pack de hojas rayadas de repuesto Éxito x480","precio":900,"descuento":0,"estado":"pmv","categoria":"Escolar","image":"img-hojas-exito"},{"id":8,"nombre":"Goma de borrar","marca":"Maped","descripcion":"Goma para borrar lapiz con la parte blanca y tinta con la parte azul","precio":30,"descuento":0,"estado":"pmv","categoria":"Escolar","image":"img-goma-maped"},{"id":9,"nombre":"Guillotina de papel","marca":"Dasa","descripcion":"Cuchillas de acero cementado rectificadas autoafilables.Corta todo tipo de papel y derivados, cuerinas y gomas finas, etc. ","precio":3200,"descuento":0,"estado":"sin-estado","categoria":"Oficina","image":"img-guillotina-papel-dasa"},{"id":10,"nombre":"Lapiceras colores clásicos x15","marca":"Bic","descripcion":"Bolígrafos marca Bic, azul y negro, trazo grueso.5 azules,4 negras 3 rojas, 3 verdes.","precio":500,"descuento":0,"estado":"sin-estado","categoria":"Oficina","image":"img-lapiceras-clasicas-bic"},{"id":11,"nombre":"Lapiceras multicolor x15","marca":"Bic","descripcion":"Boligrafos multicolor Bic, punto gruesa","precio":480,"descuento":0,"estado":"sin-estado","categoria":"Escolar","image":"img-lapiceras-multicolor-bic"},{"id":12,"nombre":"Lapices de colores x48","marca":"Maped","descripcion":"Lapices de colores dobles punta, punta de 2 pulgadas, en caja metálica.","precio":1100,"descuento":0,"estado":"sin-estado","categoria":"Escolar","image":"img-lapices-colores-maped"},{"id":13,"nombre":"Marcadores x25","marca":"Sharpie","descripcion":"25 marcadores Electro Pop de colores","precio":850,"descuento":0,"estado":"sin-estado","categoria":"Escolar","image":"img-marcadores-sharpie"},{"id":14,"nombre":"Marcador negro","marca":"Sharpie","descripcion":"Marcador negro indeleble","precio":190,"descuento":0,"estado":"sin-estado","categoria":"Oficina","image":"img-marcador-negro-sharpie"},{"id":15,"nombre":"Ruleta","marca":"Sharpie","descripcion":"26 Sharpies punta fina, 4 Sharpie neón, 3 hojas para colorear","precio":1500,"descuento":0,"estado":"sin-estado","categoria":"Escolar","image":"img-ruleta-sharpie"},{"id":16,"nombre":"Plasticola","marca":"Srt","descripcion":"Cola vinílica 100gr","precio":50,"descuento":0,"estado":"sin-estado","categoria":"Escolar","image":"img-plasticola"},{"id":17,"nombre":"Voligoma","marca":"Voligoma","descripcion":"Adhesivo sintético plástico 30ml","precio":50,"descuento":0,"estado":"sin-estado","categoria":"Escolar","image":"img-voligoma"}]
+[
+  {
+    "id": 3,
+    "nombre": "Cartuchera canopla Unicornio",
+    "marca": "Mooving",
+    "descripcion": "Cartuchera en forma de canopla, 2 compartimientos, edición Unicornio",
+    "precio": 500,
+    "descuento": 25,
+    "estado": "oferta",
+    "categoria": "Escolar",
+    "image": "img-cartuchera-canopla-moving"
+  },
+  {
+    "id": 4,
+    "nombre": "Resltadores pastel x8",
+    "marca": "Mooving",
+    "descripcion": "Nuevos colores de resaltadores, esta vez color pastel, ideal para resaltar apuntes",
+    "precio": 480,
+    "descuento": 15,
+    "estado": "oferta",
+    "categoria": "Escolar",
+    "image": "img-resaltadores-pastel-mooving.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Bolígrafo",
+    "marca": "Simball",
+    "descripcion": "Boligrafo retractil color azul",
+    "precio": 150,
+    "descuento": 10,
+    "estado": "oferta",
+    "categoria": "Oficina",
+    "image": "img-boligrafo-azul-simball"
+  },
+  {
+    "id": 6,
+    "nombre": "Cartulinas x6",
+    "marca": "Cartulina",
+    "descripcion": "Set de 6 cartulinas color pastel",
+    "precio": 150,
+    "descuento": 0,
+    "estado": "pmv",
+    "categoria": "Escolar",
+    "image": "img-cartulinas-pastel"
+  },
+  {
+    "id": 7,
+    "nombre": "Hojas rayadas x480",
+    "marca": "Éxito",
+    "descripcion": "Pack de hojas rayadas de repuesto Éxito x480",
+    "precio": 900,
+    "descuento": 0,
+    "estado": "pmv",
+    "categoria": "Escolar",
+    "image": "img-hojas-exito"
+  },
+  {
+    "id": 8,
+    "nombre": "Goma de borrar",
+    "marca": "Maped",
+    "descripcion": "Goma para borrar lapiz con la parte blanca y tinta con la parte azul",
+    "precio": 30,
+    "descuento": 0,
+    "estado": "pmv",
+    "categoria": "Escolar",
+    "image": "img-goma-maped"
+  },
+  {
+    "id": 9,
+    "nombre": "Guillotina de papel",
+    "marca": "Dasa",
+    "descripcion": "Cuchillas de acero cementado rectificadas autoafilables.Corta todo tipo de papel y derivados, cuerinas y gomas finas, etc. ",
+    "precio": 3200,
+    "descuento": 0,
+    "estado": "sin-estado",
+    "categoria": "Oficina",
+    "image": "img-guillotina-papel-dasa"
+  },
+  {
+    "id": 10,
+    "nombre": "Lapiceras colores clásicos x15",
+    "marca": "Bic",
+    "descripcion": "Bolígrafos marca Bic, azul y negro, trazo grueso.5 azules,4 negras 3 rojas, 3 verdes.",
+    "precio": 500,
+    "descuento": 0,
+    "estado": "sin-estado",
+    "categoria": "Oficina",
+    "image": "img-lapiceras-clasicas-bic"
+  },
+  {
+    "id": 11,
+    "nombre": "Lapiceras multicolor x15",
+    "marca": "Bic",
+    "descripcion": "Boligrafos multicolor Bic, punto gruesa",
+    "precio": 480,
+    "descuento": 0,
+    "estado": "sin-estado",
+    "categoria": "Escolar",
+    "image": "img-lapiceras-multicolor-bic"
+  },
+  {
+    "id": 12,
+    "nombre": "Lapices de colores x48",
+    "marca": "Maped",
+    "descripcion": "Lapices de colores dobles punta, punta de 2 pulgadas, en caja metálica.",
+    "precio": 1100,
+    "descuento": 0,
+    "estado": "sin-estado",
+    "categoria": "Escolar",
+    "image": "img-lapices-colores-maped"
+  },
+  {
+    "id": 13,
+    "nombre": "Marcadores x25",
+    "marca": "Sharpie",
+    "descripcion": "25 marcadores Electro Pop de colores",
+    "precio": 850,
+    "descuento": 0,
+    "estado": "sin-estado",
+    "categoria": "Escolar",
+    "image": "img-marcadores-sharpie"
+  },
+  {
+    "id": 14,
+    "nombre": "Marcador negro",
+    "marca": "Sharpie",
+    "descripcion": "Marcador negro indeleble",
+    "precio": 190,
+    "descuento": 0,
+    "estado": "sin-estado",
+    "categoria": "Oficina",
+    "image": "img-marcador-negro-sharpie"
+  },
+  {
+    "id": 15,
+    "nombre": "Ruleta",
+    "marca": "Sharpie",
+    "descripcion": "26 Sharpies punta fina, 4 Sharpie neón, 3 hojas para colorear",
+    "precio": 1500,
+    "descuento": 0,
+    "estado": "sin-estado",
+    "categoria": "Escolar",
+    "image": "img-ruleta-sharpie"
+  },
+  {
+    "id": 16,
+    "nombre": "Plasticola",
+    "marca": "Srt",
+    "descripcion": "Cola vinílica 100gr",
+    "precio": 50,
+    "descuento": 0,
+    "estado": "sin-estado",
+    "categoria": "Escolar",
+    "image": "img-plasticola"
+  },
+  {
+    "id": 17,
+    "nombre": "Voligoma",
+    "marca": "Voligoma",
+    "descripcion": "Adhesivo sintético plástico 30ml",
+    "precio": 50,
+    "descuento": 0,
+    "estado": "sin-estado",
+    "categoria": "Escolar",
+    "image": "img-voligoma"
+  },
+  {
+    "id": 18,
+    "nombre": "Cuaderno tapa blanda 96 hojas.",
+    "marca": "Garrahan",
+    "precio": 170,
+    "descuento": 8,
+    "estado": "sin-estado",
+    "descripcion": "Cuaderno eco-friendly de tapa blanda, 96 hojas, edición Garrahan",
+    "categoria": "escolar",
+    "imagen": "image-1600728875226.jpg"
+  }
+]
