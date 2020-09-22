@@ -74,33 +74,26 @@ Las páginas elegidas, son utilizadas como referencia ya que consideramos que ta
 ### _Colores_ :art:
 [Paleta de colores](https://github.com/ezzeguason/grupo_12_D-Raje/blob/master/design/colors/Color%20Hunt%20Palette%20204627.png)
 
-## Segundo Sprint (05/09) :large_red_circle: 
+## Segundo Sprint (05/09) :large_blue_circle: 
 
-#Rutas:
-
+# Rutas:
+	GET:
 	*	Home: localhost:3000/
 	*	Detalle Producto : localhost:3000/products/detalle/:id
 	*	Carrito de compras : localhost:3000/users/shop
 	*	Registro : localhost:3000/users/register
 	*	Carga de producto : localhost:3000/products/create
 
+## Tercer Sprint (21/09)
+	GET:
+	Estas rutas deberán ser visibles sólo por usuarios administradores.
+	* Vista de producto con opción de editar o eliminar:
+	localhost:3000/products/show/:id
+
+	* Formulario para editar producto: localhost:3000/products/show/:id
+# Rutas: 
+
 #Trello
 
 [Trello_Grupo_12](https://trello.com/b/tax86dzo/proyecto-integrador-grupo-12)
 
-#Retrospectiva Estrella Sprint 1
-
-## Empezar a hacer:
-	* Practicas grupales de programación.
-	* Trabajar con ramas en Git. 
-
-## Hacer más:
-
-## Seguir haciendo:
-	* Comunicación fluida.
-	* Cumplir tiempos de entrega.
-
-## Hacer menos:
-
-## Dejar de hacer:
-	*Centralización tareas.
