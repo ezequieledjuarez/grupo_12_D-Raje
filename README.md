@@ -82,7 +82,7 @@ Las páginas elegidas, son utilizadas como referencia ya que consideramos que ta
 	*	Detalle Producto : localhost:3000/products/detalle/:id
 	*	Carrito de compras : localhost:3000/users/shop
 	*	Registro : localhost:3000/users/register
-	*	Carga de producto : localhost:3000/products/load
+	*	Carga de producto : localhost:3000/products/create
 
 #Trello
 
