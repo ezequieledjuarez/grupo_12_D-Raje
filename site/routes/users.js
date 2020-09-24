@@ -10,6 +10,9 @@ router.get('/', function(req, res, next) {
 /*Carrito de compra*/
 router.get('/shop', usersControllers.carrito)
 
+/*Login*/ 
+router.get('/login', usersControllers.login)
+router.post('/login', usersControllers.loginSend)
 /*Registro*/
 router.get('/register', usersControllers.registro)
 
