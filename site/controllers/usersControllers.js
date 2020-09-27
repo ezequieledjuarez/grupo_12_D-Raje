@@ -26,6 +26,14 @@ module.exports = {
     loginSend:function(req,res){
         let errores = validationResult(req);
         if(errores.isEmpty()){
+            dbUsers.forEach(user=>{
+                if(user.email == req.body.email){
+                    req.session.user = {
+                        id: user.id,
+                        email: user.email
+                    }
+                }
+            })
             res.redirect('/')
         }else{
             res.render('login',{
