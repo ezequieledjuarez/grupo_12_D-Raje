@@ -113,9 +113,9 @@ module.exports = {
     },
 
     todosLosProductos: function(req,res){
-        res.render('mostrarProducto',{
-            title: 'Editar Producto',
-            css: 'home.css',
+        res.render('Productos',{
+            title: 'Productos',
+            css: 'detalleProducto.css',
             productos: dbProducts
         })
     }
