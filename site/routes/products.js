@@ -3,8 +3,10 @@ const router = express.Router();
 const productsController = require('../controllers/productsControllers');
 const subirImg = require('../middlewares/subirImgProductos')
 
-/*Detalle de producto*/
+/*Ruta principal donde se muestran todos los productos*/ 
+router.get('/')
 
+/*Detalle de producto*/
 router.get('/detalle/:id', productsController.detalleProducto)
 
 /*vista carga de producto*/ 

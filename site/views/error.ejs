@@ -1,3 +1,17 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('partials/head')%>
+<body>
+
+    <div class="container">
+        <div class="contenido">
+            <h1><%= message %></h1>
+            <h2><%= error.status %></h2>
+            <p>La página que estás buscando no existe. Por favor verifica no tener errores de tipeo o quizás la página que buscas ha sido movida</p>
+            <a href="/">Volver a inicio</a>
+        </div>
+    </div>  
+
+</body>
+</html>
+
