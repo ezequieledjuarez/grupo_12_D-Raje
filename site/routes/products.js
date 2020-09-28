@@ -4,8 +4,7 @@ const productsController = require('../controllers/productsControllers');
 const subirImg = require('../middlewares/subirImgProductos')
 
 /*Ruta principal donde se muestran todos los productos*/ 
-router.get('/')
-
+router.get('/',productsController.todosLosProductos)
 /*Detalle de producto*/
 router.get('/detalle/:id', productsController.detalleProducto)
 

@@ -3,6 +3,7 @@ const path = require('path')
 const dbProducts = require(path.join(__dirname, '..', 'data', 'dbProducts'))
 
 module.exports = {
+
     detalleProducto: function(req, res) {
         idProducto = req.params.id
         let producto = dbProducts.filter(producto => {
@@ -109,5 +110,13 @@ module.exports = {
     
         res.redirect('/')
     
+    },
+
+    todosLosProductos: function(req,res){
+        res.render('mostrarProducto',{
+            title: 'Editar Producto',
+            css: 'home.css',
+            productos: dbProducts
+        })
     }
 }
