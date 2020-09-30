@@ -44,4 +44,26 @@ module.exports = {
             })
         }
     },
+    agregarUsuario:function(req,res){
+        let ultimoId = 1
+        usuarios.forEach(id=>{
+            if(id.id > ultimoId){
+                ultimoId = id.id
+            }    
+        })
+        let nuevoUsuario = {
+            id : ultimoId + 1,
+            nombre : req.body.nombre.trim(),
+            correo: req.body.correo.trim(),
+            categoria:req.body.categoria.trim(),
+            contraseña:req.body.contraseña.trim(),
+            imagen:(req.files[0])?req.files[0].filename:"imgDeffault.jpg",
+        }
+        usuarios.push(nuevoUsuario)
+
+        let usuarioJson = JSON.stringify(usuarios)
+
+        fs.writeFileSync(path.join(__dirname, '..', 'data', 'usuarios.json'),usuarioJson)
+        res.redirect('/')
+    },
 }
