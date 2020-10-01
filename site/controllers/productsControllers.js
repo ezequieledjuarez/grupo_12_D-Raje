@@ -112,11 +112,30 @@ module.exports = {
     
     },
 
-    todosLosProductos: function(req,res){
+    listarTodos: function(req,res){
         res.render('Productos',{
             title: 'Productos',
-            css: 'detalleProducto.css',
+            css: 'home.css',
             productos: dbProducts
         })
+    },
+    buscar: function(req,res){
+        let buscado = req.query.search
+        if(buscado == ""){
+            res.redirect('/')
+        }
+        else{
+            let encontrados = []
+            dbProducts.forEach(producto =>{
+            if(producto.name.toLowerCase().includes(buscado.toLowerCase())){
+                encontrados.push(producto)
+            }
+            })
+            res.render('products',{
+                title: 'Resultados de la búsqueda',
+                css: 'productos.css',
+                productos : encontrados
+            })
+        }
     }
 }

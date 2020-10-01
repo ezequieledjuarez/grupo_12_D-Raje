@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
-const dbUsers = require('../data/dbUsers')
+const bcrypt = require('b')
+const dbUsers = require(path.join(__dirname, '..', 'data', 'dbUsers'))
 const {validationResult} = require('express-validator');
 
 
@@ -25,6 +26,7 @@ module.exports = {
     },
 
     loginSend:function(req,res){
+        console.log(dbUsers);
         let errores = validationResult(req);
         if(errores.isEmpty()){
             dbUsers.forEach(user=>{
@@ -47,20 +49,20 @@ module.exports = {
     },
     agregarUsuario:function(req,res){
         let ultimoId = 1
-        usuarios.forEach(id=>{
-            if(id.id > ultimoId){
-                ultimoId = id.id
+        dbUsers.forEach(usuario=>{
+            if(usuario.id > ultimoId){
+                ultimoId = usuario.id
             }    
         })
         let nuevoUsuario = {
             id : ultimoId + 1,
             nombre : req.body.nombre.trim(),
             correo: req.body.correo.trim(),
-            categoria:req.body.categoria.trim(),
-            contraseña:req.body.contraseña.trim(),
+            categoria:'user',
+            contraseña:bcrypt.hashSync(req.body.pass,10),
             imagen:(req.files[0])?req.files[0].filename:"imgDeffault.jpg",
         }
-        usuarios.push(nuevoUsuario)
+        dbUsers.push(nuevoUsuario)
 
         let usuarioJson = JSON.stringify(usuarios)
 
