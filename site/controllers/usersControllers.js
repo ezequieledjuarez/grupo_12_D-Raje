@@ -54,7 +54,7 @@ module.exports = {
         }
         dbUsers.push(nuevoUsuario)
 
-        let usuarioJson = JSON.stringify(dbUser)
+        let usuarioJson = JSON.stringify(dbUsers)
 
         fs.writeFileSync(path.join(__dirname, '..', 'data', 'usuarios.json'),usuarioJson)
         res.redirect('/')
