@@ -46,9 +46,9 @@ module.exports = {
     },
     agregarUsuario:function(req,res){
         let ultimoId = 1
-        usuarios.forEach(id=>{
-            if(id.id > ultimoId){
-                ultimoId = id.id
+        usuarios.forEach(usuario=>{
+            if(usuario.id > ultimoId){
+                ultimoId = usuario.id
             }    
         })
         let nuevoUsuario = {
