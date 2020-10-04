@@ -12,33 +12,67 @@
                     <form action="#" method="POST" enctype="multipart/form-data">
                         <p>
                             <label for="correo">Ingrese su correo:</label>
-                            <input type="email" name="correo" required id="correo">
+                            <input type="email" name="correo" required id="correo" 
+                            class="form-control <%= (typeof old != 'undefined' && old.email && !errores.email)?"is-valid":(typeof errores != 'undefined' && errores.email)?"is-invalid": ""  %>"
+							value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>"
+							name="correo" />
+							<small
+							class="text-danger"><%= (typeof errores != 'undefined' && errores.correo)?errores.correo.msg: "" %>
+							</small>
                         </p>
                         <p>
                             <label for="password">Ingrese su contraseña:</label>
-                            <input type="password" name="password" required id="contraceña1">
+                            <input type="password" name="password" required id="contraceña1"
+                            class="form-control <%= (typeof errores != 'undefined' && errores.password)?"is-invalid": ""  %>/>
+							<small
+								class="text-danger"><%= (typeof errores != 'undefined' && errores.password)?errores.password.msg: "" %>
+							</small>
                         </p>
                         <p>
                             <label for="password2">Repetir contraseña:</label>
-                            <input type="password" name="password2" required id="contraceña2">
+                            <input type="password" name="password2" required id="contraceña2"
+                            class="form-control <%= (typeof errores != 'undefined' && errores.password2)?"is-invalid": ""  %>"
+							name="password2" />
+							<small
+								class="text-danger"><%= (typeof errores != 'undefined' && errores.password2)?errores.password2.msg: "" %>
+							</small>
                         </p>
                         <p>
                             <label for="nombre">Ingrese su nombre:</label>
-                            <input type="text" name="nombre" required id="nombre">
+                            <input type="text" name="nombre" required id="nombre"
+                            class="form-control <%= (typeof old != 'undefined' && old.nombre)?"is-valid":(typeof errores != 'undefined' && errores.nombre)?"is-invalid": ""  %>"
+                            value="<%= (typeof old != 'undefined' && old.nombre)?old.nombre:'' %>"/>
+							<small
+								class="text-danger"><%= (typeof errores != 'undefined' && errores.nombre)?errores.nombre.msg: "" %>
+							</small>
                         </p>
                         <p>
                             <label for="apellido">Ingrese su apellido:</label>
-                            <input type="text" name="apellido" required id="apellido">
+                            <input type="text"
+							    class="form-control <%= (typeof old != 'undefined' && old.apellido)?"is-valid":(typeof errores != 'undefined' && errores.apellido)?"is-invalid": ""  %>"
+								id="apellido" value="<%= (typeof old != 'undefined' && old.apellido)?old.apellido:'' %>"
+								name="apellido" />
+								<small
+								    class="text-danger"><%= (typeof errores != 'undefined' && errores.apellido)?errores.apellido.msg: "" %>
+								</small>
                         </p>
                         <p>
                             <label for="exampleFormControlFile1">Seleccionar imagen</label>
                             <input type="file" class="form-control-file" id="exampleFormControlFile1" name = "image">
+                            <small
+						    class="text-danger"><%= (typeof errorFormato != 'undefined')?errorFormato: "" %>
+							</small>
                         </p>
 
                         <input type="checkbox"
-                        class="custom-control-input"  id="customCheck1" name="byc">
+                        class="custom-control-input <%= (typeof old != 'undefined' && old.byc)?"is-valid":(typeof errores != 'undefined' && errores.byc)?"is-invalid": ""  %>"
+                        id="customCheck1" name="byc">
                     <label class="custom-control-label" for="customCheck1">Acepto las bases y condiciones</label><br>
-                    <a href="" class="text-info">Ver bases y condiciones</a><br>
+                    <a href="" class="text-info">ver bases y condiciones</a><br>
+
+                    <small
+                        class="text-danger"><%= (typeof errores != 'undefined' && errores.bases)?errores.bases.msg: "" %>
+                    </small>
 
                     
                         <div class="boton-registro">
