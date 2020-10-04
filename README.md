@@ -85,18 +85,38 @@ Las páginas elegidas, son utilizadas como referencia ya que consideramos que ta
 	*	Carga de producto : localhost:3000/products/create
 
 ## Tercer Sprint (21/09)
+# Rutas: 
 	GET:
 	Estas rutas deberán ser visibles sólo por usuarios administradores.
 	* Vista de producto con opción de editar o eliminar:
 	localhost:3000/products/show/:id
 
 	* Formulario para editar producto: localhost:3000/products/show/:id
-# Rutas: 
+
 
 #Trello
 
 [Trello_Grupo_12](https://trello.com/b/tax86dzo/proyecto-integrador-grupo-12)
 
 ## Las contraseñas para el testeo en el login son:
-12345678 para los usuarios juan@juan.com eze@eze.com axel@axel.com
-testuser para user@user.com
+* 12345678 para los usuarios con id 1,2,3
+* testuser par los usuarios con id 4,5
+
+## Cuarto Sprint (05/10)
+# Listado de rutas actualizado
+GET:
+	** Rutas accesibles por todos.
+	*	Home: localhost:3000/
+	*	Detalle Producto : localhost:3000/products/detalle/:id
+	*   Buscar producto: localhost:3000/products/search (No está terminada)
+	*   Listado de todos los productos : localhost:3000/products/ (No está terminada)
+	** Rutas solo accesible por usuarios que iniciaron sesión
+	*  Carrito de compras : localhost:3000/users/shop 
+	*  Logout: localhost:3000/users/logout
+	** Solo accesible por usuarios que no iniciarion sesión
+	*	Registro : localhost:3000/users/register
+	*   Login : localhost:3000/users/login
+	** Solo accesibles por administradores
+	*	Carga de producto : localhost:3000/products/create
+	*	Vista de producto con opción de eliminar y editar: localhost:3000/products/show/:id (No es responsive)
+	* Editar producto: localhost:3000/products/edit/:id

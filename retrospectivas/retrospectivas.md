@@ -36,13 +36,12 @@
 
 ## Empezar a hacer:
 
-
 ## Hacer más:
-	
+	*Actualizar trello
 ## Seguir haciendo:
 	
 
 ## Hacer menos:
-
+	*Dejar varias tareas para fechas próximas a la entrega.
 ## Dejar de hacer:
 	* Volver a ser reuniones día por medio.
