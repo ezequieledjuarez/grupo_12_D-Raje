@@ -4,7 +4,7 @@
 <body>
     <%- include('partials/header') %>
     <% productos.forEach(producto => { %>
-        <div class="card" style="width: 30%;">
+        <div class="card">
             <img class="card-img-top" src="/images/productos/<%= producto.image %>.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"><%= producto.nombre%></h5>

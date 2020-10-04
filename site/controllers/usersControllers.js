@@ -37,12 +37,21 @@ module.exports = {
             res.redirect('/')
     },
     agregarUsuario:function(req,res){
+        let errores = validationResult(req)
         let ultimoId = 1
         dbUsers.forEach(usuario=>{
             if(usuario.id > ultimoId){
                 ultimoId = usuario.id
             }    
         })
+        if(!errores.isEmpty()){
+            res.render('registro',{
+                title: "Registro de usuario",
+                css : 'registro.css',
+                errores: errores.mapped(),
+                old: req.body
+            })
+        }
         let nuevoUsuario = {
             id : ultimoId + 1,
             nombre : req.body.nombre.trim(),

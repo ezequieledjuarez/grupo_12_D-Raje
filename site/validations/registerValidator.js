@@ -2,7 +2,7 @@ const {check, validationResult, body} = require('express-validator')
 
 const dbUsers =  require('../data/dbUsers')
 
-module.exprots = [
+module.exports = [
     check('nombre')
     .isLength({
         min: 3,
@@ -16,15 +16,15 @@ module.exprots = [
     })
     .withMessage('Este campo no puede quedar vacío.'),
     
-    check('email')
-    .isEmail
+    check('correo')
+    .isEmail()
     .withMessage('Debe ingresar un mail válido.'),
 
-    body('email')
-    .custom(function(email){
+    body('correo')
+    .custom(function(value){
         for(let i = 0; i<dbUsers.length; i++){
-            if(dbUsers[i].email == email){
-
+            if(dbUsers[i].correo == value){
+                return false
             }
         }
             return true
@@ -39,8 +39,8 @@ module.exprots = [
     .withMessage('La contraseña debe tener entre 8 y 12 caracteres'),
 
     body('password2')
-    .custom((password2,{req}) =>{
-        if(password2 != req.body.password){
+    .custom((value,{req}) =>{
+        if(value != req.body.password){
             return false
         }
         return true
