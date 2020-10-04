@@ -23,6 +23,6 @@ router.post('/register', subirImg.any(),registerValidator,usersControllers.agreg
 
 /*Logout*/
 
-router.get('/logout', isLogged, usersControllers.logout)
+router.get('/logout', usersControllers.logout)
 
 module.exports = router;
