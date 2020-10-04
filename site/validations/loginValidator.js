@@ -7,14 +7,16 @@ module.exports = [
     .isEmail()
     .withMessage('Debes ingresar un email valido'),
 
-    check('correo')
+    body('correo')
     .custom(function(value){
-        for(let i = 0; i<dbUsers.length; i++){
-            if(dbUsers[i].correo != value){
-                return false
-            }
-        }
+        let user = dbUsers.filter(user=>{
+            return user.correo == value
+        })
+        if(user == false){
+            return false 
+        }else{
             return true
+        }
     })
     .withMessage('El usuario ingresado no existe'),
 
@@ -29,8 +31,8 @@ module.exports = [
         let resultado = true
         dbUsers.forEach(user=>{
             if(user.correo == req.body.correo){
-                if(!bcrypt.compareSync(value,user.correo)){
-                    return false
+                if(!bcrypt.compareSync(value,user.password)){
+                    resultado = false
                 }
             }
         })
