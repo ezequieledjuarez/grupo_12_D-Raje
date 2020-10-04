@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var methodOverride = require('method-override')
 const session = require('express-session')
+const resLocalsMiddleware = require('./middlewares/resLocalsMiddleware')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products')
@@ -21,7 +22,7 @@ app.use(cookieParser());
 app.use(methodOverride('_method'))
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({secret:'D-RajeTopSecret'}))
-
+app.use(resLocalsMiddleware)
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
