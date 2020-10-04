@@ -34,5 +34,14 @@
     "categoria": "user",
     "password": "$2b$10$UbjsVuH8ZdVITiG07GV2E.7YBcBEN52c8wDqPBXEG.J27alLM0Ir6",
     "image": "image-1601819203203.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Admin",
+    "apellido": "Istrador",
+    "correo": "admin@admin.com",
+    "categoria": "admin",
+    "password": "$2b$10$UbjsVuH8ZdVITiG07GV2E.7YBcBEN52c8wDqPBXEG.J27alLM0Ir6",
+    "image": "image-1601819203203.jpg"
   }
 ]

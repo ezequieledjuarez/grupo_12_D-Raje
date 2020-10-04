@@ -1,12 +1,11 @@
 module.exports = (req,res,next) =>{
-
-    if(req.params.categoria == 'user'){
-        next()
-    }else{
+        if(req.session.user.categoria == 'user'){
+            next()
+    }else {
         res.redirect('/')
     }
 }
 /*
-let categoria = req.params.categoria;
+let categoria = req.session.user.categoria;
 (categoria == 'user') ? next() : res.redirect('/')
 */

@@ -34,7 +34,8 @@ module.exports = {
                         id: user.id,
                         alias: user.nombre + " " + user.apellido,
                         email: user.correo,
-                        image: user.image
+                        image: user.image,
+                        categoria : user.categoria
                     }
                 }
             })

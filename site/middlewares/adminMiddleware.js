@@ -1,5 +1,5 @@
 module.exports = (req,res,next) =>{
-    if(req.params.categoria == 'admin'){
+    if(req.session.user.categoria == 'admin'){
         next()
     }else{
         res.redirect('/')

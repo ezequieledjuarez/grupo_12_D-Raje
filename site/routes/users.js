@@ -4,6 +4,8 @@ const usersControllers = require('../controllers/usersControllers')
 const subirImg = require('../middlewares/subirImgUser')
 const registerValidator = require('../validations/registerValidator')
 const loginValidator = require('../validations/loginValidator')
+const isLogged = require('../middlewares/userMiddleware')
+const isVisitor = require('../middlewares/visitorMiddleware')
 /* GET users listing. */
 router.get('/', function(req, res, next) {
     res.send('respond with a resource');
