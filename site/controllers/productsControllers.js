@@ -57,6 +57,7 @@ module.exports = {
         res.render('mostrarProducto',{
             title: 'Editar Producto',
             css: 'home.css',
+            productos: dbProducts,
             producto: producto[0]
 
         })
