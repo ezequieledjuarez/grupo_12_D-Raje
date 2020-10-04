@@ -11,6 +11,7 @@ router.get('/detalle/:id', productsController.detalleProducto)
 /*vista carga de producto*/ 
 router.get('/create', productsController.cargaProducto)
 
+router.get('/search', productsController.buscar)
 /*Envio de datos de carga*/
 
 router.post('/create', subirImg.any(), productsController.agregarProducto)
