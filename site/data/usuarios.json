@@ -16,5 +16,23 @@
     "categoria": "user",
     "password": "$2b$10$wbMM3LzBwZQs6IbCZkPaZux3KeDK/gxXM0tNizCyrBsHrpe5XQaAO",
     "image": "image-1601662671757.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Eze",
+    "apellido": "Juarez",
+    "correo": "eze@eze.com",
+    "categoria": "user",
+    "password": "$2b$10$1EgCRw2lboSPVLfr9aK6X.EUNx9z0QztHEHQ.cMfBf4rNXlnveSay",
+    "image": "imgDeffault.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Juan Carlos",
+    "apellido": "Troche Hinojosa",
+    "correo": "juan@juan.com",
+    "categoria": "user",
+    "password": "$2b$10$fPzGUkIP1wyjmi2At58OSOojztTpysG64JDUYz.uy6YEMMVYbpejC",
+    "image": "imgDeffault.jpg"
   }
 ]

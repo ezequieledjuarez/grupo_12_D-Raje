@@ -153,7 +153,7 @@
     "categoria": "Escolar",
     "image": "img-plasticola"
   },
-  {
+    {
     "id": 17,
     "nombre": "Voligoma",
     "marca": "Voligoma",
@@ -163,8 +163,8 @@
     "estado": "sin-estado",
     "categoria": "Escolar",
     "image": "img-voligoma"
-  },
-  {
+    },
+    {
     "id": 18,
     "nombre": "Cuaderno tapa blanda 96 hojas.",
     "marca": "Garrahan",
@@ -173,6 +173,6 @@
     "estado": "sin-estado",
     "descripcion": "Cuaderno eco-friendly de tapa blanda, 96 hojas, edición Garrahan",
     "categoria": "escolar",
-    "imagen": "image-1600728875226.jpg"
+    "imagen": "image-1600728875226"
   }
 ]
