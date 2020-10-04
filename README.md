@@ -97,3 +97,6 @@ Las páginas elegidas, son utilizadas como referencia ya que consideramos que ta
 
 [Trello_Grupo_12](https://trello.com/b/tax86dzo/proyecto-integrador-grupo-12)
 
+## Las contraseñas para el testeo en el login son:
+12345678 para los usuarios juan@juan.com eze@eze.com axel@axel.com
+testuser para user@user.com
