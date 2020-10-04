@@ -13,8 +13,8 @@
                         <p>
                             <label for="correo">Ingrese su correo:</label>
                             <input type="email" name="correo" required id="correo" 
-                            class="form-control <%= (typeof old != 'undefined' && old.email && !errores.email)?"is-valid":(typeof errores != 'undefined' && errores.email)?"is-invalid": ""  %>"
-							value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>"
+                            class="form-control <%= (typeof old != 'undefined' && old.correo && !errores.correo)?"is-valid":(typeof errores != 'undefined' && errores.correo)?"is-invalid": ""  %>"
+							value="<%= (typeof old != 'undefined' && old.correo)?old.correo:'' %>"
 							name="correo" />
 							<small
 							class="text-danger"><%= (typeof errores != 'undefined' && errores.correo)?errores.correo.msg: "" %>
