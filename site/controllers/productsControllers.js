@@ -128,13 +128,13 @@ module.exports = {
         else{
             let encontrados = []
             dbProducts.forEach(producto =>{
-            if(producto.name.toLowerCase().includes(buscado.toLowerCase())){
+            if(producto.nombre.toLowerCase().includes(buscado.toLowerCase())){
                 encontrados.push(producto)
             }
             })
-            res.render('products',{
+            res.render('productos',{
                 title: 'Resultados de la búsqueda',
-                css: 'productos.css',
+                css: 'index.css',
                 productos : encontrados
             })
         }
