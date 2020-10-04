@@ -85,4 +85,12 @@ module.exports = {
             res.redirect('/')
         }
     },
+
+    logout: function(req,res){
+        req.session.destroy()
+        if(req.cookies.userDRaje){
+            res.cookie('userDRaje', ' ', {maxAge:-1})
+        }
+        return res.redirect('/')
+    }
 }

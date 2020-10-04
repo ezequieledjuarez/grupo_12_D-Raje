@@ -19,5 +19,8 @@ router.post('/login', loginValidator, usersControllers.loginSend)
 router.get('/register', usersControllers.registro)
 router.post('/register', subirImg.any(),registerValidator,usersControllers.agregarUsuario)
 
+/*Logout*/
+
+router.get('/logout', usersControllers.logout)
 
 module.exports = router;
