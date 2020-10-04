@@ -26,15 +26,29 @@ module.exports = {
     },
 
     loginSend:function(req,res){
+        let errores = validationResult(req)
+        if(errores.isEmpty()){
             dbUsers.forEach(user=>{
-                if(user.email == req.body.email){
+                if(user.correo == req.body.correo){
                     req.session.user = {
                         id: user.id,
-                        email: user.email
+                        email: user.correo
                     }
                 }
             })
+            if(req.body.recordar){
+                res.cookie('userD-Raje',req.session.user, {maxAge:1000*60*10})
+            }
             res.redirect('/')
+        }else{
+            res.render('login',{
+                title: 'Ingresa a tu cuenta',
+                css: 'login.css',
+                errores : errores.mapped(),
+                old: req.body
+            })
+        }
+            
     },
     agregarUsuario:function(req,res){
         let errores = validationResult(req)
@@ -45,6 +59,7 @@ module.exports = {
             }    
         })
         if(!errores.isEmpty()){
+            
             res.render('registro',{
                 title: "Registro de usuario",
                 css : 'registro.css',
@@ -52,20 +67,22 @@ module.exports = {
                 old: req.body
             })
         }
-        let nuevoUsuario = {
-            id : ultimoId + 1,
-            nombre : req.body.nombre.trim(),
-            apellido: req.body.apellido.trim(),
-            correo: req.body.correo.trim(),
-            categoria:'user',
-            password:bcrypt.hashSync(req.body.password,10),
-            image:(req.files[0])?req.files[0].filename:"imgDeffault.jpg",
+        else{
+            let nuevoUsuario = {
+                id : ultimoId + 1,
+                nombre : req.body.nombre.trim(),
+                apellido: req.body.apellido.trim(),
+                correo: req.body.correo.trim(),
+                categoria:'user',
+                password:bcrypt.hashSync(req.body.password,10),
+                image:(req.files[0])?req.files[0].filename:"imgDeffault.jpg",
+            }
+            dbUsers.push(nuevoUsuario)
+
+            let usuarioJson = JSON.stringify(dbUsers)
+
+            fs.writeFileSync(path.join(__dirname, '..', 'data', 'usuarios.json'),usuarioJson)
+            res.redirect('/')
         }
-        dbUsers.push(nuevoUsuario)
-
-        let usuarioJson = JSON.stringify(dbUsers)
-
-        fs.writeFileSync(path.join(__dirname, '..', 'data', 'usuarios.json'),usuarioJson)
-        res.redirect('/')
     },
 }
