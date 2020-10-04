@@ -32,7 +32,9 @@ module.exports = {
                 if(user.correo == req.body.correo){
                     req.session.user = {
                         id: user.id,
-                        email: user.correo
+                        alias: user.nombre + " " + user.apellido,
+                        email: user.correo,
+                        image: user.image
                     }
                 }
             })
@@ -40,6 +42,7 @@ module.exports = {
                 res.cookie('userD-Raje',req.session.user, {maxAge:1000*60*10})
             }
             res.redirect('/')
+            console.log(req.session.user)
         }else{
             res.render('login',{
                 title: 'Ingresa a tu cuenta',
