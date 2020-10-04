@@ -1,5 +1,5 @@
 module.exports = (req,res,next) =>{
-        if(req.session.user.categoria == 'user'){
+        if(typeof user != 'undefined'){
             next()
     }else {
         res.redirect('/')

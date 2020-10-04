@@ -1,8 +1,8 @@
 module.exports = (req,res,next) => {
-    if (typeof user == 'undefined' ){
-        next()
+    if(req.session.user){
+        res.redirect('/')
     }
-    else{
-       res.redirect('/')
+    else {
+        next()
     }
 }
