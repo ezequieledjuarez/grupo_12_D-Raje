@@ -27,6 +27,6 @@ router.post('/register', subirImg.any(),registerValidator,usersControllers.agreg
 router.get('/logout', usersControllers.logout)
 
 /*Perfil de usuario*/
-router.get('/profile', islogged, isUser, usersControllers.profile) 
+router.get('/profile', isUser, usersControllers.profile) 
 
 module.exports = router;
