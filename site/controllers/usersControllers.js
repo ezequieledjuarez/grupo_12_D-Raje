@@ -96,5 +96,12 @@ module.exports = {
             res.cookie('userDRaje', ' ', {maxAge:-1})
         }
         return res.redirect('/')
+    },
+
+    profile: function(req,res){
+        res.render('profile',{
+            title: 'Perfil',
+            css: 'home.css'
+        })
     }
 }
