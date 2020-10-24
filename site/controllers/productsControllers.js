@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const dbProducts = require(path.join(__dirname, '..', 'data', 'dbProducts'))
+const db = require(path.join(__dirname, '..', 'db', 'models'))
 
 module.exports = {
 
@@ -24,7 +24,24 @@ module.exports = {
     },
 
     agregarProducto:function(req,res){
-        let ultimoId = 1
+
+        db.Products.create({
+            nombre: req.body.nombre.trim(),
+            marca: req.body.marca.trim(),
+            precio:Number(req.body.precio),
+            descuento:Number(req.body.descuento),
+            descripcion:req.body.descripcion.trim(),
+            image:(req.files[0])?req.files[0].filename:"default-image.jpg",
+            estado:req.body.estado.trim(),
+            categoria:req.body.categoria.trim(),
+        })
+        .then(product =>{
+            res.redirect('/')
+        })
+        .catch(e =>{
+            res.send(e)
+        })
+      /*   let ultimoId = 1
         dbProducts.forEach(producto=>{
             if(producto.id > ultimoId){
                 ultimoId = producto.id
@@ -46,7 +63,7 @@ module.exports = {
         let productoJson = JSON.stringify(dbProducts)
 
         fs.writeFileSync(path.join(__dirname, '..', 'data', 'productos.json'),productoJson)
-        res.redirect('/')
+        res.redirect('/') */
     },
 
     mostrarProducto: function(req,res){

@@ -21,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     let config = {
-        tablename = 'productxcart'
+        tablename : 'productxcart'
     }
 
     const ProductXCart = sequelize.define(alias,cols,config)

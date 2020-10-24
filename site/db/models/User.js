@@ -6,7 +6,7 @@ module.exports = (sequelize, dataTypes) => {
 
     id:{
         type: dataTypes.INTEGER(10).UNSIGNED,
-        autoincrement: true,
+        autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },
@@ -44,14 +44,14 @@ module.exports = (sequelize, dataTypes) => {
  }
 
  let config = {
-    tablename = 'users',
-    timestamps = true
+    tablename : 'users',
+    timestamps : true
  }
 
  const User = sequelize.define(alias,cols,config)
 
  User.associate = function(models){
-     User.hasOne(models.Cart,{
+     User.hasOne(models.Carts,{
          as: 'carts',
          foreignKey: 'idUser'
      })

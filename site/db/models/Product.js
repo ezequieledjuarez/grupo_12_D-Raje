@@ -5,7 +5,7 @@ module.exports = (sequelize, dataTypes) => {
     let cols = {
         id:{
             type: dataTypes.INTEGER(10).UNSIGNED,
-            autoincrement: true,
+            autoIncrement: true,
             allowNull: false,
             primaryKey: true
         },
@@ -53,18 +53,20 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     let config = {
-        tablename = 'products',
-        timestamps = true
+        tablename : 'products',
+        timestamps : true
     }
 
     const Product = sequelize.define(alias,cols,config)
 
-    Product.associate = (models.Carts,{
-        as:'carts',
-        through: "productXCart",
-        foreignKey:"idProduct",
-        otherKey:"idCart",
-        timestamps:false
-    })
+    Product.associate = function(models){
+            Product.belongsToMany(models.Carts,{
+            as:'carts',
+            through: "productXCart",
+            foreignKey:"idProduct",
+            otherKey:"idCart",
+            timestamps:false
+        })
+     }
     return Product
 }

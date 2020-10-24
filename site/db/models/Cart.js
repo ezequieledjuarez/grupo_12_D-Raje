@@ -5,7 +5,7 @@ module.exports = (sequelize, dataTypes) => {
     let cols = {
         id:{
             type: dataTypes.INTEGER(10).UNSIGNED,
-            autoincrement: true,
+            autoIncrement: true,
             allowNull: false,
             primaryKey: true
         },
@@ -27,7 +27,7 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     let config = {
-        tablename = 'carts'
+        tablename : 'carts'
     }
 
     const Cart = sequelize.define(alias,cols,config)
