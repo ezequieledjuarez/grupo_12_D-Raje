@@ -59,5 +59,12 @@ module.exports = (sequelize, dataTypes) => {
 
     const Product = sequelize.define(alias,cols,config)
 
+    Product.associate = (models.Carts,{
+        as:'carts',
+        through: "productXCart",
+        foreignKey:"idProduct",
+        otherKey:"idCart",
+        timestamps:false
+    })
     return Product
 }
