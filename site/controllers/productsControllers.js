@@ -67,34 +67,53 @@ module.exports = {
     },
 
     mostrarProducto: function(req,res){
-        idProducto = req.params.id
-        let producto = dbProducts.filter(producto => {
-            return producto.id == idProducto
+       db.Products.findByPk(req.params.id)
+        .then(producto =>{
+            res.render('mostrarProducto',{
+                title: 'Editar Producto',
+                css: 'home.css',
+                producto: producto
+    
+            })
         })
-        res.render('mostrarProducto',{
-            title: 'Editar Producto',
-            css: 'home.css',
-            productos: dbProducts,
-            producto: producto[0]
-
+        .catch(e=>{
+            res.send(e)
         })
     },
 
     formProducto: function(req,res){
-        let idProducto = req.params.id;
-
-        let prEditar = dbProducts.filter(producto =>{
-            return producto.id == idProducto
-        });
-        res.render('editarProductos',
-        {css: 'detalleProducto.css',
-        producto : prEditar[0]}
+        db.Products.findByPk(req.params.id)
+        .then(producto =>{
+            res.render('editarProductos',{
+            css: 'detalleProducto.css',
+            producto: producto
+            }
         )
+        })
+        .catch(e=>{
+            res.send(e)
+        })
+        
     },
     
     editarProducto: function(req,res){
 
-        dbProducts.forEach(producto=>{
+            db.Products.update({
+            nombre: req.body.nombre.trim(),
+            marca: req.body.marca.trim(),
+            precio:Number(req.body.precio),
+            descuento:Number(req.body.descuento),
+            descripcion:req.body.descripcion.trim(),
+            image:(req.files[0])?req.files[0].filename:"default-image.jpg",
+            estado:req.body.estado.trim(),
+            categoria:req.body.categoria.trim(),
+            },
+            {
+            where:{
+                id:req.params.id
+            }
+        })
+        /* dbProducts.forEach(producto=>{
             if(producto.id == req.params.id){
                 producto.nombre = req.body.nombre.trim()
                 producto.marca = req.body.marca.trim()
@@ -110,11 +129,22 @@ module.exports = {
         let productoJson = JSON.stringify(dbProducts)
 
         fs.writeFileSync(path.join(__dirname,'../data/productos.json'),productoJson,'utf-8');
-        res.redirect('/products/show/'+ req.params.id)
+        res.redirect('/products/show/'+ req.params.id) */
 
     },
     eliminarProducto: (req,res) =>{
-        let indiceDelProducto;
+        
+         db.Products.destroy({
+             where:{
+                 id: req.params.id
+             }
+         })
+         .then(product =>{
+             res.redirect('/')
+         })
+         .catch(e => res.send(e))
+      
+        /* let indiceDelProducto;
     
         dbProducts.forEach(producto => {
             if(producto.id == req.params.id)
@@ -126,7 +156,7 @@ module.exports = {
     
         fs.writeFileSync(path.join(__dirname, '..' , 'data' , 'productos.json'), productoJson)
     
-        res.redirect('/')
+        res.redirect('/') */
     
     },
 
