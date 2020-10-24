@@ -85,6 +85,7 @@ module.exports = {
         db.Products.findByPk(req.params.id)
         .then(producto =>{
             res.render('editarProductos',{
+            title: 'Editar Producto',
             css: 'detalleProducto.css',
             producto: producto
             }
@@ -105,13 +106,19 @@ module.exports = {
             descuento:Number(req.body.descuento),
             descripcion:req.body.descripcion.trim(),
             image:(req.files[0])?req.files[0].filename:"default-image.jpg",
-            estado:req.body.estado.trim(),
-            categoria:req.body.categoria.trim(),
+            estado:req.body.estado,
+            categoria:req.body.categoria,
             },
             {
             where:{
                 id:req.params.id
             }
+        })
+        .then(product=>{
+            res.redirect('/')
+        })
+        .catch(e=>{
+            res.send(e)
         })
         /* dbProducts.forEach(producto=>{
             if(producto.id == req.params.id){
