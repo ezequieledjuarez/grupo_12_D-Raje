@@ -26,9 +26,11 @@
         <div class = "botones">
           <form action="/products/eliminar/ <%= producto.id %>?_method=DELETE" method="POST">
             <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a class="btn btn-warning" href="/products/edit/<%=producto.id %>" role="button">Editar</a>
           </form>
 
-          <a class="btn btn-primary" href="/products/edit/<%=producto.id %>" role="button">Editar</a>
+
+        </div>
         </section>
   <%- include('partials/footer') %> 
 </body>

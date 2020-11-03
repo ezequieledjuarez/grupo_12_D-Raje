@@ -39,6 +39,14 @@ header form button {
     cursor: pointer;
 }
 
+nav li ul{
+    display:none;
+}
+nav li:hover > .tareas{
+    display:block;
+    position:relative;
+}
+
 .barra {
     margin-top: 25px;
     height: 40px;

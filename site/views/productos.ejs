@@ -16,6 +16,12 @@
                 <li class="list-group-item">$<%= producto.precio %></li>
                 <li class="list-group-item"><%= producto.descuento %>  % OFF</li>
               </ul>
+              <% if (typeof user !== "undefined" && user.categoria == 'admin') { %>
+              <div class="botones">
+                <a class="btn btn-danger" href="/products/show/<%=producto.id %>" role="button">Eliminar</a>
+                <a class="btn btn-warning" href="/products/edit/<%=producto.id %>" role="button">Editar</a>
+              </div>
+              <% } %>
             </div>
           </div>
     <% }) %>

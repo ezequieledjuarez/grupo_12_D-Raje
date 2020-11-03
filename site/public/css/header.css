@@ -67,7 +67,7 @@
         padding: 10px;
         border-radius: 20px;
     }
-    
+   
     li a {
         text-decoration: none;
         color: white;
@@ -96,7 +96,13 @@
         transition: 0.50s;
         color: white;
     }
-    
+    nav li ul{
+        display:none;
+    }
+    nav li:hover > .tareas{
+        display:block;
+        position:relative;
+    }
     @media (min-width:400px) and (max-width: 767px) {
         .barra {
             margin-top: 0px;

@@ -47,8 +47,22 @@
             </li>
             <li class="l-n">
                 <a href="/users/shop">Mi carrito <i class="fas fa-shopping-cart"></i>
-          </a>
+            </a>
+          </li>
+
+          <% if (typeof user !== "undefined" && user.categoria == 'admin') { %>
+            <li id="admin">
+                <a href="">Administrar</a>
+                <ul class = "tareas">
+                    <li>
+                        <a href="/products/create">Agregar Producto</a>
+                    </li>
+                    <li>
+                        <a href="/products">Editar Productos</a>
+                    </li>
+                </ul>
             </li>
+        <% } %>
         </ul>
     </nav>
 </header>
