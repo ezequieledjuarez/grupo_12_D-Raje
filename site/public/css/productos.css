@@ -4,10 +4,9 @@
 @import "style.css";
 
 body{
-    width: 1200px;
+    width: 100%;
 }
 
-img{
-    width: 200px;
-    height: 200px;
+.card-img-top{
+    width:400px;
 }
