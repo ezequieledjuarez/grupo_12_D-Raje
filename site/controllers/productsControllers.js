@@ -1,3 +1,4 @@
+const dbProducts = require('../data/dbProducts')
 const fs = require('fs')
 const path = require('path')
 const db = require(path.join(__dirname, '..', 'db', 'models'))
@@ -170,7 +171,7 @@ module.exports = {
     listarTodos: function(req,res){
         res.render('Productos',{
             title: 'Productos',
-            css: 'home.css',
+            css: 'productos.css',
             productos: dbProducts
         })
     },

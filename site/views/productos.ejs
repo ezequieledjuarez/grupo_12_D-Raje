@@ -3,20 +3,24 @@
 <%- include('partials/head') %>
 <body>
     <%- include('partials/header') %>
+    <div class="container"></div>
+      <div class = "row">
     <% productos.forEach(producto => { %>
         <div class="card">
-            <img class="card-img-top" src="/images/productos/<%= producto.image %>.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title"><%= producto.nombre%></h5>
-              <p class="card-text"><%= producto.descripcion %> </p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><%= producto.marca %></li>
-              <li class="list-group-item">$<%= producto.precio %></li>
-              <li class="list-group-item"><%= producto.descuento %>  % OFF</li>
-            </ul>
-        
+          <img class="card-img-top" src="/images/productos/<%= producto.image %>.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title"><%= producto.nombre%></h5>
+                  <p class="card-text"><%= producto.descripcion %> </p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><%= producto.marca %></li>
+                <li class="list-group-item">$<%= producto.precio %></li>
+                <li class="list-group-item"><%= producto.descuento %>  % OFF</li>
+              </ul>
     <% }) %>
-    <%- include('partials/footer') %>
+  </div>
+</div>
+  
+<%- include('partials/footer') %>
 </body>
 </html>
