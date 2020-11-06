@@ -32,7 +32,9 @@ module.exports = {
                 if(user.correo == req.body.correo){
                     req.session.user = {
                         id: user.id,
-                        alias: user.nombre + " " + user.apellido,
+                        nombre: user.nombre,
+                        apellido: user.apellido,
+                        alias:user.nombre + " " + user.apellido,
                         email: user.correo,
                         image: user.image,
                         categoria : user.categoria

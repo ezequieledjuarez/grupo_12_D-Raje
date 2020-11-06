@@ -189,7 +189,7 @@ module.exports = {
             })
             res.render('productos',{
                 title: 'Resultados de la búsqueda',
-                css: 'index.css',
+                css: 'h.css',
                 productos : encontrados
             })
         }

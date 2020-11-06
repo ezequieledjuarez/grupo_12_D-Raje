@@ -29,4 +29,6 @@ router.get('/logout', usersControllers.logout)
 /*Perfil de usuario*/
 router.get('/profile', isUser, usersControllers.profile) 
 
+//Actualizar datos del usuario
+//router.get('/update', isUser, userControllers.update)
 module.exports = router;

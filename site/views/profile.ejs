@@ -5,6 +5,16 @@
         <%- include('partials/header') %>
 
         <h1> Bienvenido <%= user.alias%></h1>
+        <img src="/images/usuarios/<%= user.image%>" alt="">
+        <form action="/users/update/ <%= user.id%>?_method=PUT" method = "POST" enctype="multipart/form-data">
+            <div class="row">
+                <input type="file" name="image" id="">
+            </div>
+            <input type="text" name="nombre" id="" value="<%= user.nombre%>">
+            <input type="text" name="apellido" id="" value = "<%= user.apellido%>">
+            <input type="email" name="correo" id="" value = "<%= user.email%>">
+            <button type="submit" class="btn-sm btn-success">Actualizar mis datos</button>
+        </form>
 
         <%- include('partials/footer') %>
     
