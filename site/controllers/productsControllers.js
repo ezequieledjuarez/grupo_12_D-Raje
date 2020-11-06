@@ -1,8 +1,8 @@
-const dbProducts = require('../data/dbProducts')
 const fs = require('fs')
 const path = require('path')
 const db = require(path.join(__dirname, '..', 'db', 'models'))
-
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op
 module.exports = {
 
     detalleProducto: function(req, res) {
@@ -169,18 +169,68 @@ module.exports = {
     },
 
     listarTodos: function(req,res){
-        res.render('Productos',{
-            title: 'Productos',
-            css: 'productos.css',
-            productos: dbProducts
+
+    db.Products.findAll()
+    .then(result =>{
+        res.render('productos',{
+            title:'Resultado de la busqueda',
+            css:'productos.css',
+            productos: result,
         })
+    })
+    .catch(e => {
+        res.send(e)
+    })
+
     },
     buscar: function(req,res){
         let buscado = req.query.search
         if(buscado == ""){
             res.redirect('/')
         }
-        else{
+
+        /*let nombre = db.Produts.findAll({
+            order : [
+                ['nombre','ASC']
+            ]
+        });
+        let marca = db.Produts.findAll({
+            order : [
+                ['marca','ASC']
+            ]
+        });
+        Promise.all([generos,actores])
+        .then(([generos,actores]) => {
+            res.render('moviesAdd',{
+                generos : generos,
+                actores : actores
+            })
+        })
+ */
+
+    db.Products.findAll({
+        where:{
+            nombre:{
+                [Op.substring]:buscado
+            },
+            marca:{
+                [Op.substring]:buscado
+            }
+        }
+    })
+    .then(result =>{
+        res.render('productos',{
+            title:'Resultado de la busqueda',
+            css:'home.css',
+            productos: result,
+        })
+    })
+    .catch(e => {
+        res.send(e)
+    })
+
+
+        /*else{
             let encontrados = []
             dbProducts.forEach(producto =>{
             if(producto.nombre.toLowerCase().includes(buscado.toLowerCase())){
@@ -192,6 +242,6 @@ module.exports = {
                 css: 'h.css',
                 productos : encontrados
             })
-        }
+        }*/
     }
 }
