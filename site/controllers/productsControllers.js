@@ -189,42 +189,24 @@ module.exports = {
             res.redirect('/')
         }
 
-        /*let nombre = db.Produts.findAll({
-            order : [
-                ['nombre','ASC']
-            ]
-        });
-        let marca = db.Produts.findAll({
-            order : [
-                ['marca','ASC']
-            ]
-        });
-        Promise.all([generos,actores])
-        .then(([generos,actores]) => {
-            res.render('moviesAdd',{
-                generos : generos,
-                actores : actores
+        db.Products.findAll({
+            where:{
+                [Op.or]: [
+                { nombre :{[Op.substring] : buscado }},
+                { marca :{[Op.substring] : buscado }},  
+                { categoria : {[Op.substring] : buscado }},
+                { precio:{[Op.lte] : buscado }},
+                { estado : {[Op.substring] : buscado }}
+                ]
+            }
+        })
+        .then(result =>{
+            res.render('productos',{
+                title:'Resultado de la busqueda',
+                css:'home.css',
+                productos: result,
             })
         })
- */
-
-    db.Products.findAll({
-        where:{
-            nombre:{
-                [Op.substring]:buscado
-            },
-            marca:{
-                [Op.substring]:buscado
-            }
-        }
-    })
-    .then(result =>{
-        res.render('productos',{
-            title:'Resultado de la busqueda',
-            css:'home.css',
-            productos: result,
-        })
-    })
     .catch(e => {
         res.send(e)
     })
