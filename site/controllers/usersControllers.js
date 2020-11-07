@@ -3,7 +3,7 @@ const path = require('path')
 const bcrypt = require('bcrypt')
 const dbUsers = require(path.join(__dirname, '..', 'data', 'dbUsers'))
 const {validationResult} = require('express-validator');
-
+const db = require(path.join(__dirname, '..', 'db', 'models'))
 
 module.exports = {
     carrito: function(req, res) {
@@ -28,8 +28,12 @@ module.exports = {
     loginSend:function(req,res){
         let errores = validationResult(req)
         if(errores.isEmpty()){
-            dbUsers.forEach(user=>{
-                if(user.correo == req.body.correo){
+            db.Users.findOne({
+                where:{
+                    correo:req.body.correo
+                }
+            })
+            .then(user=>{
                     req.session.user = {
                         id: user.id,
                         nombre: user.nombre,
@@ -39,13 +43,12 @@ module.exports = {
                         image: user.image,
                         categoria : user.categoria
                     }
-                }
-            })
             if(req.body.recordar){
                 res.cookie('userD-Raje',req.session.user, {maxAge:1000*60*10})
             }
             res.redirect('/')
             console.log(req.session.user)
+        })
         }else{
             res.render('login',{
                 title: 'Ingresa a tu cuenta',
@@ -58,12 +61,6 @@ module.exports = {
     },
     agregarUsuario:function(req,res){
         let errores = validationResult(req)
-        let ultimoId = 1
-        dbUsers.forEach(usuario=>{
-            if(usuario.id > ultimoId){
-                ultimoId = usuario.id
-            }    
-        })
         if(!errores.isEmpty()){
             
             res.render('registro',{
@@ -74,22 +71,18 @@ module.exports = {
             })
         }
         else{
-            let nuevoUsuario = {
-                id : ultimoId + 1,
+            db.Users.create({
                 nombre : req.body.nombre.trim(),
                 apellido: req.body.apellido.trim(),
                 correo: req.body.correo.trim(),
                 categoria:'user',
                 password:bcrypt.hashSync(req.body.password,10),
                 image:(req.files[0])?req.files[0].filename:"imgDeffault.jpg",
-            }
-            dbUsers.push(nuevoUsuario)
-
-            let usuarioJson = JSON.stringify(dbUsers)
-
-            fs.writeFileSync(path.join(__dirname, '..', 'data', 'usuarios.json'),usuarioJson)
-            res.redirect('/')
+            })
+            .then(result => { return res.redirect('/')})
+            .catch(e=> res.send(e))
         }
+        
     },
 
     logout: function(req,res){
@@ -101,9 +94,50 @@ module.exports = {
     },
 
     profile: function(req,res){
-        res.render('profile',{
+        db.Users.findByPk(req.session.user.id)
+        .then(user=>{res.render('profile',{
             title: 'Perfil',
-            css: 'home.css'
+            css: 'home.css',
+            user: user
+            })
+        })
+        .catch(e=>{res.send(e)})
+    },
+
+    updateUser:function(req,res){
+        db.Users.update({
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            correo: req.body.correo,
+            image:(req.files[0])?req.files[0].filename:req.session.user.image,
+        },
+
+        {
+            where:{
+                id:req.params.id
+            }
+        })
+        .then(()=>{res.redirect('/')})
+
+        .catch(e=>{res.send(e)})
+    },
+
+    deleteUser: function(req,res){
+        db.Users.destroy({
+            where: {
+                id:req.params.id
+            }
+        })
+        .then(result=>{
+            console.log(result);
+            req.session.destroy()
+            if(req.cookies.userDRaje){
+                res.cookie('userD-Raje', '', {maxAge:-1})
+            }
+            return res.redirect('/')
+        })
+        .catch(error=>{
+            res.send(error)
         })
     }
 }

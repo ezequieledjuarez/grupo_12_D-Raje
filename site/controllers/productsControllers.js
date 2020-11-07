@@ -210,12 +210,10 @@ module.exports = {
 
     db.Products.findAll({
         where:{
-            nombre:{
-                [Op.substring]:buscado
-            },
-            marca:{
-                [Op.substring]:buscado
-            }
+            [Op.or]: [
+            { nombre :{[Op.substring] : buscado }},
+            { marca :{[Op.substring] : buscado }}, 
+            ]
         }
     })
     .then(result =>{
