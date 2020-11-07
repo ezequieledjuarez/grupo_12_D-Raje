@@ -188,41 +188,6 @@ module.exports = {
         if(buscado == ""){
             res.redirect('/')
         }
-
-<<<<<<< HEAD
-        /*let nombre = db.Produts.findAll({
-            order : [
-                ['nombre','ASC']
-            ]
-        });
-        let marca = db.Produts.findAll({
-            order : [
-                ['marca','ASC']
-            ]
-        });
-        Promise.all([generos,actores])
-        .then(([generos,actores]) => {
-            res.render('moviesAdd',{
-                generos : generos,
-                actores : actores
-            })
-        })
- */
-
-    db.Products.findAll({
-        where:{
-            [Op.or]: [
-            { nombre :{[Op.substring] : buscado }},
-            { marca :{[Op.substring] : buscado }}, 
-            ]
-        }
-    })
-    .then(result =>{
-        res.render('productos',{
-            title:'Resultado de la busqueda',
-            css:'home.css',
-            productos: result,
-=======
         db.Products.findAll({
             where:{
                 [Op.or]: [
@@ -233,7 +198,6 @@ module.exports = {
                 { estado : {[Op.substring] : buscado }}
                 ]
             }
->>>>>>> 7db7adce1479452af130f56971865e11641880ac
         })
         .then(result =>{
             res.render('productos',{
