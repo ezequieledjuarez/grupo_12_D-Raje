@@ -189,6 +189,7 @@ module.exports = {
             res.redirect('/')
         }
 
+<<<<<<< HEAD
         /*let nombre = db.Produts.findAll({
             order : [
                 ['nombre','ASC']
@@ -221,8 +222,26 @@ module.exports = {
             title:'Resultado de la busqueda',
             css:'home.css',
             productos: result,
+=======
+        db.Products.findAll({
+            where:{
+                [Op.or]: [
+                { nombre :{[Op.substring] : buscado }},
+                { marca :{[Op.substring] : buscado }},  
+                { categoria : {[Op.substring] : buscado }},
+                { precio:{[Op.lte] : buscado }},
+                { estado : {[Op.substring] : buscado }}
+                ]
+            }
+>>>>>>> 7db7adce1479452af130f56971865e11641880ac
         })
-    })
+        .then(result =>{
+            res.render('productos',{
+                title:'Resultado de la busqueda',
+                css:'home.css',
+                productos: result,
+            })
+        })
     .catch(e => {
         res.send(e)
     })
