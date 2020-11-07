@@ -30,5 +30,9 @@ router.get('/logout', usersControllers.logout)
 router.get('/profile', isUser, usersControllers.profile) 
 
 //Actualizar datos del usuario
-//router.get('/update', isUser, userControllers.update)
+router.put('/update/:id', isUser,subirImg.any(), usersControllers.updateUser)
+
+//Dar de baja al usuario
+router.delete('/delete/:id',isUser,usersControllers.deleteUser)
+
 module.exports = router;
