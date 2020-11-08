@@ -7,7 +7,7 @@
       <div class="row">
     <% productos.forEach(producto => { %>
       <div class="card class=col-12 col-md-4 col-xl-6">
-          <img class="card-img-top" src="/images/productos/<%= producto.image %>.jpg" alt="Card image cap">
+          <img class="card-img-top" src="/images/productos/<%= producto.image %>" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title"><%= producto.nombre%></h5>
                   <p class="card-text"><%= producto.descripcion %> </p>

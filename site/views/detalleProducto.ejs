@@ -5,57 +5,20 @@
 
     <body>
         <%- include('partials/header') %>
-            <div class="row productoElegido">
-                <div class="titulo">
-                    <h1>
-                        <%= title %>
-                    </h1>
+        <div class="container">
+                <div class="row">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="/images/productos/<%= producto.image %>" alt="Card image cap">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><%= producto.nombre %></li>
+                            <li class="list-group-item"><%= producto.categoria %></li>
+                            <li class="list-group-item"><%= producto.precio %></li>
+                        </ul>
+                    </div>
+                    <div class="card texto">
+                        <p class="card-text"><%= producto.descripcion %></p>
+                    </div>    
                 </div>
-                <section class="principal">
-                    <div class="producto">
-                        <div class="row productoDetalle">
-                            <div class="col-8 col-md-6 col-xl-10">
-
-                                <h2 class="productoNombre">
-                                    <%= producto.nombre%>
-                                </h2>
-
-                                <img src="/images/productos/<%= producto.image %>.jpg" alt="" class="imgProducto">
-                                <p class="productoDescripcion">
-                                    <%= producto.descripcion %>
-                                </p>
-                            </div>
-                            <div class="datosProducto ">
-
-                                <span>
-                        <span class="tachado">
-                    $<%= producto.precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ". ") %>
-                        </span>
-                                <strong class="productoDescuento">
-                              <%= producto.descuento %>  % OFF
-                        </strong>
-                                </span>
-                                <h2 class="productoPrecio">
-                                    $
-                                    <%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0)%>
-                                </h2>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="boton">
-                        <button type="submit">Agregar producto</button>
-                    </div>
-
-                    <div class="boton">
-                        <form action="/products/eliminar/ <%= producto.id %>?_method=DELETE" method="POST">
-                        <button type="submit">Eliminar</button>
-                    </form>
-                    </div>
-                
-                </section>
-
             </div>
             <%- include('partials/footer') %>
     </body>
