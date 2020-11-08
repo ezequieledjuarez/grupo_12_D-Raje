@@ -6,12 +6,18 @@ const Op = Sequelize.Op
 module.exports = {
     home: function(req, res) {
         db.Products.findAll()
-        .then(productos =>{
-        res.render('home', {
-            title: 'D-Raje',
-            css: 'home.css',
-            productos: productos
+            .then(productos =>{
+                res.render('home', {
+                    title: 'D-Raje',
+                    css: 'home.css',
+                    productos: productos
+                })
+            })
+        },
+    faq: function(req,res){
+        res.render('faq',{
+            title: 'Preguntas Frecuentes',
+            css: 'home.css'
         })
-    })
     }
 }
