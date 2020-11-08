@@ -6,15 +6,14 @@ const Op = Sequelize.Op
 module.exports = {
 
     detalleProducto: function(req, res) {
-        idProducto = req.params.id
-        let producto = dbProducts.filter(producto => {
-            return producto.id == idProducto
-        })
+        db.Products.findByPk(req.params.id)
+        .then(producto=>{
         res.render('detalleProducto', {
             title: 'Producto detallado',
             css: 'detalleProducto.css',
-            producto: producto[0]
+            producto: producto
         })
+    })
     },
 
     cargaProducto: function(req, res) {
@@ -42,29 +41,6 @@ module.exports = {
         .catch(e =>{
             res.send(e)
         })
-      /*   let ultimoId = 1
-        dbProducts.forEach(producto=>{
-            if(producto.id > ultimoId){
-                ultimoId = producto.id
-            }    
-        })
-        let nuevoProducto = {
-            id : ultimoId + 1,
-            nombre : req.body.nombre.trim(),
-            marca: req.body.marca.trim(),
-            precio:Number(req.body.precio),
-            descuento:Number(req.body.descuento),
-            estado:req.body.estado.trim(),
-            descripcion:req.body.descripcion.trim(),
-            categoria:req.body.categoria.trim(),
-            imagen:(req.files[0])?req.files[0].filename:"default-image.jpg",
-        }
-        dbProducts.push(nuevoProducto)
-
-        let productoJson = JSON.stringify(dbProducts)
-
-        fs.writeFileSync(path.join(__dirname, '..', 'data', 'productos.json'),productoJson)
-        res.redirect('/') */
     },
 
     mostrarProducto: function(req,res){
@@ -106,7 +82,7 @@ module.exports = {
             precio:Number(req.body.precio),
             descuento:Number(req.body.descuento),
             descripcion:req.body.descripcion.trim(),
-            image:(req.files[0])?req.files[0].filename:"default-image.jpg",
+            image:(req.files[0])?req.files[0].filename:req.body.image,
             estado:req.body.estado,
             categoria:req.body.categoria,
             },
@@ -116,29 +92,12 @@ module.exports = {
             }
         })
         .then(product=>{
+            console.log(product)
             res.redirect('/')
         })
         .catch(e=>{
             res.send(e)
         })
-        /* dbProducts.forEach(producto=>{
-            if(producto.id == req.params.id){
-                producto.nombre = req.body.nombre.trim()
-                producto.marca = req.body.marca.trim()
-                producto.precio = Number(req.body.precio),
-                producto.descuento = Number(req.body.descuento),
-                producto.estado = req.body.estado,
-                producto.descripcion = req.body.descripcion.trim(),
-                producto.categoria = req.body.categoria,
-                producto.image = producto.image
-            }
-        });
-
-        let productoJson = JSON.stringify(dbProducts)
-
-        fs.writeFileSync(path.join(__dirname,'../data/productos.json'),productoJson,'utf-8');
-        res.redirect('/products/show/'+ req.params.id) */
-
     },
     eliminarProducto: (req,res) =>{
         
@@ -151,21 +110,6 @@ module.exports = {
              res.redirect('/')
          })
          .catch(e => res.send(e))
-      
-        /* let indiceDelProducto;
-    
-        dbProducts.forEach(producto => {
-            if(producto.id == req.params.id)
-            indiceDelProducto = dbProducts.indexOf(producto)
-        })
-    
-        dbProducts.splice( indiceDelProducto , 1);
-        let productoJson =JSON.stringify(dbProducts);
-    
-        fs.writeFileSync(path.join(__dirname, '..' , 'data' , 'productos.json'), productoJson)
-    
-        res.redirect('/') */
-    
     },
 
     listarTodos: function(req,res){
@@ -183,6 +127,7 @@ module.exports = {
     })
 
     },
+    
     buscar: function(req,res){
         let buscado = req.query.search
         if(buscado == ""){
@@ -209,20 +154,5 @@ module.exports = {
     .catch(e => {
         res.send(e)
     })
-
-
-        /*else{
-            let encontrados = []
-            dbProducts.forEach(producto =>{
-            if(producto.nombre.toLowerCase().includes(buscado.toLowerCase())){
-                encontrados.push(producto)
-            }
-            })
-            res.render('productos',{
-                title: 'Resultados de la búsqueda',
-                css: 'h.css',
-                productos : encontrados
-            })
-        }*/
     }
 }
