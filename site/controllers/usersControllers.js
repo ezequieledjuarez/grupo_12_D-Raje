@@ -12,12 +12,14 @@ module.exports = {
             css: 'carrito.css'
         })
     },
+
     registro: function(req, res) {
         res.render('registro', {
             title: 'Registro',
             css: 'registro.css'
         })
     },
+
     login: function(req,res){
         res.render('login',{
             title:'Ingreso',
@@ -43,12 +45,11 @@ module.exports = {
                         image: user.image,
                         categoria : user.categoria
                     }
-            if(req.body.recordar){
-                res.cookie('userD-Raje',req.session.user, {maxAge:1000*60*10})
-            }
-            res.redirect('/')
-            console.log(req.session.user)
-        })
+                if(req.body.recordar){
+                    res.cookie('userD-Raje',req.session.user, {maxAge:1000*60*10})
+                }
+                res.redirect('/')
+            })
         }else{
             res.render('login',{
                 title: 'Ingresa a tu cuenta',
@@ -59,10 +60,10 @@ module.exports = {
         }
             
     },
+    
     agregarUsuario:function(req,res){
         let errores = validationResult(req)
         if(!errores.isEmpty()){
-            
             res.render('registro',{
                 title: "Registro de usuario",
                 css : 'registro.css',

@@ -8,23 +8,23 @@ module.exports = {
     detalleProducto: function(req, res) {
         db.Products.findByPk(req.params.id)
         .then(producto=>{
-        res.render('detalleProducto', {
-            title: 'Producto detallado',
-            css: 'detalleProducto.css',
-            producto: producto
+            res.render('detalleProducto', {
+                title: 'Producto detallado',
+                css: 'detalleProducto.css',
+                producto: producto
+            })
         })
-    })
     },
 
     cargaProducto: function(req, res) {
-        res.render('cargaDeProducto', {
+        res.render('cargaDeProducto', 
+        {
             title: 'Carga de producto',
             css: 'cargaProductos.css',
         })
     },
 
     agregarProducto:function(req,res){
-
         db.Products.create({
             nombre: req.body.nombre.trim(),
             marca: req.body.marca.trim(),
@@ -62,11 +62,10 @@ module.exports = {
         db.Products.findByPk(req.params.id)
         .then(producto =>{
             res.render('editarProductos',{
-            title: 'Editar Producto',
-            css: 'detalleProducto.css',
-            producto: producto
-            }
-        )
+                title: 'Editar Producto',
+                css: 'detalleProducto.css',
+                producto: producto
+            })
         })
         .catch(e=>{
             res.send(e)
@@ -75,18 +74,17 @@ module.exports = {
     },
     
     editarProducto: function(req,res){
-
             db.Products.update({
-            nombre: req.body.nombre.trim(),
-            marca: req.body.marca.trim(),
-            precio:Number(req.body.precio),
-            descuento:Number(req.body.descuento),
-            descripcion:req.body.descripcion.trim(),
-            image:(req.files[0])?req.files[0].filename:req.body.image,
-            estado:req.body.estado,
-            categoria:req.body.categoria,
+                nombre: req.body.nombre.trim(),
+                marca: req.body.marca.trim(),
+                precio:Number(req.body.precio),
+                descuento:Number(req.body.descuento),
+                descripcion:req.body.descripcion.trim(),
+                image:(req.files[0])?req.files[0].filename:req.body.image,
+                estado:req.body.estado,
+                categoria:req.body.categoria,
             },
-            {
+        {
             where:{
                 id:req.params.id
             }
@@ -99,10 +97,11 @@ module.exports = {
             res.send(e)
         })
     },
+
     eliminarProducto: (req,res) =>{
-        
          db.Products.destroy({
-             where:{
+             where:
+             {
                  id: req.params.id
              }
          })
@@ -113,7 +112,6 @@ module.exports = {
     },
 
     listarTodos: function(req,res){
-
     db.Products.findAll()
     .then(result =>{
         res.render('productos',{
