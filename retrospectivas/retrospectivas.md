@@ -45,3 +45,32 @@
 	*Dejar varias tareas para fechas próximas a la entrega.
 ## Dejar de hacer:
 	* Volver a ser reuniones día por medio.
+#Retrospectiva Estrella Sprint 4
+
+## Empezar a hacer:
+
+## Hacer más:
+	*Actualizar trello
+	*Mejorar la comunicación
+	*Mayor compromiso.
+## Seguir haciendo:
+	
+
+## Hacer menos:
+	*Dejar varias tareas para fechas próximas a la entrega.
+
+## Dejar de hacer:
+
+#Retrospectiva Estrella Sprint 5
+
+## Empezar a hacer:
+	*Reuniones para practicar la exposición.
+	*Debuggear la página.
+## Hacer más:
+## Seguir haciendo:
+	*Actualizar trello
+	*Mejoras en la comunicación.
+## Hacer menos:
+	*Dejar varias tareas para fechas próximas a la entrega.
+## Dejar de hacer:
+

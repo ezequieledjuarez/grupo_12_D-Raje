@@ -110,8 +110,8 @@ Las páginas elegidas, son utilizadas como referencia ya que consideramos que ta
 ### Rutas accesibles por todos.
 * Home: localhost:3000/
 *	Detalle Producto : localhost:3000/products/detalle/:id
-*   Buscar producto: localhost:3000/products/search (No está terminada)
-*   Listado de todos los productos : localhost:3000/products/ (No está terminada)
+*   Buscar producto: localhost:3000/products/search
+*   Listado de todos los productos : localhost:3000/products
 ### Rutas solo accesible por usuarios que iniciaron sesión
 *  Carrito de compras : localhost:3000/users/shop 
 *  Logout: localhost:3000/users/logout
@@ -122,3 +122,21 @@ Las páginas elegidas, son utilizadas como referencia ya que consideramos que ta
 *	Carga de producto : localhost:3000/products/create
 *	Vista de producto con opción de eliminar y editar: localhost:3000/products/show/:id (No es responsive)
 * Editar producto: localhost:3000/products/edit/:id
+
+## Quinto Sprint (9/11)
+# Listado de rutas actualizado
+## GET:
+	* Preguntas Frecuentes:
+		localhost:3000/faq
+		Si el usuario es administrador se mostrarán 3 preguntas más.
+	* Perfil de usuario (Sólo para usuarios loggeados)
+      localhost:3000/users/profile
+## PUT:	
+	* Editar usuario (Sólo para usuarios loggeados)
+		localhost:3000/users/update/:id
+## DELETE:
+	* Editar usuario (Sólo para usuarios loggeados, un usuario puede darse de baja a si mismo)
+		localhost:3000/users/delete/:id
+
+
+	
