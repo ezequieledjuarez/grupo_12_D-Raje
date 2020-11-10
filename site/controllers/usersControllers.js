@@ -16,7 +16,8 @@ module.exports = {
     registro: function(req, res) {
         res.render('registro', {
             title: 'Registro',
-            css: 'registro.css'
+            css: 'registro.css',
+            script:'userRegister.js'
         })
     },
 
