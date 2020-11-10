@@ -19,5 +19,12 @@ module.exports = {
             title: 'Preguntas Frecuentes',
             css: 'home.css'
         })
+    },
+
+    tyc:function(req,res){
+        res.render('terminosYcondiciones',{
+            title: 'Términos y Condiciones',
+            css: 'home.css'
+        })
     }
 }
