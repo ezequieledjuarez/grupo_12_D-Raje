@@ -110,13 +110,19 @@ window.addEventListener('load', ()=>{
     formulario.addEventListener('submit',function(e){
         e.preventDefault()
         let elements = formulario.elements
+
         if(checkAbc.checked == false){
             addIsInvalid(checkAbc)
             errorAbc.innerHTML = 'Debes aceptar nuestras bases y condiciones'
+        }else if(checkAbc.checked == true){
+            this.classList.remove('is-invalid')
+            addIsValid(checkAbc)
+            errorAbc.innerHTML = ''
         }
+        
         let error = false
-        for (let i = 0; i<elements.length; i++){
-            if(elements[i].value ==0){
+        for (let i = 0; i<elements.length-1; i++){
+            if(elements[i].value == 0){
                 addIsInvalid(elements[i])
                 error = true
             }
@@ -126,5 +132,8 @@ window.addEventListener('load', ()=>{
         }else{
             msgError.innerHTML = 'Los campos señalados son obligatorios'
         }
+        console.log(error)
+        console.log(checkAbc.checked)
     })
+
 })

@@ -57,23 +57,23 @@
 								</small>
                         </div>
                         <div>
-                            <label for="exampleFormControlFile1">Seleccionar imagen</label>
-                            <input type="file" class="form-control-file" id="imagen" name = "image">
-                            <small
-						    class="text-danger" id="errorImagen"><%= (typeof errorFormato != 'undefined')?errorFormato: "" %>
-							</small>
-                        </div>
+                                <label for="exampleFormControlFile1">Seleccionar imagen</label>
+                                <input type="file" class="form-control-file" id="imagen" name = "image">
+                                <small
+                                class="text-danger" id="errorImagen"><%= (typeof errorFormato != 'undefined')?errorFormato: "" %>
+                                </small>
+                            </div>
+                    <div class="custom-control custom-checkbox">
+                            <input type="checkbox"
+                            class="custom-control-input <%= (typeof old != 'undefined' && old.byc)?"is-valid":(typeof errores != 'undefined' && errores.byc)?"is-invalid": ""  %>"
+                            id="byc" name="byc">
+                        <label class="custom-control-label" for="byc">Acepto las bases y condiciones</label><br>
+                        <a href="/terminosycondiciones" class="text-info">Ver términos y condiciones</a><br>
 
-                        <input type="checkbox"
-                        class="custom-control-input <%= (typeof old != 'undefined' && old.byc)?"is-valid":(typeof errores != 'undefined' && errores.byc)?"is-invalid": ""  %>"
-                        id="byc" name="byc">
-                    <label class="custom-control-label" for="customCheck1">Acepto las bases y condiciones</label><br>
-                    <a href="/terminosycondiciones" class="text-info">Ver términos y condiciones</a><br>
-
-                    <small
-                        class="text-danger" id="errorAbc"><%= (typeof errores != 'undefined' && errores.bases)?errores.bases.msg: "" %>
-                    </small>
-
+                        <small
+                            class="text-danger" id="errorAbc"><%= (typeof errores != 'undefined' && errores.bases)?errores.bases.msg: "" %>
+                        </small>
+                    </div>
                     
                         <div class="boton-registro">
                             <button>Registrarme</button>
