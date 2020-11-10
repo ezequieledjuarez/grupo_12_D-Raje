@@ -132,11 +132,12 @@ module.exports = {
             }
         })
         .then(result=>{
-            console.log(result);
+            
+            fs.unlinkSync('./public/images/usuarios/'+ req.session.user.image); 
             req.session.destroy()
             if(req.cookies.userDRaje){
                 res.cookie('userD-Raje', '', {maxAge:-1})
-            }
+            } 
             return res.redirect('/')
         })
         .catch(error=>{
