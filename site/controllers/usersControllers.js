@@ -81,7 +81,7 @@ module.exports = {
                 password:bcrypt.hashSync(req.body.password,10),
                 image:(req.files[0])?req.files[0].filename:"imgDeffault.jpg",
             })
-            .then(result => { return res.redirect('/')})
+            .then(result => { return res.redirect('/users/login')})
             .catch(e=> res.send(e))
         }
         
@@ -100,6 +100,7 @@ module.exports = {
         .then(user=>{res.render('profile',{
             title: 'Perfil',
             css: 'home.css',
+            /* script: 'userDelete.js', */
             user: user
             })
         })
