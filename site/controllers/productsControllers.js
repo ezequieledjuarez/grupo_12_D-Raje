@@ -106,6 +106,7 @@ module.exports = {
              }
          })
          .then(product =>{
+             fs.unlinkSync('./public/images/productos/'+ product.image); 
              res.redirect('/')
          })
          .catch(e => res.send(e))
