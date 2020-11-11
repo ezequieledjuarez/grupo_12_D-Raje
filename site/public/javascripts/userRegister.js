@@ -20,7 +20,7 @@ window.addEventListener('load', ()=>{
     let inputImagen = document.getElementById('imagen')
     let checkAbc = document.getElementById('byc')
 
-    inputCorreo.addEventListener('blur',function(){
+    inputCorreo.addEventListener('keyup',function(){
         switch(true){
             case this.value.length == 0:
                 errorCorreo.innerHTML = 'Este campo es obligatorio'
@@ -38,7 +38,7 @@ window.addEventListener('load', ()=>{
         }
     })
 
-    inputPass.addEventListener('blur',function(){
+    inputPass.addEventListener('keyup',function(){
         switch(true){
             case this.value.length == 0:
                 errorPass.innerHTML = 'La contraseña es obligatoria'
@@ -56,7 +56,7 @@ window.addEventListener('load', ()=>{
         }
     })
     
-    inputPass2.addEventListener('blur',function(){
+    inputPass2.addEventListener('keyup',function(){
         switch(true){
             case this.value.length == 0:
             errorPass2.innerHTML = 'Debe reingresar su contraseña'
@@ -73,7 +73,7 @@ window.addEventListener('load', ()=>{
             break
         }
     })
-    inputNombre.addEventListener('blur',function(){
+    inputNombre.addEventListener('keyup',function(){
         switch(true){
             case this.value.length == 0:
             errorNombre.innerHTML = 'El nombre es obligatorio'
@@ -90,7 +90,7 @@ window.addEventListener('load', ()=>{
                 break;
         }
     })
-    inputApellido.addEventListener('blur',function(){
+    inputApellido.addEventListener('keyup',function(){
         switch(true){
             case this.value.length == 0:
                 errorApellido.innerHTML = 'Debe ingresar su apellido'

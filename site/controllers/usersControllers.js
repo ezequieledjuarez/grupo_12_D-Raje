@@ -100,7 +100,7 @@ module.exports = {
         .then(user=>{res.render('profile',{
             title: 'Perfil',
             css: 'home.css',
-            /* script: 'userDelete.js', */
+            script: 'userDelete.js', 
             user: user
             })
         })
@@ -120,7 +120,12 @@ module.exports = {
                 id:req.params.id
             }
         })
-        .then(()=>{res.redirect('/')})
+        .then(()=>{
+            req.session.user.nombre = req.body.nombre
+            req.session.user.apellido = req.body.apellido
+            req.session.user.alias = req.body.nombre +' '+ req.body.apellido
+            res.redirect('/')
+        })
 
         .catch(e=>{res.send(e)})
     },
