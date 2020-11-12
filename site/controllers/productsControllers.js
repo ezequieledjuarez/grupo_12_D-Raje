@@ -21,6 +21,7 @@ module.exports = {
         {
             title: 'Carga de producto',
             css: 'cargaProductos.css',
+            script: 'productRegister.js'
         })
     },
 
@@ -49,6 +50,7 @@ module.exports = {
             res.render('mostrarProducto',{
                 title: 'Editar Producto',
                 css: 'home.css',
+                script: 'productDelete.js',
                 producto: producto
     
             })
@@ -64,7 +66,8 @@ module.exports = {
             res.render('editarProductos',{
                 title: 'Editar Producto',
                 css: 'detalleProducto.css',
-                producto: producto
+                producto: producto,
+                script: 'productDelete.js'
             })
         })
         .catch(e=>{
@@ -118,7 +121,7 @@ module.exports = {
         res.render('productos',{
             title:'Resultado de la busqueda',
             css:'productos.css',
-            productos: result,
+            productos: result
         })
     })
     .catch(e => {
