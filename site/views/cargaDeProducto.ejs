@@ -32,7 +32,7 @@
                     </div>  
                     
                     <div>
-                        <span class="text-danger" id ="errorNombre"></span>
+                        <span class="text-danger" id ="errorNombre" <%= (typeof errores != 'undefined' && errores.nombre)?errores.nombre.msg: "" %>>></span>
                         <p>
                             <input class="datos-producto" type="text" name="nombre" id="nombre"
                                 placeholder="Ingrese el nombre del producto">
@@ -40,14 +40,14 @@
                     </div>
                     
                     <div>
-                        <span class="text-danger" id ="errorPrecio"> </span>
+                        <span class="text-danger" id ="errorPrecio" <%= (typeof errores != 'undefined' && errores.precio)?errores.precio.msg: "" %>>> </span>
                         <p>
                             <input class="datos-producto" type="number" name="precio" id="precio"
                                 placeholder="Ingrese el precio del producto">
                         </p>
                     </div>
                     <div>
-                        <span class="text-danger" id ="errorDescuento"></span>
+                        <span class="text-danger" id ="errorDescuento" <%= (typeof errores != 'undefined' && errores.descuento)?errores.descuento.msg: "" %>>></span>
                         <p>
                             <input class="datos-producto" type="number" name="descuento" id="descuento"
                                 placeholder="Ingrese el descuento del producto">

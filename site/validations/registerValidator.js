@@ -32,13 +32,6 @@ module.exports = [
                 return Promise.reject('El correo ingresado ya fue registrado')
             }
         })
-        
-        /* for(let i = 0; i<dbUsers.length; i++){
-            if(dbUsers[i].correo == value){
-                return false
-            }
-        }
-            return true */
     })
     .withMessage('El mail ingresado ya fue registrado.'),
 
