@@ -7,11 +7,18 @@ window.addEventListener('load',()=>{
       if(!conf){
           e.preventDefault()
           Swal.fire({
-              background:'#0f4c75',
+              icon:'info',
               title: 'Gracias por quedarte',
               text: 'Seguí disfrutando de nuestras ofertas'
           })
       }
+      else{
+            Swal.fire({
+            icon: 'success',
+            title: 'Se ha dado de baja tu cuenta',
+            text: 'Te vamos a extrañar :('
+            })
+        }
     })
 
     })
