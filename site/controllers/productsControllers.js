@@ -26,22 +26,32 @@ module.exports = {
     },
 
     agregarProducto:function(req,res){
-        db.Products.create({
-            nombre: req.body.nombre.trim(),
-            marca: req.body.marca.trim(),
-            precio:Number(req.body.precio),
-            descuento:Number(req.body.descuento),
-            descripcion:req.body.descripcion.trim(),
-            image:(req.files[0])?req.files[0].filename:"default-image.jpg",
-            estado:req.body.estado.trim(),
-            categoria:req.body.categoria.trim(),
-        })
-        .then(product =>{
-            res.redirect('/')
-        })
-        .catch(e =>{
-            res.send(e)
-        })
+        let errores = validationResult(req)
+        if(!errores.isEmpty){
+            res.render('cargaDeProducto',{
+                title: 'Carga de producto',
+                css: 'cargaProductos.css',
+                errores: errores.mapped(),
+                old: req.body
+            })
+        }else{
+            db.Products.create({
+                nombre: req.body.nombre.trim(),
+                marca: req.body.marca.trim(),
+                precio:Number(req.body.precio),
+                descuento:Number(req.body.descuento),
+                descripcion:req.body.descripcion.trim(),
+                image:(req.files[0])?req.files[0].filename:"default-image.jpg",
+                estado:req.body.estado.trim(),
+                categoria:req.body.categoria.trim(),
+            })
+            .then(product =>{
+                res.redirect('/')
+            })
+            .catch(e =>{
+                res.send(e)
+            })
+         }
     },
 
     mostrarProducto: function(req,res){
