@@ -25,7 +25,7 @@
         </div>
         <div class = "botones">
           <form action="/products/eliminar/ <%= producto.id %>?_method=DELETE" method="POST">
-            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <button type="submit" class="btn btn-danger"id="deleteProduct">Eliminar</button>
             <a class="btn btn-warning" href="/products/edit/<%=producto.id %>" role="button">Editar</a>
           </form>
 

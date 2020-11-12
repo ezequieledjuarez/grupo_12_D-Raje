@@ -40,16 +40,16 @@
                         <div>
                             <label for="nombre">Ingrese su nombre:</label>
                             <input type="text" class="form-control" name="nombre" id="nombre"
-                            class="form-control <%= (typeof old != 'undefined' && old.nombre)?"is-valid":(typeof errors != 'undefined' && errors.nombre)?"is-invalid": ""  %>"
+                            class="form-control <%= (typeof old != 'undefined' && old.nombre)?"is-valid":(typeof errores != 'undefined' && errores.nombre)?"is-invalid": ""  %>"
                             value="<%= (typeof old != 'undefined' && old.nombre)?old.nombre:'' %>"/>
 							<small
-								class="text-danger" id="errorNombre"><%= (typeof errors != 'undefined' && errors.nombre)?errors.nombre.msg: "" %>
+								class="text-danger" id="errorNombre"><%= (typeof errores != 'undefined' && errores.nombre)?errores.nombre.msg: "" %>
 							</small>
                         </div>
                         <div>
                             <label for="apellido">Ingrese su apellido:</label>
                             <input type="text" 
-							    class="form-control id="errorApellido <%= (typeof old != 'undefined' && old.apellido)?"is-valid":(typeof errores != 'undefined' && errores.apellido)?"is-invalid": ""  %>"
+							    class="form-control id=" <%= (typeof old != 'undefined' && old.apellido)?"is-valid":(typeof errores != 'undefined' && errores.apellido)?"is-invalid": ""  %>"
 								id="apellido" value="<%= (typeof old != 'undefined' && old.apellido)?old.apellido:'' %>"
 								name="apellido" />
 								<small
@@ -57,10 +57,11 @@
 								</small>
                         </div>
                         <div>
-                                <label for="exampleFormControlFile1">Seleccionar imagen</label>
-                                <input type="file" class="form-control-file" id="imagen" name = "image">
+                                
+                                <input type="file" accept="image/png, .jpeg, .jpg, image/gif" class="form-control-file" id="imagen" name = "image">
+                                <label for="imagen">Seleccionar imagen</label>
                                 <small
-                                class="text-danger" id="errorImagen"><%= (typeof errorFormato != 'undefined')?errorFormato: "" %>
+                                class="text-danger" id="errorImagen"><%= (typeof image != 'undefined')?image: "" %>
                                 </small>
                             </div>
                     <div class="custom-control custom-checkbox">
@@ -71,7 +72,7 @@
                         <a href="/terminosycondiciones" class="text-info">Ver términos y condiciones</a><br>
 
                         <small
-                            class="text-danger" id="errorAbc"><%= (typeof errores != 'undefined' && errores.bases)?errores.bases.msg: "" %>
+                            class="text-danger" id="errorAbc"><%= (typeof errores != 'undefined' && errores.bases)?errores.byc.msg: "" %>
                         </small>
                     </div>
                     

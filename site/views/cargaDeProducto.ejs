@@ -7,50 +7,77 @@
         <div class="conteiner">
             <div class="body-de-form">
                 <h4>Ingrese los datos del Producto</h4>
-                <form action="/products/create" method="post" enctype="multipart/form-data">
+                <form action="/products/create" method="post" enctype="multipart/form-data" id="formProducto">
                     <p>
-                        <input class="datos-producto" type="file" name="image" id="imagen-del-producto">
+                        <input class="datos-producto" type="file" name="image" id="imagenProducto">
                     </p>
+                    <span class="text-danger" id ="errorImagen">
 
-                    <p>
-                        <input class="datos-producto" type="text" name="marca" id="marca"
-                        placeholder="Ingrese la marca del producto">
-                    </p>
-                    <p>
-                        <textarea name="descripcion" id="descripcion-del-producto" cols="20" rows="5"
-                            placeholder="Descripcion del producto"></textarea>
-                    </p>
-                    <p>
-                        <input class="datos-producto" type="text" name="nombre" id="nombre-del-producto"
-                            placeholder="Ingrese el nombre del producto">
-                    </p>
-                  
-                    <p>
-                        <input class="datos-producto" type="text" name="precio" id="precio-de-producto"
-                            placeholder="Ingrese el precio del producto">
-                    </p>
-                    <p>
-                        <input class="datos-producto" type="text" name="descuento" id="descuento-de-producto"
-                            placeholder="Ingrese el descuento del producto">
-                    </p>
-                    <p> 
-                            Estado del producto
-                            <select name="estado" id="">
-                                <option value = "sin-estado"selected>Sin estado</option>
-                                <option value = "pmv">PMV</option>
-                                <option value = "oferta">Oferta</option>
-                            </select>
-                    </p>
-                    <p>
-                            Categoría del producto
-                            <select name="categoria" id="">
-                                <option value ="escolar" selected>Escolar</option>
-                                <option value = "oficina">Oficina</option>
-                                <option value = "artistica">Artística</option>
-                            </select>
-                    </p>
-                   
-                    <input class="botones" type="submit" value="Subir producto">
+                    </span>
+                    <div>
+                        <span class="text-danger" id ="errorMarca" <%= (typeof errores != 'undefined' && errores.marca)?errores.marca.msg: "" %>></span>
+                        <p>
+                            <input class="datos-producto" type="text" name="marca" id="marca"
+                            placeholder="Ingrese la marca del producto">
+                        </p>
+                    </div>
+                        
+                    
+                    <div>
+                        <span class="text-danger" id ="errorDescripcion" <%= (typeof errores != 'undefined' && errores.descripcion)?errores.descripcion.msg: "" %>></span>
+                        <p>
+                            <textarea name="descripcion" id="descripcion" cols="20" rows="5"
+                                placeholder="Descripcion del producto"></textarea>
+                        </p>
+                    </div>  
+                    
+                    <div>
+                        <span class="text-danger" id ="errorNombre"></span>
+                        <p>
+                            <input class="datos-producto" type="text" name="nombre" id="nombre"
+                                placeholder="Ingrese el nombre del producto">
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <span class="text-danger" id ="errorPrecio"> </span>
+                        <p>
+                            <input class="datos-producto" type="number" name="precio" id="precio"
+                                placeholder="Ingrese el precio del producto">
+                        </p>
+                    </div>
+                    <div>
+                        <span class="text-danger" id ="errorDescuento"></span>
+                        <p>
+                            <input class="datos-producto" type="number" name="descuento" id="descuento"
+                                placeholder="Ingrese el descuento del producto">
+                        </p>
+                    </div>
+                    <div>
+                        <p> 
+                                Estado del producto
+                                <select name="estado" id="">
+                                    <option value = "sin-estado"selected>Sin estado</option>
+                                    <option value = "pmv">PMV</option>
+                                    <option value = "oferta">Oferta</option>
+                                </select>
+                        </p>
+                    
+                    </div>
+                    <div>
+                        <p>
+                                Categoría del producto
+                                <select name="categoria" id="">
+                                    <option value ="escolar" selected>Escolar</option>
+                                    <option value = "oficina">Oficina</option>
+                                    <option value = "artistica">Artística</option>
+                                </select>
+                        </p>
+                    </div>
+                    <div>
+                        <input class="botones" type="submit" value="Subir producto">
+                        <small id="msgError" class="text-danger"></small>
+                    </div>
                     <input class="botones" type="reset" value="Borrar todo">
                 </form>
             </div>
