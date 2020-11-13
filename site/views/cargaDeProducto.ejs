@@ -8,54 +8,55 @@
             <div class="body-de-form">
                 <h4>Ingrese los datos del Producto</h4>
                 <form action="/products/create" method="post" enctype="multipart/form-data" id="formProducto">
-                    <p>
-                        <input class="datos-producto" type="file" name="image" id="imagenProducto">
-                    </p>
-                    <span class="text-danger" id ="errorImagen">
-
-                    </span>
                     <div>
-                        <span class="text-danger" id ="errorMarca" <%= (typeof errores != 'undefined' && errores.marca)?errores.marca.msg: "" %>></span>
+                        <label for="marca"></label>
+                        <span class="text-danger" id ="errorMarca"> <%= (typeof errors != 'undefined' && errors.marca)?errors.marca.msg: "" %></span>
                         <p>
-                            <input class="datos-producto" type="text" name="marca" id="marca"
-                            class="form-control <%= (typeof old != 'undefined' && old.marca && !errores.marca)?"is-valid":(typeof errores != 'undefined' && errores.marca)?"is-invalid": ""  %>"
-                            placeholder="Ingrese la marca del producto">
+                            <input class="datos-producto form-control <%= (typeof old != 'undefined' && old.marca)?"is-valid":(typeof errors != 'undefined' && errors.marca)?"is-invalid": ""  %>"
+                            type="text" name="marca" id="marca"  placeholder="Ingrese la marca del producto"
+                            value = "<%= (typeof old != 'undefined' && old.marca)?old.precio:''%>">
                         </p>
                     </div>
                         
                     
                     <div>
-                        <span class="text-danger" id ="errorDescripcion" <%= (typeof errores != 'undefined' && errores.descripcion)?errores.descripcion.msg: "" %>></span>
+                        <label for="descripcion"></label>
+                        <span class="text-danger" id ="errorDescripcion"> <%= (typeof errors != 'undefined' && errors.descripcion)?errors.descripcion.msg: "" %></span>
                         <p>
                             <textarea name="descripcion" id="descripcion" cols="20" rows="5"
-                            class="form-control <%= (typeof old != 'undefined' && old.descripcion && !errores.descripcion)?"is-valid":(typeof errores != 'undefined' && errores.descripcion)?"is-invalid": ""  %>"
-                            placeholder="Descripcion del producto"></textarea>
+                            class="form-control <%= (typeof old != 'undefined' && old.descripcion)?"is-valid":(typeof errors != 'undefined' && errors.descripcion)?"is-invalid": ""  %>"
+                            <%= (typeof old != 'undefined' && old.descripcion)?old.descripcion:''%>" placeholder="Descripcion del producto">
+                            </textarea>
                         </p>
                     </div>  
                     
                     <div>
-                        <span class="text-danger" id ="errorNombre" <%= (typeof errores != 'undefined' && errores.nombre)?errores.nombre.msg: "" %>>></span>
+                        <label for="nombre"></label>
+                        <span class="text-danger" id ="errorNombre"><%= (typeof errors != 'undefined' && errors.nombre)?errors.nombre.msg: "" %></span>
                         <p>
-                            <input class="datos-producto" type="text" name="nombre" id="nombre"
-                            class="form-control <%= (typeof old != 'undefined' && old.nombre && !errores.nombre)?"is-valid":(typeof errores != 'undefined' && errores.nombre)?"is-invalid": ""  %>"
-                            placeholder="Ingrese el nombre del producto">
+                            <input class="datos-producto form-control <%= (typeof old != 'undefined' && old.nombre)?"is-valid":(typeof errors != 'undefined' && errors.nombre)?"is-invalid": ""  %>"
+                             type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre del producto"
+                             value = "<%= (typeof old != 'undefined' && old.nombre)?old.nombre:''%>">
+                            
                         </p>
                     </div>
                     
                     <div>
-                        <span class="text-danger" id ="errorPrecio" <%= (typeof errores != 'undefined' && errores.precio)?errores.precio.msg: "" %>>> </span>
                         <p>
-                            <input class="datos-producto" type="number" name="precio" id="precio"
-                            class="form-control <%= (typeof old != 'undefined' && old.precio && !errores.precio)?"is-valid":(typeof errores != 'undefined' && errores.precio)?"is-invalid": ""  %>"
-                            placeholder="Ingrese el precio del producto">
+                            <span class="text-danger" id ="errorPrecio"> <%= (typeof errors != 'undefined' && errors.precio)?errors.precio.msg: "" %> </span>
+                            <label for="precio"></label>
+                            <input class="datos-producto form-control <%= (typeof old != 'undefined' && old.precio && !errors.precio)?"is-valid":(typeof errors != 'undefined' && errors.precio)?"is-invalid": ""  %>" 
+                            value = "<%= (typeof old != 'undefined' && old.precio)?old.precio:''%>"
+                            type="number" name="precio" id="precio" placeholder="Ingrese el precio del producto">
                         </p>
                     </div>
                     <div>
-                        <span class="text-danger" id ="errorDescuento" <%= (typeof errores != 'undefined' && errores.descuento)?errores.descuento.msg: "" %>>></span>
+                        <label for="descuento"></label>
+                        <span class="text-danger" id ="errorDescuento"> <%= (typeof errors != 'undefined' && errors.descuento)?errors.descuento.msg: "" %></span>
                         <p>
-                            <input class="datos-producto" type="number" name="descuento" id="descuento"
-                            class="form-control <%= (typeof old != 'undefined' && old.descuento && !errores.descuento)?"is-valid":(typeof errores != 'undefined' && errores.descuento)?"is-invalid": ""  %>"
-                            placeholder="Ingrese el descuento del producto">
+                            <input class="datos-producto form-control <%= (typeof old != 'undefined' && old.descuento)?"is-valid":(typeof errors != 'undefined' && errors.descuento)?"is-invalid": ""  %>" 
+                            type="number" name="descuento" id="descuento" placeholder="Ingrese el descuento del producto"
+                            value = "<%= (typeof old != 'undefined' && old.descuento)?old.precio:''%>" >
                         </p>
                     </div>
                     <div>
@@ -79,6 +80,15 @@
                                 </select>
                         </p>
                     </div>
+                    <div>
+                        <p>
+                            <input class="datos-producto" type="file" name="image" id="imagenProducto">
+                        </p>
+                        <span class="text-danger" id ="errorImagen">
+
+                        </span>
+                    </div>
+
                     <div>
                         <input class="botones" type="submit" value="Subir producto">
                         <small id="msgError" class="text-danger"></small>

@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const db = require(path.join(__dirname, '..', 'db', 'models'))
+const {validationResult} = require('express-validator');
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
 module.exports = {
@@ -20,18 +21,18 @@ module.exports = {
         res.render('cargaDeProducto', 
         {
             title: 'Carga de producto',
-            css: 'cargaProductos.css',
-            script: 'productRegister.js'
+            //script: 'productRegister.js',
+            css: 'cargaProductos.css'
         })
     },
 
     agregarProducto:function(req,res){
-        let errores = validationResult(req)
-        if(!errores.isEmpty){
+        let errors = validationResult(req)
+        if(errors.isEmpty){
             res.render('cargaDeProducto',{
                 title: 'Carga de producto',
                 css: 'cargaProductos.css',
-                errores: errores.mapped(),
+                errors: errors.mapped(),
                 old: req.body
             })
         }else{
@@ -50,8 +51,9 @@ module.exports = {
             })
             .catch(e =>{
                 res.send(e)
+            
             })
-         }
+          }
     },
 
     mostrarProducto: function(req,res){
