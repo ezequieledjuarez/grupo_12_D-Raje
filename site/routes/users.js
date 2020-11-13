@@ -7,6 +7,7 @@ const loginValidator = require('../validations/loginValidator')
 const isLogged = require('../middlewares/loggedMiddleware')
 const isVisitor = require('../middlewares/visitorMiddleware')
 const isUser = require('../middlewares/userMiddleware')
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
     res.send('respond with a resource');
@@ -20,7 +21,7 @@ router.get('/login',isVisitor, usersControllers.login)
 router.post('/login',loginValidator, usersControllers.loginSend)
 /*Registro*/
 router.get('/register', isVisitor, usersControllers.registro)
-router.post('/register', subirImg.any(),registerValidator,usersControllers.agregarUsuario)
+router.post('/register', registerValidator,subirImg.any(),registerValidator,usersControllers.agregarUsuario)
 
 /*Logout*/
 
