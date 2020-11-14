@@ -21,21 +21,14 @@ module.exports = {
         res.render('cargaDeProducto', 
         {
             title: 'Carga de producto',
-            //script: 'productRegister.js',
+            script: 'productRegister.js',
             css: 'cargaProductos.css'
         })
     },
 
     agregarProducto:function(req,res){
         let errors = validationResult(req)
-        if(errors.isEmpty){
-            res.render('cargaDeProducto',{
-                title: 'Carga de producto',
-                css: 'cargaProductos.css',
-                errors: errors.mapped(),
-                old: req.body
-            })
-        }else{
+        if(errors.isEmpty()){
             db.Products.create({
                 nombre: req.body.nombre.trim(),
                 marca: req.body.marca.trim(),
@@ -52,6 +45,13 @@ module.exports = {
             .catch(e =>{
                 res.send(e)
             
+            })
+        }else{
+                res.render('cargaDeProducto',{
+                title: 'Carga de producto',
+                css: 'cargaProductos.css',
+                errors: errors.mapped(),
+                old: req.body
             })
           }
     },

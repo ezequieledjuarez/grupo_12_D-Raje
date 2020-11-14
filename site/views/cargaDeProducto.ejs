@@ -12,9 +12,9 @@
                         <label for="marca"></label>
                         <span class="text-danger" id ="errorMarca"> <%= (typeof errors != 'undefined' && errors.marca)?errors.marca.msg: "" %></span>
                         <p>
-                            <input class="datos-producto form-control <%= (typeof old != 'undefined' && old.marca)?"is-valid":(typeof errors != 'undefined' && errors.marca)?"is-invalid": ""  %>"
+                            <input class="datos-producto form-control <%= (typeof old != 'undefined' && old.marca && !errors.marca)?"is-valid":(typeof errors != 'undefined' && errors.marca)?"is-invalid": ""  %>"
                             type="text" name="marca" id="marca"  placeholder="Ingrese la marca del producto"
-                            value = "<%= (typeof old != 'undefined' && old.marca)?old.precio:''%>">
+                            value = "<%= (typeof old != 'undefined' && old.marca)?old.marca:''%>">
                         </p>
                     </div>
                         
@@ -23,10 +23,8 @@
                         <label for="descripcion"></label>
                         <span class="text-danger" id ="errorDescripcion"> <%= (typeof errors != 'undefined' && errors.descripcion)?errors.descripcion.msg: "" %></span>
                         <p>
-                            <textarea name="descripcion" id="descripcion" cols="20" rows="5"
-                            class="form-control <%= (typeof old != 'undefined' && old.descripcion)?"is-valid":(typeof errors != 'undefined' && errors.descripcion)?"is-invalid": ""  %>"
-                            <%= (typeof old != 'undefined' && old.descripcion)?old.descripcion:''%>" placeholder="Descripcion del producto">
-                            </textarea>
+                            <textarea name="descripcion" id="descripcion" placeholeder = "Descripcion del producto" cols="20" rows="5"class="
+                            datos-producto form-control <%= (typeof old != 'undefined' && old.descripcion && !errors.descripcion)?"is-valid":(typeof errors != 'undefined' && errors.descripcion)?"is-invalid": ""  %>"><%= (typeof old != 'undefined' && old.descripcion)?old.descripcion:'' %></textarea>
                         </p>
                     </div>  
                     
@@ -34,7 +32,7 @@
                         <label for="nombre"></label>
                         <span class="text-danger" id ="errorNombre"><%= (typeof errors != 'undefined' && errors.nombre)?errors.nombre.msg: "" %></span>
                         <p>
-                            <input class="datos-producto form-control <%= (typeof old != 'undefined' && old.nombre)?"is-valid":(typeof errors != 'undefined' && errors.nombre)?"is-invalid": ""  %>"
+                            <input class="datos-producto form-control <%= (typeof old != 'undefined' && old.nombre && !errors.nombre)?"is-valid":(typeof errors != 'undefined' && errors.nombre)?"is-invalid": ""  %>"
                              type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre del producto"
                              value = "<%= (typeof old != 'undefined' && old.nombre)?old.nombre:''%>">
                             
@@ -54,9 +52,9 @@
                         <label for="descuento"></label>
                         <span class="text-danger" id ="errorDescuento"> <%= (typeof errors != 'undefined' && errors.descuento)?errors.descuento.msg: "" %></span>
                         <p>
-                            <input class="datos-producto form-control <%= (typeof old != 'undefined' && old.descuento)?"is-valid":(typeof errors != 'undefined' && errors.descuento)?"is-invalid": ""  %>" 
+                            <input class="datos-producto form-control <%= (typeof old != 'undefined' && old.descuento && !errors.descuento)?"is-valid":(typeof errors != 'undefined' && errors.descuento)?"is-invalid": ""  %>" 
                             type="number" name="descuento" id="descuento" placeholder="Ingrese el descuento del producto"
-                            value = "<%= (typeof old != 'undefined' && old.descuento)?old.precio:''%>" >
+                            value ="<%= (typeof old != 'undefined' && old.descuento)?old.precio:''%>">
                         </p>
                     </div>
                     <div>
@@ -81,12 +79,14 @@
                         </p>
                     </div>
                     <div>
-                        <p>
-                            <input class="datos-producto" type="file" name="image" id="imagenProducto">
-                        </p>
-                        <span class="text-danger" id ="errorImagen">
-
+                        <span class="text-danger" id ="errorImagen"> 
+                            <%= (typeof errors != 'undefined' && errors.imagen)?errors.imagen.msg: "" %> 
                         </span>
+
+                        <p>
+                            <input class="datos-producto" type="file" name="imagen" id="imagenProducto">
+                            <img id = "preview" alt="" class="w-75">
+                        </p>
                     </div>
 
                     <div>

@@ -7,7 +7,7 @@ function addIsValid(element){
 }
 let regExCorreo =  /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
 let regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
-let regExExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+
 
                     
 window.addEventListener('load', ()=>{
@@ -108,23 +108,23 @@ window.addEventListener('load', ()=>{
             break
         }
     })
-    inputImagen.addEventLister('change', function(e){
+    inputImagen.addEventListener('change', function(e){
         switch(true){
         case !regExExtensions.exec(this.value):
             errorImagen.innerHTML = 'La extensión de la imagen sólo puedo ser jpg/jpeg/png/gif'
             addIsInvalid(inputImagen)
             this.value = ''
-            vistaPrevia.src=''
+            preview.src=''
         break
 
         default:
             this.classList.remove('is-invalid')
-            addIsValid(inputImage)
+            addIsValid(inputImagen)
             errorImagen.innerHTML=''
             let reader = new FileReader()
             reader.readAsDataURL(e.target.files[0])
             reader.onload = function(){
-                vistaPrevia.src = render.result
+                preview.src = reader.result
             }
         }
     })

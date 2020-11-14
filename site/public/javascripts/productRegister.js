@@ -8,7 +8,7 @@ function addIsValid(element){
 
 window.addEventListener('load', function(){
     let formulario = document.getElementById('formProducto')
-    let inputImage = document.getElementById('imagenProducto')
+    let inputImagen = document.getElementById('imagenProducto')
     let inputMarca = document.getElementById('marca')
     let inputDescripcion = document.getElementById('descripcion')
     let inputNombre = document.getElementById('nombre')
@@ -17,7 +17,8 @@ window.addEventListener('load', function(){
     
     console.log(formulario)
     let regExSignos = /[+-]/
-
+    let regExExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+    
     inputMarca.addEventListener('keyup', function(){
         switch(true){
             case this.value.trim().length == 0:
@@ -106,6 +107,27 @@ window.addEventListener('load', function(){
             break
 
             
+        }
+    })
+
+    inputImagen.addEventListener('change', function(e){
+        switch(true){
+        case !regExExtensions.exec(this.value):
+            errorImagen.innerHTML = 'La extensión de la imagen sólo puedo ser jpg/jpeg/png/gif'
+            addIsInvalid(inputImagen)
+            this.value = ''
+            preview.src=''
+        break
+
+        default:
+            this.classList.remove('is-invalid')
+            addIsValid(inputImagen)
+            errorImagen.innerHTML=''
+            let reader = new FileReader()
+            reader.readAsDataURL(e.target.files[0])
+            reader.onload = function(){
+                preview.src = reader.result
+            }
         }
     })
 

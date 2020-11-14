@@ -10,7 +10,7 @@ router.get('/',productsController.listarTodos)
 router.get('/detalle/:id', productsController.detalleProducto)
 
 /*vista carga de producto*/ 
-router.get('/create', productsController.cargaProducto)
+router.get('/create', isAdmin,productsController.cargaProducto)
 
 router.get('/search', productsController.buscar)
 /*Envio de datos de carga*/

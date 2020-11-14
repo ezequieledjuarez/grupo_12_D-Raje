@@ -31,5 +31,15 @@ module.exports = [
     .isInt({
         gt: -1
     })
-    .withMessage('El descuento debe ser 0 en caso de que no haya o superior a 0 en caso de que haya')
-]
+    .withMessage('El descuento debe ser 0 en caso de que no haya o superior a 0 en caso de que haya'),
+
+    body('imagen')
+    .custom((value, {req})=>{
+        if(!req.files[0]){
+            return false
+        }else{
+            return true
+        }
+    })
+    .withMessage('Debes subir una imagen')
+]   

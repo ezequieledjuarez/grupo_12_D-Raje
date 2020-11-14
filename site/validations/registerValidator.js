@@ -50,7 +50,17 @@ module.exports = [
         return true
     })
     .withMessage('Las contraseñas no coinciden.'),
-
+    
+    body('imagen')
+    .custom((value, {req})=>{
+        if(!req.files[0]){
+            return false
+        }else{
+            return true
+        }
+    })
+    .withMessage('Debes subir una imagen'),
+    
     check('byc')
     .isString("on")
     .withMessage('Debes aceptar las bases y condiciones.')

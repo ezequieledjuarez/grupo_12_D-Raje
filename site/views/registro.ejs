@@ -49,7 +49,7 @@
                         <div>
                             <label for="apellido">Ingrese su apellido:</label>
                             <input type="text" 
-							    class="form-control id=" <%= (typeof old != 'undefined' && old.apellido)?"is-valid":(typeof errores != 'undefined' && errores.apellido)?"is-invalid": ""  %>"
+							    class="form-control " <%= (typeof old != 'undefined' && old.apellido)?"is-valid":(typeof errores != 'undefined' && errores.apellido)?"is-invalid": ""  %>"
 								id="apellido" value="<%= (typeof old != 'undefined' && old.apellido)?old.apellido:'' %>"
 								name="apellido" />
 								<small
@@ -57,11 +57,11 @@
 								</small>
                         </div>
                         <div>
-                                
-                                <input type="file" accept="image/png, .jpeg, .jpg, image/gif" class="form-control-file" id="imagen" name = "image">
+                                <input type="file" accept="image/png, .jpeg, .jpg, image/gif" class="form-control" id="imagen" name = "imagen">
                                 <label for="imagen">Seleccionar imagen</label>
+                                <img id="preview" src= "" alt="" class="w-75"/>
                                 <small
-                                class="text-danger" id="errorImagen"><%= (typeof image != 'undefined')?image: "" %>
+                                class="text-danger" id="errorImagen"><%= (typeof errors != 'undefined' && errores.imagen)?errores.imagen.msg: "" %>
                                 </small>
                             </div>
                     <div class="custom-control custom-checkbox">
