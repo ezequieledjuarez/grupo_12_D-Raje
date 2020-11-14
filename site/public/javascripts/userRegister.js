@@ -7,9 +7,9 @@ function addIsValid(element){
 }
 let regExCorreo =  /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
 let regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
+let regExExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
 
-
-                    
+          
 window.addEventListener('load', ()=>{
     let formulario = document.getElementById('registerForm')
 

@@ -1,5 +1,5 @@
 const {check, validationResult, body} = require('express-validator')
-
+const path = require('path')
 const db = require('../db/models')
 
 module.exports = [
@@ -41,5 +41,15 @@ module.exports = [
             return true
         }
     })
-    .withMessage('Debes subir una imagen')
+    .withMessage('Debes subir una imagen'),
+
+    body('imagen')
+    .custom((value, {req})=>{
+   
+        value = req.files[0].filename
+        let extension = path.extname(value)
+        
+        return extension == '.jpg' || extension == '.jpeg' || extension == '.png' || extension == '.gif'
+    })
+    .withMessage('Debes subir una imagen con formato jpg, jpeg, png o gif')
 ]   

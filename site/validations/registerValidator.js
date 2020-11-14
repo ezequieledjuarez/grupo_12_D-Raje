@@ -1,7 +1,7 @@
 const {check, validationResult, body} = require('express-validator')
 
 const db =  require('../db/models')
-
+const extensiones = ['.jpg', '.jpeg', '.png', '.gif']
 module.exports = [
     check('nombre')
     .isLength({
@@ -60,6 +60,16 @@ module.exports = [
         }
     })
     .withMessage('Debes subir una imagen'),
+
+    body('imagen')
+    .custom((value, {req})=>{
+   
+        value = req.files[0].filename
+        let extension = path.extname(value)
+        
+        return extension == '.jpg' || extension == '.jpeg' || extension == '.png' || extension == '.gif'
+    })
+    .withMessage('Debes subir una imagen con formato jpg, jpeg, png o gif'),
     
     check('byc')
     .isString("on")
