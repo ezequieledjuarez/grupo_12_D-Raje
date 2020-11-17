@@ -9,6 +9,7 @@ const resLocalsMiddleware = require('./middlewares/resLocalsMiddleware')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products')
+const apiRouter = require('./routes/apis')
 var app = express();
 
 // view engine setup
@@ -27,6 +28,7 @@ app.use(resLocalsMiddleware)
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter)
+app.use('/api', apiRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

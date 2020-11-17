@@ -39,6 +39,24 @@ window.addEventListener('load', ()=>{
         }
     })
 
+    inputCorreo.addEventListener('change', function(){
+        fetch(`${window.location.origin}/api/mails`,{method:'POST'})
+        .then(response => response.json())
+        .then(users=>{
+            users.forEach(user =>{
+                if(user.correo == this.value){
+                    errorCorreo.innerHTML = 'Este correo ya fue registrado'
+                    addIsInvalid(inputCorreo)
+                }
+                else{
+                inputCorreo.classList.remove('is-invalid')
+                addIsValid(inputCorreo)
+                errorCorreo.innerHTML=''
+                }
+            })
+        })
+    })
+
     inputPass.addEventListener('keyup',function(){
         switch(true){
             case this.value.length == 0:
