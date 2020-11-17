@@ -9,7 +9,7 @@
                 <h1><span>Registrarme</span></h1>
                 <div class="agrupacion">
                     <!--todo el formulario esta dentro de este div-->
-                    <form action="#" method="POST" enctype="multipart/form-data" id="registerForm">
+                    <form action="#" method="POST" enctype="multipart/form-data" id="registerForm" autocomplete= 'off'>
                         <div>
                             <label for="correo">Ingrese su correo:</label>
                             <input type="email" name="correo" id="correo" 
@@ -61,7 +61,7 @@
                                  id="imagen" name = "imagen">
                                 <label for="imagen">Seleccionar imagen</label>
                                 <img id="preview" src= "" alt="" class="w-75"/>
-                                <small>
+                                <small class="text-danger" id="errorImagen">
                                 <%= (typeof errores != 'undefined' && errores.imagen)?errores.imagen.msg: "" %> 
                                 </small>
                             </div>
@@ -69,7 +69,7 @@
                             <input type="checkbox"
                             class="custom-control-input <%= (typeof old != 'undefined' && old.byc)?"is-valid":(typeof errores != 'undefined' && errores.byc)?"is-invalid": ""  %>"
                             id="byc" name="byc">
-                        <label class="custom-control-label" for="byc">Acepto las bases y condiciones</label><br>
+                        <label class="custom-control-label" for="byc">Acepto los términos y condiciones</label><br>
                         <a href="/terminosycondiciones" class="text-info">Ver términos y condiciones</a><br>
 
                         <small

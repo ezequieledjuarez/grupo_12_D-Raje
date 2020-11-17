@@ -21,8 +21,20 @@ window.addEventListener('load', ()=>{
     let inputApellido = document.getElementById('apellido')
     let inputImagen = document.getElementById('imagen')
     let checkAbc = document.getElementById('byc')
-    console.log(formulario)
-    console.log(inputImagen)
+    
+    inputCorreo.addEventListener('change', function(){
+        fetch(`${window.location.origin}/api/mails`,{method:'POST'})
+        .then(response => response.json())
+        .then(users=>{
+            users.forEach(user =>{
+                if(user.correo === inputCorreo.value){
+                    errorCorreo.innerHTML = 'Este correo ya fue registrado'
+                    inputCorreo.classList.toggle('is-invalid')
+                }        
+            })
+        })
+    })
+  
     inputCorreo.addEventListener('keyup',function(){
         switch(true){
             case this.value.length == 0:
@@ -36,28 +48,11 @@ window.addEventListener('load', ()=>{
             default:
                 this.classList.remove('is-invalid')
                 addIsValid(inputCorreo)
-                errorCorreo.innerHtml = ''
+                errorCorreo.innerHTML = ''
                 break
         }
     })
 
-    inputCorreo.addEventListener('change', function(){
-        fetch(`${window.location.origin}/api/mails`,{method:'POST'})
-        .then(response => response.json())
-        .then(users=>{
-            users.forEach(user =>{
-                if(user.correo == this.value){
-                    errorCorreo.innerHTML = 'Este correo ya fue registrado'
-                    inputCorreo.classList.toggle('is-invalid')
-                }
-                else{
-                inputCorreo.classList.remove('is-invalid')
-                addIsValid(inputCorreo)
-                errorCorreo.innerHTML=''
-                }
-            })
-        })
-    })
 
     inputPass.addEventListener('keyup',function(){
         switch(true){
