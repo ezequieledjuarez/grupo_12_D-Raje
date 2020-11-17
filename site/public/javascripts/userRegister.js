@@ -11,6 +11,7 @@ let regExExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
 
           
 window.addEventListener('load', ()=>{
+    
     let formulario = document.getElementById('registerForm')
 
     let inputCorreo = document.getElementById('correo')
@@ -20,7 +21,8 @@ window.addEventListener('load', ()=>{
     let inputApellido = document.getElementById('apellido')
     let inputImagen = document.getElementById('imagen')
     let checkAbc = document.getElementById('byc')
-
+    console.log(formulario)
+    console.log(inputImagen)
     inputCorreo.addEventListener('keyup',function(){
         switch(true){
             case this.value.length == 0:
@@ -46,7 +48,7 @@ window.addEventListener('load', ()=>{
             users.forEach(user =>{
                 if(user.correo == this.value){
                     errorCorreo.innerHTML = 'Este correo ya fue registrado'
-                    addIsInvalid(inputCorreo)
+                    inputCorreo.classList.toggle('is-invalid')
                 }
                 else{
                 inputCorreo.classList.remove('is-invalid')

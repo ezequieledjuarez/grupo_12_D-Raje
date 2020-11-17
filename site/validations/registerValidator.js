@@ -1,12 +1,11 @@
 const {check, validationResult, body} = require('express-validator')
-
+const path = require('path')
 const db =  require('../db/models')
-const extensiones = ['.jpg', '.jpeg', '.png', '.gif']
 module.exports = [
     check('nombre')
     .isLength({
         min: 3,
-        max: 16
+        max: 12
     })
     .withMessage('El nombre ingresado debe ser mayor a 3 y menor a 16 caracteres.'),
 

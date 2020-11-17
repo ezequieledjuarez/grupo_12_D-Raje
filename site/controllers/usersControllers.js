@@ -1,7 +1,6 @@
 const fs = require('fs')
 const path = require('path')
 const bcrypt = require('bcrypt')
-const dbUsers = require(path.join(__dirname, '..', 'data', 'dbUsers'))
 const {validationResult} = require('express-validator');
 const db = require(path.join(__dirname, '..', 'db', 'models'))
 
@@ -20,6 +19,33 @@ module.exports = {
             script:'userRegister.js'
         })
     },
+
+     agregarUsuario:function(req,res){
+     let errores = validationResult(req)
+     
+     if(!errores.isEmpty()){
+        res.render('registro',{
+            title: "Registro de usuario",
+            css : 'registro.css',
+            errores: errores.mapped(),
+            old: req.body
+        })
+     }
+     else{
+        db.Users.create({
+            nombre : req.body.nombre.trim(),
+            apellido: req.body.apellido.trim(),
+            correo: req.body.correo.trim(),
+            categoria:'user',
+            password:bcrypt.hashSync(req.body.password,10),
+            image:(req.files[0])?req.files[0].filename:"imgDeffault.jpg",
+        })
+        .then(user => {
+             res.redirect('/users/login')
+            })
+        .catch(e=> res.send(e))
+     }
+ },
 
     login: function(req,res){
         res.render('login',{
@@ -60,31 +86,6 @@ module.exports = {
             })
         }
             
-    },
-    
-    agregarUsuario:function(req,res){
-        let errores = validationResult(req)
-        if(!errores.isEmpty()){
-            res.render('registro',{
-                title: "Registro de usuario",
-                css : 'registro.css',
-                errores: errores.mapped(),
-                old: req.body
-            })
-        }
-        else{
-            db.Users.create({
-                nombre : req.body.nombre.trim(),
-                apellido: req.body.apellido.trim(),
-                correo: req.body.correo.trim(),
-                categoria:'user',
-                password:bcrypt.hashSync(req.body.password,10),
-                image:(req.files[0])?req.files[0].filename:"imgDeffault.jpg",
-            })
-            .then(result => { return res.redirect('/users/login')})
-            .catch(e=> res.send(e))
-        }
-        
     },
 
     logout: function(req,res){

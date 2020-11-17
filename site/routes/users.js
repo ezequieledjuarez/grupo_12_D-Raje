@@ -21,7 +21,7 @@ router.get('/login',isVisitor, usersControllers.login)
 router.post('/login',loginValidator, usersControllers.loginSend)
 /*Registro*/
 router.get('/register', isVisitor, usersControllers.registro)
-router.post('/register', registerValidator,subirImg.any(),registerValidator,usersControllers.agregarUsuario)
+router.post('/register',subirImg.any(),registerValidator,usersControllers.agregarUsuario)
 
 /*Logout*/
 
