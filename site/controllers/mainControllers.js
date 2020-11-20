@@ -2,7 +2,6 @@ const path = require('path');
 const db = require(path.join(__dirname, '..', 'db', 'models'));
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
-const nodemailer = require('nodemailer')
 
 module.exports = {
     home: function(req, res) {
