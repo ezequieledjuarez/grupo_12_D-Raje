@@ -132,14 +132,15 @@ module.exports = {
     },
 
     deleteUser: function(req,res){
+        db.Users.findByPk(req.params.id)
+        .then(user=>
+            fs.unlinkSync('./public/images/usuarios/'+ req.session.user.image))
         db.Users.destroy({
             where: {
                 id:req.params.id
             }
         })
         .then(result=>{
-            
-            fs.unlinkSync('./public/images/usuarios/'+ req.session.user.image); 
             req.session.destroy()
             if(req.cookies.userDRaje){
                 res.cookie('userD-Raje', '', {maxAge:-1})

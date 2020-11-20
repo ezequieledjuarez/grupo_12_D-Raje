@@ -114,6 +114,11 @@ module.exports = {
     },
 
     eliminarProducto: (req,res) =>{
+        db.Products.findByPk(req.params.id)
+        .then(product=>{
+            fs.unlinkSync('./public/images/productos/'+ product.image); 
+        })
+        
          db.Products.destroy({
              where:
              {
@@ -121,7 +126,6 @@ module.exports = {
              }
          })
          .then(product =>{
-             fs.unlinkSync('./public/images/productos/'+ product.image); 
              res.redirect('/')
          })
          .catch(e => res.send(e))
