@@ -1,6 +1,6 @@
 window.addEventListener('load',()=>{
     let eliminarProducto = document.getElementById('deleteProduct')
-    console.log(eliminarProducto)
+    
 
       eliminarProducto.addEventListener('click',function(e){
       let conf = confirm('¿Estás seguro que deseas dar de baja la cuenta?')
