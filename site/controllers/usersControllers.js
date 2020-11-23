@@ -50,13 +50,14 @@ module.exports = {
     login: function(req,res){
         res.render('login',{
             title:'Ingreso',
+            script: 'login.js',
             css: 'login.css'
         })
     },
 
     loginSend:function(req,res){
-        let errores = validationResult(req)
-        if(errores.isEmpty()){
+        let error = validationResult(req)
+        if(error.isEmpty()){
             db.Users.findOne({
                 where:{
                     correo:req.body.correo
@@ -81,7 +82,8 @@ module.exports = {
             res.render('login',{
                 title: 'Ingresa a tu cuenta',
                 css: 'login.css',
-                errores : errores.mapped(),
+                script: 'login.js',
+                error : error.mapped(),
                 old: req.body
             })
         }

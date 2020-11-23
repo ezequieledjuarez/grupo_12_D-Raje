@@ -9,14 +9,16 @@ window.addEventListener('load',()=>{
           Swal.fire({
               icon:'info',
               title: 'Gracias por quedarte',
-              text: 'Seguí disfrutando de nuestras ofertas'
+              text: 'Seguí disfrutando de nuestras ofertas',
+              timer:2000
           })
       }
       else{
             Swal.fire({
             icon: 'success',
             title: 'Se ha dado de baja tu cuenta',
-            text: 'Te vamos a extrañar :('
+            text: 'Te vamos a extrañar :(',
+            timer:2000
             })
         }
     })
