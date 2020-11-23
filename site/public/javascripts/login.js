@@ -54,9 +54,9 @@ window.addEventListener('load',()=>{
             }
         })    
 
-    formLogin.addEventListener('change',function(){
+    formLogin.addEventListener('keyup',function(){
         let error = false
-            if(inputCorreo.value.length == 0 || inputPass.value.length == 0 || errorPass.innerHTML.length != 0 || errorCorreo.innerHTML.length != 0){
+            if(inputCorreo.value.length == 0 || inputPass.value.length < 6 ){
                 error = true
             }
         
