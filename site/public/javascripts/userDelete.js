@@ -1,5 +1,5 @@
 window.addEventListener('load',()=>{
-
+    console.log('Evento registrado')
     let botonBaja = document.getElementById('darBaja')
 
     botonBaja.addEventListener('click',function(e){

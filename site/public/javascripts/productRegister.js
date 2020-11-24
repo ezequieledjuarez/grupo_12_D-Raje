@@ -15,7 +15,6 @@ window.addEventListener('load', function(){
     let inputPrecio = document.getElementById('precio')
     let inputDescuento = document.getElementById('descuento')
     
-    console.log(formulario)
     let regExSignos = /[+-]/
     let regExExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
     
@@ -111,6 +110,7 @@ window.addEventListener('load', function(){
     })
 
     inputImagen.addEventListener('change', function(e){
+        console.log(e.target.files)
         switch(true){
         case !regExExtensions.exec(this.value):
             errorImagen.innerHTML = 'La extensión de la imagen sólo puedo ser jpg/jpeg/png/gif'

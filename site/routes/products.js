@@ -25,7 +25,7 @@ router.get('/show/:id', isAdmin, productsController.mostrarProducto)
 router.get('/edit/:id', isAdmin, productsController.formProducto)
 
 /*Editar productos*/ 
-router.put('/edit/:id', subirImg.any(), productsController.editarProducto)
+router.put('/edit/:id', subirImg.any(),productValidator, productsController.editarProducto)
 
 /*Eliminar productos*/ 
 

@@ -3,28 +3,39 @@
     <%- include('partials/head') %>
 <body>
     <%- include('partials/header') %>
-    <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <form action="/products/edit/<%= producto.id %>?_method=PUT" id="formProducto" method="POST" enctype="multipart/form-data">
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="nombre">Nombre</label>
+            <span class="text-danger" id ="errorNombre"><%= (typeof errors != 'undefined' && errors.nombre)?errors.nombre.msg: "" %></span>
             <input type="text" name= "nombre" value= "<%= producto.nombre%> "class="form-control" id="nombre" placeholder= "nombre">
           </div>
           <div class="form-group col-md-6">
             <label for="marca">Marca</label>
+            <span class="text-danger" id ="errorMarca"> <%= (typeof errors != 'undefined' && errors.marca)?errors.marca.msg: "" %></span>
             <input type="text" name = "marca" value = "<%= producto.marca%>"class="form-control" id="marca" placeholder="Marca">
           </div>
         </div>
-        <div class="form-group">
-          <label for="descripcion">Descripcion</label>
-          <textarea name="descripcion" cols = "95" rows ="3"> <%= producto.descripcion%> </textarea> <class="form-control" id="descripcion" placeholder="Escriba una descripción del producto">
-        </div>
+        <div>
+          <label for="descripcion"></label>
+         
+          <p>
+              <textarea name="descripcion" id="descripcion" placeholeder = "Descripcion del producto" cols="20" rows="5"class="
+              datos-producto form-control <%= (typeof old != 'undefined' && old.descripcion && !errors.descripcion)?"is-valid":(typeof errors != 'undefined' && errors.descripcion)?"is-invalid": ""  %>"><%= (typeof old != 'undefined' && old.descripcion)?old.descripcion:'' %>
+              <%= producto.descripcion%> 
+            </textarea>
+               <span class="text-danger" id ="errorDescripcion"> <%= (typeof errors != 'undefined' && errors.descripcion)?errors.descripcion.msg: "" %></span>
+          </p>
+      </div>  
         <div class="form-row">
             <div class="form-group col-md-3">
             <label for="precio">Precio</label>
+            <span class="text-danger" id ="errorPrecio"> <%= (typeof errors != 'undefined' && errors.precio)?errors.precio.msg: "" %> </span>
             <input type="text" name = "precio" value = "<%= producto.precio%>" class="form-control" id="precio" placeholder="$">
             </div>
             <div class="form-group col-md-3">
             <label for="descuento">Descuento</label>
+            <span class="text-danger" id ="errorDescuento"> <%= (typeof errors != 'undefined' && errors.descuento)?errors.descuento.msg: "" %></span>
             <input type="text" name = "descuento" value="<%=producto.descuento%>" class="form-control" id="descuento" placeholder="%">
           </div>
         </div>
@@ -51,7 +62,10 @@
         </div>
         <div class="form-group">
             <label for="image">Seleccionar imagen</label>
-            <input type="file" name = "image" class="form-control-file" id="image">
+            <span class="text-danger" id ="errorImagen"> 
+              <%= (typeof errors != 'undefined' && errors.imagen)?errors.imagen.msg: "" %> 
+            <input accept = "image/.png, .jpeg, .jpg, image/gif"type="file" name = "image" class="form-control-file" id="imagenProducto">
+            <img id = "preview" src =" /images/productos/<%=producto.image%>" alt="" class="w-75">
         </div>
         <div class="form-group">
           <div class="form-check">
@@ -62,6 +76,8 @@
           </div>
         </div>
           <button type="submit" class="btn btn-primary">Editar</button>
+          <small id="msgError" class="text-danger"></small>
+
     </form>
 
     <%- include('partials/footer') %>
