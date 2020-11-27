@@ -15,17 +15,15 @@ window.addEventListener('load',()=>{
     let inputPass = document.getElementById('pass')
     
     let botonIngresar = document.getElementById('ingresar')
-
-    console.log(formLogin.elements)
     
      inputCorreo.addEventListener('keyup',function(){
             switch(true){
                 case inputCorreo.value.length == 0:
-                    inputCorreo.innerHTML = 'Este campo es obligatorio'
+                    errorCorreo.innerHTML = 'Este campo es obligatorio'
                     addIsInvalid(inputCorreo)
                     break
                 case !regExCorreo.test(this.value):
-                    inputCorreo.innerHTML = 'Debes ingresar un correo válido'
+                    errorCorreo.innerHTML = 'Debes ingresar un correo válido'
                     addIsInvalid(inputCorreo)
                     break
                 default:

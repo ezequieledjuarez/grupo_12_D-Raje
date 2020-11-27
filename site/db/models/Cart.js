@@ -10,7 +10,7 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true
         },
 
-        idUser:{
+        id_user:{
             type: dataTypes.INTEGER(10).UNSIGNED,
             allowNull: false,
             primaryKey: true
