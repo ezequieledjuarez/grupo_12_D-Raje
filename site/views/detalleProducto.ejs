@@ -7,17 +7,21 @@
         <%- include('partials/header') %>
         <div class="container">
                 <div class="row">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="/images/productos/<%= producto.image %>" alt="Card image cap">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><%= producto.nombre %></li>
-                            <li class="list-group-item"><%= producto.categoria %></li>
-                            <li class="list-group-item"><%= producto.precio %></li>
-                        </ul>
-                    </div>
-                    <div class="card texto">
-                        <p class="card-text"><%= producto.descripcion %></p>
-                    </div>    
+                    <div class="card mb-12" style="max-width: 540px;">
+                        <div class="row no-gutters">
+                          <div class="col-md-4">
+                            <img src="/images/productos/<%= producto.image %>" class="card-img" alt="product-img">
+                        </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title"><%= producto.nombre %></h5>
+                              <h4 class = "card-text">$<%= producto.precio %></h4>
+                              <p class="card-text"><%= producto.descripcion %></p>
+                              <p class="card-text"><small class="text-muted"><%= producto.categoria %></small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                 </div>
             </div>
             <%- include('partials/footer') %>
