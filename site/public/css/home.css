@@ -217,9 +217,9 @@ footer article p {
     height: 20%;
 }
 
-.ver-mas {
-    margin-right: 30px;
-    margin-left: 30px;
+.ver-mas, .button-ver-mas {
+    margin-right: auto ;
+    margin-left: auto;
     text-decoration: none;
     list-style: none;
 }
