@@ -3,7 +3,7 @@
 <%- include('partials/head') %>
     <body>
         <%- include('partials/header') %>
-        <img src="/images/usuarios/<%= user.image%>" alt="">
+        <img src="/images/usuarios/<%= user.image%>" alt=" " height="150" width="150">
         <h1> Bienvenido <%= user.alias%></h1>
         <form action="/users/update/<%= user.id %>?_method=PUT" method = "POST" enctype="multipart/form-data">
             <div class="row">

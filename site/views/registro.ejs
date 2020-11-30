@@ -60,7 +60,7 @@
                                 <input type="file" accept="image/png, .jpeg, .jpg, image/gif" class="form-control"   <%= (typeof old != 'undefined' && old.imagen)?"is-valid":(typeof errores != 'undefined' && errores.imagen)?"is-invalid": ""  %>"
                                  id="imagen" name = "imagen">
                                 <label for="imagen">Seleccionar imagen</label>
-                                <img id="preview" src= "" alt="" class="w-75"style="width:200px;height:200px"/>
+                                <img id="preview" src= "/images/usuarios/imgDeffault.jpg" alt="" height="100" width="100" />
                                 <small class="text-danger" id="errorImagen">
                                 <%= (typeof errores != 'undefined' && errores.imagen)?errores.imagen.msg: "" %> 
                                 </small>
