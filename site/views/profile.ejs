@@ -3,24 +3,38 @@
 <%- include('partials/head') %>
     <body>
         <%- include('partials/header') %>
-        <img src="/images/usuarios/<%= user.image%>" alt=" " height="150" width="150">
-        <h1> Bienvenido <%= user.alias%></h1>
-        <form action="/users/update/<%= user.id %>?_method=PUT" method = "POST" enctype="multipart/form-data">
+        <div class="container-fluid">
             <div class="row">
-                <input type="file" name="image" id="">
+                <div class="card class=col-12 col-md-6 col-xl-6">
+                    <h1> Bienvenido a tu perfil <%= user.alias%></h1>
+                    <img src="/images/usuarios/<%= user.image%>" alt=" " height="150" width="150">
+                    <div>
+                        <input type="file" name="image" id="" style="color:transparent;">
+                    </div>
+                </div>
+                <div class="card class=col-12 col-md-6 col-xl-6">
+                    <form action="/users/update/<%= user.id %>?_method=PUT" method = "POST" enctype="multipart/form-data">
+                        <div class="row">
+                        </div>
+                        <label for="nombe">Nombre</label>
+                        <input type="text" name="nombre" id="" value="<%= user.nombre%>">
+                        <div>
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="apellido" id="" value = "<%= user.apellido%>">
+                        </div>
+                        
+                    </form>
+                    <div>
+                        <button type="submit" class="btn-sm btn-success">Actualizar mis datos</button>
+                    
+                        <form action="/users/delete/<%= user.id%>?_method=delete" method="post">
+                            <button type="submit" class="btn-sm btn-danger" id="darBaja">Dar de baja mi cuenta</button>
+                        </form>
+                    
+                    </div>
+                </div>
             </div>
-            <label for="nombe">Nombre</label>
-            <input type="text" name="nombre" id="" value="<%= user.nombre%>">
-            <label for="apellido"></label>
-            <input type="text" name="apellido" id="" value = "<%= user.apellido%>">
-            <label for="correo"></label>
-            <input type="email" name="correo" id="" value = "<%= user.correo%>">
-            <button type="submit" class="btn-sm btn-success">Actualizar mis datos</button>
-        </form>
-        <form action="/users/delete/<%= user.id%>?_method=delete" method="post">
-            <button type="submit" class="btn-sm btn-danger" id="darBaja">Dar de baja mi cuenta</button>
-        </form>
-
+        </div>
 
         <%- include('partials/footer') %>
     
