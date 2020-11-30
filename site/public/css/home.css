@@ -73,6 +73,8 @@ nav li:hover > .tareas{
     padding: 10px;
 }
 
+
+
 nav {
     width: 100%;
     background-color: #3282b8;
@@ -162,7 +164,6 @@ footer article p {
     font-size: 24px;
     color: black;
     padding: 20px;
-    text-align: center;
     background-color: #0f4c75;
     color: white;
     box-shadow: -5px 5px 8px #3282b8;
@@ -173,7 +174,6 @@ footer article p {
     margin-bottom: 30px;
     border-radius: 5px;
     padding: 5px;
-    text-align: center;
 }
 
 .productos .contenido figure img {
@@ -223,6 +223,12 @@ footer article p {
     text-decoration: none;
     list-style: none;
 }
+
+.nph{
+    width: 200px;
+    justify-content: center;
+}
+
 
 @media (min-width:400px) and (max-width: 767px) {
     .barra {
@@ -368,6 +374,12 @@ footer article p {
         text-decoration: none;
         list-style: none;
     }
+   
+    .nph{
+    width: 200px;
+    justify-content: center;
+    }
+
 }
 
 .login {
