@@ -42,8 +42,10 @@
             <li class="pc">
                 <a href="/faq">Ayuda</a>
             </li>
+            <% if (typeof user !== "undefined") { %>
             <li class="l-n">
                 <a href="/users/shop">Mi carrito <i class="fas fa-shopping-cart"></i>
+            <% } %>
             </a>
           </li>
 
