@@ -3,11 +3,11 @@ window.addEventListener('load',()=>{
     
 
       eliminarProducto.addEventListener('click',function(e){
-      let conf = confirm('¿Estás seguro que deseas dar de baja la cuenta?')
+      let conf = confirm('¿Estás seguro que deseas eliminar este producto?')
       if(!conf){
           e.preventDefault()
           Swal.fire({
-              icon: 'error',
+              icon: 'info',
               title: 'No se ha eliminado el producto',
               text: 'Este producto seguirá existiendo',
               timer: 2000
@@ -15,7 +15,7 @@ window.addEventListener('load',()=>{
       }
       else{
           Swal.fire({
-            icon: 'success',
+            icon: 'danger',
             title: 'Se ha eliminado el producto',
             text: 'Este producto se ha eliminado correctamente',
             timer:2000

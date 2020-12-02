@@ -107,7 +107,6 @@ window.addEventListener('load', function(){
     })
 
     inputImagen.addEventListener('change', function(e){
-        console.log(e.target.files)
         switch(true){
         case !regExExtensions.exec(this.value):
             errorImagen.innerHTML = 'La extensión de la imagen sólo puedo ser jpg/jpeg/png/gif'

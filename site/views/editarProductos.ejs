@@ -64,16 +64,8 @@
             <label for="image">Seleccionar imagen</label>
             <span class="text-danger" id ="errorImagen"> 
               <%= (typeof errors != 'undefined' && errors.imagen)?errors.imagen.msg: "" %> 
-            <input accept = "image/.png, .jpeg, .jpg, image/gif"type="file" name = "image" class="form-control-file" id="imagenProducto">
-            <img id = "preview" src =" /images/productos/<%=producto.image%>" alt="" class="w-75">
-        </div>
-        <div class="form-group">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-             Aceptar los cambios.
-            </label>
-          </div>
+            <input accept = "image/.png, .jpeg, .jpg, image/gif" type="file" name = "image" class="form-control-file" id="imagenProducto" value = "<%=producto.image%>" height="150" width="150" >
+            <img id = "preview" src =" /images/productos/<%=producto.image%>" alt="" value = "<%=producto.image%>" height="150" width="150">
         </div>
           <button type="submit" class="btn btn-primary">Editar</button>
           <small id="msgError" class="text-danger"></small>
