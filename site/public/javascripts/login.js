@@ -41,7 +41,7 @@ window.addEventListener('load',()=>{
                     addIsInvalid(inputPass)
                 break
                 case !regExPass.test(inputPass.value):
-                    errorPass.innerHTML = 'La contraseña debe tener entre 6 y 12 carácteres, una mayúscula, una minúscula y un número'
+                    errorPass.innerHTML = 'La contraseña debe tener entre 8 y 12 carácteres, una mayúscula, una minúscula y un número'
                     addIsInvalid(inputPass)
                 break
                 default:
@@ -60,9 +60,10 @@ window.addEventListener('load',()=>{
         
         if(!error){
             botonIngresar.removeAttribute('disabled')
+            msgError.innerHTML = ''
         }
         else{
-            msgError.innerHTML = 'Los campos señalados son obligatorios'
+            msgError.innerHTML = 'Los datos ingresados no son válidos'
         }
     })
 })
