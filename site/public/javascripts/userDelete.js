@@ -10,7 +10,7 @@ window.addEventListener('load',()=>{
               icon:'info',
               title: 'Gracias por quedarte',
               text: 'Seguí disfrutando de nuestras ofertas',
-              timer:2000
+              timer:5000
           })
       }
       else{
@@ -18,7 +18,7 @@ window.addEventListener('load',()=>{
             icon: 'success',
             title: 'Se ha dado de baja tu cuenta',
             text: 'Te vamos a extrañar :(',
-            timer:2000
+            timer:5000
             })
         }
     })

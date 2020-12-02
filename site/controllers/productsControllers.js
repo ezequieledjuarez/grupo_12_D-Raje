@@ -79,7 +79,7 @@ module.exports = {
                 title: 'Editar Producto',
                 css: 'detalleProducto.css',
                 producto: producto,
-                script: 'productRegister.js'
+                script: 'productEdit.js'
             })
         })
         .catch(e=>{

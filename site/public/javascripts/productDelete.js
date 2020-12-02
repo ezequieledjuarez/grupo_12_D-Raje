@@ -9,16 +9,16 @@ window.addEventListener('load',()=>{
           Swal.fire({
               icon: 'info',
               title: 'No se ha eliminado el producto',
-              text: 'Este producto seguirá existiendo',
-              timer: 2000
+              text: 'Este producto seguirá exhibiéndose',
+              timer: 5000
           })
       }
       else{
           Swal.fire({
-            icon: 'danger',
+            icon: 'success',
             title: 'Se ha eliminado el producto',
             text: 'Este producto se ha eliminado correctamente',
-            timer:2000
+            timer:5000
           })
       }
     })
