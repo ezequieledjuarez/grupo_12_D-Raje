@@ -132,7 +132,11 @@ module.exports = {
     },
 
     listarTodos: function(req,res){
-    db.Products.findAll()
+    db.Products.findAll({
+        order:[
+           [ 'id', 'DESC']
+        ]
+    })
     .then(result =>{
         res.render('productos',{
             title:'Resultado de la busqueda',

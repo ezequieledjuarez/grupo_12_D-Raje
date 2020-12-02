@@ -5,7 +5,11 @@ const Op = Sequelize.Op
 
 module.exports = {
     home: function(req, res) {
-        db.Products.findAll()
+        db.Products.findAll({
+            order:[
+               [ 'id', 'DESC']
+            ]
+        })
             .then(productos =>{
                 res.render('home', {
                     title: 'D-Raje',

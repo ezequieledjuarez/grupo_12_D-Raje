@@ -16,6 +16,9 @@
                             <div class="card-body">
                               <h5 class="card-title"><%= producto.nombre %></h5>
                               <h4 class = "card-text">$<%= producto.precio %></h4>
+                              <% if (producto.descuento > 0 ){ %>
+                                <li class="list-group-item"><%= producto.descuento %>  % OFF</li>
+                                <% } %>
                               <p class="card-text"><%= producto.descripcion %></p>
                               <p class="card-text"><small class="text-muted"><%= producto.categoria %></small></p>
                             </div>
