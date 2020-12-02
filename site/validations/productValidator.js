@@ -23,13 +23,13 @@ module.exports = [
 
     check('precio')
     .isFloat({
-        gt: 0
+        gt: -1
     })
     .withMessage('El precio debe ser mayor a 0'),
 
     check('descuento')
     .isInt({
-        gt: -1
+        min:0
     })
     .withMessage('El descuento debe ser 0 en caso de que no haya o superior a 0 en caso de que haya'),
 

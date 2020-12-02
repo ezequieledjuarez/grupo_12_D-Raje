@@ -93,12 +93,9 @@ window.addEventListener('load', function(){
             case this.value < 0: 
                 errorDescuento.innerHTML = 'El descuento no puede ser negativo'
                 addIsInvalid(inputDescuento)
+
             break
 
-            case this.value.trim().length == 0:
-                errorDescuento.innerHTML = 'Este campo no puede quedar vacío, en caso de no tener descuento colocar un 0'
-                addIsInvalid(inputDescuento)
-            break
             default:
                 errorDescuento.innerHTML = ''
                 inputDescuento.classList.remove('is-invalid')

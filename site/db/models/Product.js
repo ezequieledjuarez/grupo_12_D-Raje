@@ -97,25 +97,7 @@ module.exports = (sequelize, dataTypes) => {
         descuento:{
             type: dataTypes.INTEGER(10).UNSIGNED,
             defaultValue: null
-            /*,
-            validate:{
-                isFloat:{
-                    msg: 'Este valor debe ser decimal'
-                },
-                allowNull:{
-                    msg: 'Este campo no puede quedar vacío'
-                },
-                notEmpty:{
-                    msg: 'Este campo no puede quedar vacío'
-                },
-                min:{
-                    isMin(value){
-                        if(value < 1){
-                            msg: 'Este valor no puede ser menor a 0'
-                        } 
-                    }
-                } 
-            }*/
+
         },
 
         image: {
