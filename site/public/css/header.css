@@ -103,6 +103,7 @@
         display:block;
         position:relative;
     }
+
     @media (min-width:400px) and (max-width: 767px) {
         .barra {
             margin-top: 0px;
