@@ -21,7 +21,7 @@
                                 <article >
                                     <h2 class="nph"><%= producto.nombre%></h2>
                                     <button class="button-ver-mas"><a href="/products/detalle/<%= producto.id%>"class="ver-mas"><i> Ver mas </i><a></button>
-                                    <a href=" " class="prec"><i> $<%= producto.precio %> </i></a>
+                                    <a href=" " class="prec"><i> $<%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %>.00 </i></a>
                                 </article>
                             </div>
                         </div>

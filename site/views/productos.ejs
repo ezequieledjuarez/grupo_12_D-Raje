@@ -15,7 +15,7 @@
                 <li class="list-group-item"><%= producto.marca %></li>
                 <% if ( producto.descuento > 0 ) { %>
                   <li class="list-group-item"><%= producto.descuento %>  % OFF</li>
-                  <li class="list-group-item"> $<%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %> </li>
+                  <li class="list-group-item"> $<%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %>.00 </li>
                 <% }else{ %>  
                   <li class="list-group-item">$<%= producto.precio %></li> 
                 <% } %>
