@@ -13,9 +13,11 @@
                   <p class="card-text"><%= producto.descripcion %> </p>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item"><%= producto.marca %></li>
-                <li class="list-group-item">$<%= producto.precio %></li>
                 <% if ( producto.descuento > 0 ) { %>
                   <li class="list-group-item"><%= producto.descuento %>  % OFF</li>
+                  <li class="list-group-item"> $<%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %> </li>
+                <% }else{ %>  
+                  <li class="list-group-item">$<%= producto.precio %></li> 
                 <% } %>
               </ul>
               <% if (typeof user !== "undefined" && user.categoria == 'admin') { %>

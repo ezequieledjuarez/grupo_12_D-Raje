@@ -164,7 +164,10 @@ module.exports = {
                 { precio:{[Op.lte] : buscado }},
                 { estado : {[Op.substring] : buscado }}
                 ]
-            }
+            },
+            order:[
+                [ 'precio', 'DESC']
+             ]
         })
         .then(result =>{
             res.render('productos',{

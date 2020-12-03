@@ -15,12 +15,23 @@
                           <div class="col-md-8">
                             <div class="card-body">
                               <h5 class="card-title"><%= producto.nombre %></h5>
-                              <h4 class = "card-text">$<%= producto.precio %></h4>
                               <% if (producto.descuento > 0 ){ %>
                                 <li class="list-group-item"><%= producto.descuento %>  % OFF</li>
-                                <% } %>
+                                <li class="list-group-item"><strike>$<%= producto.precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></strike></li>
+                                <%= producto.discount %>
+                                <li class="list-group-item">
+                                   
+                                      $<%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %>
+
+                                </li>
+                              <% } else { %>
+                                <h4 class = "card-text">$<%= producto.precio %>  </h4>
+                             <% } %>
+                             <br><br><br><br>
+                             <div>
                               <p class="card-text"><%= producto.descripcion %></p>
                               <p class="card-text"><small class="text-muted"><%= producto.categoria %></small></p>
+                            </div>
                             </div>
                           </div>
                         </div>
