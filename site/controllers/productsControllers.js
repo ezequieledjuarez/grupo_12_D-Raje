@@ -179,5 +179,12 @@ module.exports = {
     .catch(e => {
         res.send(e)
     })
+    },
+    
+    updatePrice: function(req,res){
+        res.render('actualizarPrecioProducto',{
+            title: 'Actualizar precios',
+            css:'home.css'
+        })
     }
 }

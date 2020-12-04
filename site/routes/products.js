@@ -31,4 +31,5 @@ router.put('/edit/:id', subirImg.any(),productValidator, productsController.edit
 
 router.delete('/eliminar/:id', productsController.eliminarProducto)
 
+router.get('/updateprice',productsController.updatePrice)
 module.exports = router;
