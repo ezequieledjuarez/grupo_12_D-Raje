@@ -6,7 +6,7 @@
     <div class="container-fluid">
       <div class="row">
     <% productos.forEach(producto => { %>
-      <div class="card class=col-12 col-md-6 col-xl-4">
+      <div class="card class=col-12 col-md-5 col-xl-3" id="card-product">
           <img class="card-img-top" src="/images/productos/<%= producto.image %>" height="400" width="200" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title"><%= producto.nombre%></h5>
